@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_magenta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="@dimen/_5dp">
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/nodata_TV"
+            android:textSize="@dimen/text_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black"
+            android:text="No member available"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/newMemberList_RV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/title_label_TV"
+            android:paddingLeft="@dimen/_2dp"
+            android:paddingRight="@dimen/_2dp"/>
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

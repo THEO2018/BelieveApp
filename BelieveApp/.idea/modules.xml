@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BelieveApp.iml" filepath="$PROJECT_DIR$/BelieveApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/folioreader/folioreader.iml" filepath="$PROJECT_DIR$/folioreader/folioreader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/matisse/matisse.iml" filepath="$PROJECT_DIR$/matisse/matisse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rssparser/rssparser.iml" filepath="$PROJECT_DIR$/rssparser/rssparser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webViewMarker/webViewMarker.iml" filepath="$PROJECT_DIR$/webViewMarker/webViewMarker.iml" />
+    </modules>
+  </component>
+</project>

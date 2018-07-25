@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/pad10">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/notesTitle_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Note Title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18sp"
+            android:textStyle="bold"
+            android:padding="@dimen/pad10"
+            android:drawablePadding="@dimen/_10dp"
+            android:drawableRight="@drawable/right_arrow"
+            android:drawableTint="@color/white"
+            android:layout_alignParentLeft="true"
+            />
+
+        <View
+            android:id="@+id/divView"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_alignBottom="@+id/notesTitle_TV"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:layout_marginStart="@dimen/_10dp"
+            android:background="@color/light_grey"
+            app:layout_constraintTop_toBottomOf="@+id/postAction_Container" />
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

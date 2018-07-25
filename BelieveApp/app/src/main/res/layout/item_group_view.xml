@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/_240dp"
+    android:layout_gravity="center"
+    card_view:cardCornerRadius="4dp"
+    android:layout_margin="@dimen/_5dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/square_shape_magenta"
+        android:paddingLeft="@dimen/_20dp"
+        android:paddingRight="@dimen/_20dp"
+        >
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/grpImage_IV"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_marginTop="@dimen/mar_15"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+             />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/grpName_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Discussion Group"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:maxLines="2"
+            card_view:layout_constraintEnd_toEndOf="@+id/grpImage_IV"
+            card_view:layout_constraintLeft_toLeftOf="parent"
+            card_view:layout_constraintRight_toRightOf="parent"
+            card_view:layout_constraintStart_toStartOf="@+id/grpImage_IV"
+            card_view:layout_constraintTop_toBottomOf="@+id/grpImage_IV" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/gpMemberCount_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="2dp"
+            android:text="5 Members"
+            android:textColor="@color/light_pink"
+            android:textSize="@dimen/_13sp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/grpName_TV"
+            card_view:layout_constraintVertical_bias="0.0" />
+
+        <RelativeLayout
+            android:id="@+id/constraintLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.54"
+            card_view:layout_constraintRight_toRightOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/gpMemberCount_TV"
+            card_view:layout_constraintVertical_bias="0.0">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/memberImage_IV_1"
+                android:layout_width="@dimen/_50dp"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="8dp" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/memberImage_IV_2"
+                android:layout_width="@dimen/_50dp"
+                android:layout_height="@dimen/_50dp"
+                android:layout_alignLeft="@+id/memberImage_IV_1"
+                android:layout_alignStart="@+id/memberImage_IV_1"
+                android:layout_alignTop="@+id/memberImage_IV_1"
+                android:layout_marginLeft="@dimen/_35dp"
+                android:layout_marginStart="@dimen/_35dp" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/memberImage_IV_3"
+                android:layout_width="@dimen/_50dp"
+                android:layout_height="@dimen/_50dp"
+                android:layout_alignLeft="@+id/memberImage_IV_2"
+                android:layout_alignStart="@+id/memberImage_IV_2"
+                android:layout_alignTop="@+id/memberImage_IV_2"
+                android:layout_marginLeft="@dimen/_35dp"
+                android:layout_marginStart="@dimen/_35dp"
+                />
+
+        </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

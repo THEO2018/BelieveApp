@@ -1,0 +1,249 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_homeView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:elevation="4dp">
+
+
+    <View
+        android:id="@+id/divView"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/light_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divView"
+        android:orientation="vertical">
+
+        <!--<View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1dp" />-->
+
+        <LinearLayout
+            android:id="@+id/calInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_pink"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_5dp"
+            android:paddingTop="@dimen/_5dp">
+
+            <RelativeLayout
+                android:id="@+id/calendar_title_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/_5dp"
+                android:paddingStart="@dimen/_5dp">
+
+                <ImageView
+                    android:id="@+id/calendar_left_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@null"
+                    android:rotation="180"
+                    android:src="@drawable/right_arrow"
+                    android:tint="@color/white" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/calendar_month_year_tV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/white"
+                    android:textIsSelectable="true"
+                    android:textSize="@dimen/_16sp" />
+
+                <ImageView
+                    android:id="@+id/calendar_right_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@null"
+                    android:src="@drawable/right_arrow"
+                    android:tint="@color/white" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_2dp" />
+
+            <LinearLayout
+                android:id="@+id/daysLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/sun_day_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:text="@string/sun"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/mon_day_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:text="@string/mon"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tue_day_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:text="@string/tue"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/wed_day_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:text="@string/wed"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/thu_day_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:text="@string/thu"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/fri_day_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:text="@string/fri"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/sat_day_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:text="@string/sat"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--<GridView
+            android:id="@+id/weekday_gridview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:isScrollContainer="false"
+            android:numColumns="7"
+            android:paddingBottom="@dimen/_10sp"
+            android:paddingTop="@dimen/_10sp"
+            android:scrollbarStyle="insideOverlay"
+            android:stretchMode="columnWidth" />-->
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/weekday_RV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:isScrollContainer="false"
+            android:paddingTop="@dimen/_8dp"
+            android:scrollbarStyle="insideOverlay" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/view_no_task"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearLayout4"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/currenttask_listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/_10dp"
+            android:divider="@null" />
+
+
+        <!--<ImageView
+            android:id="@+id/im_no_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/_20dp"
+        app_icon app:srcCompat="@drawable/ic_task_icon" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_no_task"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_15" />-->
+
+    </LinearLayout>
+
+
+   <!-- <android.support.v7.widget.RecyclerView
+        android:id="@+id/currenttask_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearLayout4"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_toEndOf="@+id/view_no_task"
+        android:layout_toRightOf="@+id/view_no_task"
+        android:divider="@null"
+        android:visibility="gone" />-->
+
+
+   <!-- <ListView
+        android:id="@+id/currenttask_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearLayout4"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_toEndOf="@+id/view_no_task"
+        android:layout_toRightOf="@+id/view_no_task"
+        android:divider="@null"
+        android:visibility="gone" />
+-->
+
+
+
+</RelativeLayout>

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/parent"
+    android:background="@drawable/bg_splash">
+
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_5dp">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/imageConatiner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_240dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/coverImage_IV"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_180dp"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/profileIMG_IV"
+                android:layout_width="@dimen/_100dp"
+                android:layout_height="@dimen/_100dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/image_border"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/msg_TV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/_5dp"
+            android:layout_marginBottom="@dimen/_5dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageConatiner" />
+
+
+<!--
+        <LinearLayout
+            android:id="@+id/optionContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/_4dp"
+            android:paddingLeft="@dimen/_10dp"
+            android:paddingRight="@dimen/_10dp"
+            android:paddingTop="@dimen/_8dp"
+            android:weightSum="3"
+            android:layout_marginTop="@dimen/_5dp"
+        app_icon app:layout_constraintEnd_toEndOf="parent"
+        app_icon app:layout_constraintHorizontal_bias="1.0"
+        app_icon app:layout_constraintLeft_toLeftOf="parent"
+        app_icon app:layout_constraintStart_toStartOf="parent"
+        app_icon app:layout_constraintTop_toBottomOf="@+id/msg_TV">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_add_contact" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_5dp"
+                    android:text="@string/label_add_contact"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_message" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_5dp"
+                    android:text="@string/label_send_message"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_list" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_5dp"
+                    android:text="List of Contacts"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+-->
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/aboutUsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:layout_marginLeft="@dimen/_8dp"
+            android:layout_marginStart="@dimen/_8dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@drawable/square_shape_magenta"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/msg_TV">
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/light_grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.42"
+                    android:padding="@dimen/_5dp"
+                    android:text="@string/label_marital_status"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/maritalStatus_TV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.58"
+                    android:text="Marital status"
+                    android:textSize="@dimen/_13sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/light_grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/labelAge_TV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.42"
+                    android:padding="@dimen/_10dp"
+                    android:text="@string/label_age"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/age_TV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.58"
+                    android:text="Age"
+                    android:textSize="@dimen/_13sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/labelAge_TV"
+                    app:layout_constraintEnd_toEndOf="@+id/maritalStatus_TV"
+                    app:layout_constraintStart_toStartOf="@+id/maritalStatus_TV"
+                    app:layout_constraintTop_toTopOf="@+id/labelAge_TV" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/light_grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/labelGENDER_TV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.42"
+                    android:padding="@dimen/_10dp"
+                    android:text="@string/label_gender"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/gender_TV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.58"
+                    android:text="Gender"
+                    android:textSize="@dimen/_13sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/light_grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/labelCAMPUS_TV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.42"
+                    android:padding="@dimen/_10dp"
+                    android:text="@string/label_campus"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/campus_TV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.58"
+                    android:text="Campus"
+                    android:textSize="@dimen/_13sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/light_grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/labelSTATUS_TV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.42"
+                    android:padding="@dimen/_10dp"
+                    android:text="@string/label_status"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/status_TV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.58"
+                    android:text="New Member"
+                    android:textSize="@dimen/_13sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/light_grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/labelCITY_TV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.42"
+                    android:padding="@dimen/_10dp"
+                    android:text="City:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/usrCity_TV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.58"
+                    android:text="City"
+                    android:textSize="@dimen/_13sp" />
+            </LinearLayout>
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+
+        <TextView
+            android:id="@+id/reportMember_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/aboutUsContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="@dimen/_5dp"
+            android:padding="@dimen/_5dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"/>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

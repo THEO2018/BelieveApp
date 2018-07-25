@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "994512197198",
+    "firebase_url": "https://believe-203405.firebaseio.com",
+    "project_id": "believe-203405",
+    "storage_bucket": "believe-203405.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994512197198:android:c526fcf6cc789e03",
+        "android_client_info": {
+          "package_name": "com.netset.believeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994512197198-9lji3gjm2bomalif75cgu56e72i8lmi0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.netset.believeapp",
+            "certificate_hash": "c50311984b6939d0e4ad8558c684ccd0bfd2b708"
+          }
+        },
+        {
+          "client_id": "994512197198-8242csu4h8b18gk6dqhkpgloqhq6tciu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbEFuWTgu8VEkOCyEA_1GvFMCR5GSVzVg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994512197198-8242csu4h8b18gk6dqhkpgloqhq6tciu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

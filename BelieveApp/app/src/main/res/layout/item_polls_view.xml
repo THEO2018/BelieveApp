@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5dp"
+    android:id="@+id/polling_parentView"
+    android:background="@drawable/square_shape_magenta">
+
+
+    <ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pollImg_IV"
+        android:layout_width="@dimen/_80dp"
+        android:layout_height="@dimen/_80dp"
+        android:layout_marginBottom="@dimen/_8dp"
+        android:layout_marginEnd="@dimen/_8dp"
+        android:layout_marginStart="@dimen/_8dp"
+        android:layout_marginTop="@dimen/_8dp"
+       android:layout_alignParentLeft="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_toRightOf="@+id/pollImg_IV"
+        android:layout_centerVertical="true">
+
+    <TextView
+        android:id="@+id/pollName_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="Ronin Thomas"
+        android:textColor="@color/black"
+     android:layout_toRightOf="@+id/pollImg_IV"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/duration_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="20 min ago"
+        android:layout_marginTop="@dimen/margine_2"
+        android:textSize="@dimen/_14sp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margine_2"
+        android:gravity="center_vertical"
+    >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_posted_by"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14sp"
+            android:text="Admin"
+            android:layout_marginLeft="@dimen/_5dp"
+            android:textColor="@color/redish_pink"
+            android:id="@+id/postedBy_TV"
+            />
+
+    </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

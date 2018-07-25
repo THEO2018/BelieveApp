@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/advLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/advLabel_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="@dimen/_5dp"
+        android:text="Advice"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sp" />
+
+    <TextView
+        android:id="@+id/viewAllAdvice_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingRight="@dimen/_5dp"
+        android:text="@string/label_view_all"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16sp"
+        android:paddingEnd="@dimen/_5dp" />
+
+    <ImageView
+        android:id="@+id/advice_IV"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200dp"
+        android:layout_below="@+id/viewAllAdvice_TV"
+        android:layout_marginTop="@dimen/_10dp"
+        android:paddingLeft="@dimen/_5dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/wedding"
+        android:elevation="4dp"/>
+
+    <!--<android.support.v7.widget.RecyclerView
+        android:id="@+id/upco_RV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/upcoming_label_TV"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="@dimen/_10dp"
+        android:layout_marginTop="@dimen/_10dp"
+        android:background="@drawable/shape_magenta"
+        android:elevation="4dp"
+        android:paddingBottom="@dimen/_10dp"
+        android:paddingTop="@dimen/_10dp" />-->
+
+</RelativeLayout>

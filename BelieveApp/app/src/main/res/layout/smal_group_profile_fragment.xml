@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/photoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_230dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/img_back"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/coverImage_IV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:scaleType="fitXY" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/image_back"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0">
+
+                <Button
+                    android:id="@+id/joinGrp_BTN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="@dimen/_10dp"
+                    android:background="@drawable/shape_magenta_round_edge"
+                    android:padding="@dimen/_5dp"
+                    android:text="@string/label_join_group"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/grpInfoContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="@dimen/_5dp"
+                    android:layout_marginRight="@dimen/_5dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0">
+
+                    <LinearLayout
+                        android:id="@+id/grpNameContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/_5dp"
+                        android:paddingRight="@dimen/_5dp"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/grpName_TV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Group Name"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_16sp" />
+
+
+                        <LinearLayout
+                            android:id="@+id/lay_join"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_weight="0.4"
+                            android:gravity="right|center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginRight="5dp"
+                                android:padding="0dp"
+                                android:src="@drawable/ic_tick" />
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center_vertical"
+                                android:paddingTop="5dp"
+                                android:src="@drawable/down_icon" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/secndContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/_5dp"
+                        android:paddingRight="@dimen/_5dp"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/grpMemberCount_TV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="3 members"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_join"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:gravity="end"
+                            android:text="Joined"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/photoContainer">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/label_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/label_description"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/description_TV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/dummy_text"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/label_desc"
+                    app:layout_constraintTop_toBottomOf="@+id/label_desc"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </android.support.constraint.ConstraintLayout>
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/photoContainer">
+
+
+                <TextView
+                    android:id="@+id/label_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/label_location"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/location_TV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="5dp"
+                    android:text="638 Austin Avenue, MIAMI, FL,33299"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/label_location"
+                    app:layout_constraintTop_toBottomOf="@+id/label_location"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/photoContainer">
+
+
+                <TextView
+                    android:id="@+id/label_leader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/label_responsible_or_leader"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+                <TextView
+                    android:id="@+id/leader_TV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Ronan Thomas"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/label_leader"
+                    app:layout_constraintTop_toBottomOf="@+id/label_leader"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/photoContainer">
+
+
+                <TextView
+                    android:id="@+id/label_timing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/label_meeting_hours"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+                <TextView
+                    android:id="@+id/meetHours_TV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="5dp"
+                    android:text="02:00pm - 04:00pm"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/label_timing"
+                    app:layout_constraintTop_toBottomOf="@+id/label_timing"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/membersContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/photoContainer">
+
+
+                <TextView
+                    android:id="@+id/label_members"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/label_members"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            <!--    <TextView
+                    android:id="@+id/viewMembersMap_TV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/label_view_members_on_map"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sp"
+                    android:visibility="gone"
+                app_icon app:layout_constraintBottom_toBottomOf="parent"
+                app_icon app:layout_constraintEnd_toEndOf="parent"
+                app_icon app:layout_constraintTop_toTopOf="@+id/label_members"
+                app_icon app:layout_constraintVertical_bias="0.0" />-->
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <GridView
+                android:id="@+id/membersGrid_GV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/mar_10"
+                android:numColumns="6" />
+
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

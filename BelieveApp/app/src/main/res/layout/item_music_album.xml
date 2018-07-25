@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_pink_outline_solid"
+    android:id="@+id/player_label"
+    android:padding="@dimen/_2dp"
+    android:layout_marginTop="@dimen/_5dp"
+    android:layout_marginLeft="@dimen/_5dp"
+    android:layout_marginRight="@dimen/_5dp"
+    android:layout_marginBottom="@dimen/_10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="@dimen/_150dp"
+        android:paddingLeft="@dimen/_2dp"
+        android:paddingRight="@dimen/_2dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/label_recent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/albumIcon_IV"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="@dimen/_150dp"
+            android:layout_height="@dimen/_150dp" />
+
+        <TextView
+            android:id="@+id/albumName_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_recently_added"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:paddingTop="@dimen/pad5"
+            android:paddingBottom="@dimen/pad5"
+            android:textSize="@dimen/_14sp"
+            android:layout_marginLeft="@dimen/_5dp"
+            android:layout_gravity="left"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textStyle="bold"/>
+
+        <!--<TextView
+            android:id="@+id/playlist_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_12sp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/_5dp" />-->
+    </LinearLayout>
+
+</RelativeLayout>

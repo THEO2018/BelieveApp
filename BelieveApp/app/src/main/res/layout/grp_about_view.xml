@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/lable_Desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_description"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/descText_TV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5dp"
+                android:text="@string/dummy_text"
+                android:textSize="@dimen/_14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+
+            <TextView
+                android:id="@+id/label_grpType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_group_type"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/grpType_TV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5dp"
+                android:text="Private"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+            app:layout_constraintVertical_bias="0.0">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/label_members"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/_5dp"
+                    android:drawableRight="@drawable/circle_dot_black"
+                    android:gravity="center"
+                    android:text="@string/label_members"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/memberCount_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/_5dp"
+                    android:text="5"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/membersGrid_GV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

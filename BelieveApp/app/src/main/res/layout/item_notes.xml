@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5dp"
+        android:elevation="@dimen/_4dp"
+        android:paddingTop="@dimen/pad5"
+        android:paddingBottom="@dimen/pad5"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/pad5"
+            android:paddingBottom="@dimen/pad5"
+            android:layout_marginBottom="@dimen/_8dp"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:layout_marginStart="@dimen/_8dp"
+            android:layout_marginTop="@dimen/_8dp">
+
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></LinearLayout>-->
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/notesTitle_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_20dp"
+                android:text="Note Title"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/noteTiming_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_8dp"
+                android:text="Just added"
+                android:textSize="@dimen/_12sp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/noteDesc_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8dp"
+                android:layout_marginLeft="@dimen/_8dp"
+                android:layout_marginRight="@dimen/_8dp"
+                android:layout_marginTop="0dp"
+                android:textSize="@dimen/_14sp"
+                android:layout_below="@+id/notesTitle_TV" />
+
+
+        </RelativeLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingTop="@dimen/_5dp"
+    android:paddingBottom="@dimen/pad5"
+    android:layout_margin="@dimen/mar_5"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/username_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kelly smith"
+        android:textSize="@dimen/_14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/notificatioTyp_TV"
+        app:layout_constraintEnd_toStartOf="@+id/notificatioTyp_TV"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/redish_pink"
+        app:layout_constraintTop_toTopOf="@+id/notificatioTyp_TV" />
+
+    <TextView
+        android:id="@+id/notificatioTyp_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/black"
+        android:text="replied to her profile picture"
+        android:layout_marginStart="@dimen/_5dp"
+        android:layout_marginLeft="@dimen/_5dp"
+        android:textSize="@dimen/_14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/username_TV"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/notification_time_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_13sp"
+        android:text="just now"
+        app:layout_constraintStart_toStartOf="@+id/username_TV"
+        app:layout_constraintTop_toBottomOf="@+id/username_TV" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/loc_lay"
+        android:layout_marginTop="@dimen/mar_10"
+        app:layout_constraintStart_toStartOf="@+id/notification_time_TV"
+        app:layout_constraintTop_toBottomOf="@+id/notification_time_TV"
+        android:background="@color/black"></View>
+
+</android.support.constraint.ConstraintLayout>

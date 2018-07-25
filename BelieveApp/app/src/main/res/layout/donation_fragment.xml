@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/divVIew"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/redish_pink" />
+
+
+    <TextView
+        android:id="@+id/giving_View"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50dp"
+        android:background="@drawable/shape_pink_outline_solid"
+        android:text="@string/label_giving"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18sp"
+        android:gravity="center_vertical"
+        android:padding="@dimen/_10dp"
+        android:drawableRight="@drawable/right_arrow_black"
+        android:elevation="4dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_pink_outline_solid"
+        android:layout_marginTop="@dimen/_10dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/label_teaching"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sp"/>
+
+          <!--  <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/label_see_all"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sp"/>-->
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/teachingList_RV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_10dp"
+            android:paddingLeft="@dimen/_2dp"
+            android:paddingRight="@dimen/_2dp"
+            android:padding="@dimen/_10dp"/>
+        
+    </LinearLayout>
+
+</LinearLayout>

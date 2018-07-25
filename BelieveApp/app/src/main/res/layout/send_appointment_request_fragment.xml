@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/_10dp"
+    android:id="@+id/main"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/label_title_TV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_title"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18sp" />
+
+    <EditText
+        android:id="@+id/title_ET"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40dp"
+        android:background="@drawable/shape_edittext"
+        android:ems="10"
+        android:hint="@string/hint_enter_title_here"
+        android:inputType="textPersonName"
+        android:paddingLeft="@dimen/_10dp"
+        android:textSize="@dimen/_16sp"
+        android:layout_marginTop="@dimen/_5dp"
+        android:textCursorDrawable="@null"
+        android:imeOptions="actionDone"/>
+
+    <TextView
+        android:id="@+id/label_when_TV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_when"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18sp"
+        android:layout_marginTop="@dimen/_10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_edittext"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/_10dp"
+        android:weightSum="1"
+        android:layout_marginTop="@dimen/_5dp">
+
+        <TextView
+            android:id="@+id/date_ET"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawablePadding="@dimen/_10dp"
+            android:drawableTint="@color/black"
+            android:ems="10"
+            android:hint="@string/hint_select_date"
+            android:inputType="textPersonName"
+            android:paddingLeft="@dimen/_10dp"
+            android:textSize="@dimen/_16sp"
+            android:gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="@dimen/_15dp"
+            android:layout_height="@dimen/_15dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_down"
+            android:tint="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginTop="@dimen/_10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.45"
+            android:orientation="vertical"
+            android:paddingRight="@dimen/_5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_time_from"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_edittext"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/_10dp"
+                android:weightSum="1"
+                android:layout_marginTop="@dimen/_5dp">
+
+                <TextView
+                    android:id="@+id/startTime_ET"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/_10dp"
+                    android:drawableTint="@color/black"
+                    android:ems="10"
+                    android:hint="@string/hint_select_time"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="@dimen/_10dp"
+                    android:textSize="@dimen/_16sp"
+                    android:gravity="center_vertical"/>
+
+                <ImageView
+                    android:layout_width="@dimen/_15dp"
+                    android:layout_height="@dimen/_15dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_down"
+                    android:tint="@color/black" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_20dp"
+            android:layout_weight="0.1"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.45"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_time_to"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_edittext"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/_10dp"
+                android:weightSum="1"
+                android:layout_marginTop="@dimen/_5dp">
+
+                <TextView
+                    android:id="@+id/endTime_ET"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/_10dp"
+                    android:drawableTint="@color/black"
+                    android:ems="10"
+                    android:hint="@string/hint_select_time"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="@dimen/_10dp"
+                    android:textSize="@dimen/_16sp"
+                    android:gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="@dimen/_15dp"
+                    android:layout_height="@dimen/_15dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_down"
+                    android:tint="@color/black" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/sendRqst_BTN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/btn_label_send_request"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/_30dp"
+        android:background="@drawable/btn_shape_dark_yellow"/>
+</LinearLayout>

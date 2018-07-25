@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/rel_marker"
+    android:visibility="visible"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:id="@+id/marker_img"
+        android:layout_width="65dp"
+        android:layout_height="67dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/mapmarker"
+        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:background="@drawable/markerbackimage"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margine_3"
+
+        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_img"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margine_3"
+
+        />
+
+
+</RelativeLayout>

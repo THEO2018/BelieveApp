@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5dp"
+        android:paddingBottom="@dimen/pad10">
+    <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/bdayList_RV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_5dp"
+        android:paddingLeft="@dimen/_2dp"
+        android:paddingRight="@dimen/_2dp" />
+
+        <TextView
+            android:id="@+id/nodata_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#929292"
+            android:paddingTop="@dimen/pad20"
+            android:paddingBottom="@dimen/pad20"
+            android:text="Nobody's Birthday Today"
+            />
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/moreBday_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="@dimen/_5dp"
+        android:layout_marginBottom="@dimen/pad5"
+        android:text="2 more persons birthday today"
+        android:textColor="@color/light_pink"
+        android:textSize="@dimen/_14sp" />
+
+</LinearLayout>

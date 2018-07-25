@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/parent"
+    android:background="@color/white"
+    android:paddingTop="@dimen/pad5"
+    android:paddingBottom="@dimen/pad5"
+    android:paddingRight="@dimen/pad10"
+    android:paddingLeft="@dimen/pad10"
+    android:layout_height="match_parent">
+
+   <TextView
+       android:visibility="gone"
+       android:id="@+id/txt_nodata"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textColor="@color/black"
+       android:textSize="@dimen/text_16"
+       android:paddingTop="@dimen/_50dp"
+       android:paddingBottom="@dimen/_50dp"
+       android:layout_centerInParent="true"
+       android:text="No Notification found"/>
+
+   <android.support.v7.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/notify_lv"></android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

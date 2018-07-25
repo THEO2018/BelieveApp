@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profileImg_IV"
+        android:layout_width="@dimen/_70dp"
+        android:layout_height="@dimen/_70dp"
+        android:layout_marginBottom="@dimen/_8dp"
+        android:layout_marginEnd="@dimen/_8dp"
+        android:layout_marginStart="@dimen/_8dp"
+        android:layout_marginTop="@dimen/_8dp"
+        android:src="@drawable/profile_img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/usrName_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_8dp"
+        android:layout_marginEnd="@dimen/_8dp"
+        android:layout_marginStart="@dimen/_8dp"
+        android:text="Ronin Thomas"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/profileImg_IV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/profileImg_IV"
+        app:layout_constraintTop_toTopOf="@+id/profileImg_IV"
+        app:layout_constraintVertical_bias="0.39999998" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/earth_IV"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_earth"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/usrName_TV"
+        app:layout_constraintTop_toBottomOf="@+id/usrName_TV" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/usrLoc_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_8dp"
+        android:layout_marginLeft="@dimen/_5dp"
+        android:layout_marginRight="@dimen/_8dp"
+        android:layout_marginStart="@dimen/_5dp"
+        android:gravity="center_vertical"
+        android:text="USA"
+        android:textColor="@color/light_pink"
+        android:textSize="@dimen/_14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/earth_IV"
+        app:layout_constraintEnd_toStartOf="@+id/rightMove_IV"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/earth_IV"
+        app:layout_constraintTop_toTopOf="@+id/earth_IV" />
+
+
+    <ImageView
+        android:id="@+id/rightMove_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_8dp"
+        android:layout_marginRight="@dimen/_10dp"
+        android:layout_marginTop="@dimen/_8dp"
+        android:tint="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/usrLoc_TV"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/usrName_TV"
+        app:layout_constraintVertical_bias="0.609"
+        app:srcCompat="@drawable/ic_forward" />
+
+</android.support.constraint.ConstraintLayout>

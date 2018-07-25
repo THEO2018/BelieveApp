@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash"
+    android:id="@+id/marriageView_Container">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/_10dp">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mar_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                layout="@layout/betrothed_view"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/weddingListLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mar_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+            <include
+                layout="@layout/wedding_product_view"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/upcomingWeddingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mar_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weddingListLayout">
+
+
+            <TextView
+                android:id="@+id/upcoming_label_TV"
+                android:layout_alignParentLeft="true"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:paddingLeft="@dimen/_5dp"
+                android:text="@string/label_upcoming_weddings"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sp" />
+
+            <TextView
+                android:id="@+id/viewAllUpcoming_TV"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:paddingRight="@dimen/_10dp"
+                android:text="@string/label_view_all"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_180dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_below="@+id/viewAllUpcoming_TV">
+
+                <TextView
+                    android:id="@+id/noupcoming_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_16"
+                    android:text="No advice available"/>
+
+                <ImageView
+                    android:visibility="gone"
+                    android:elevation="4dp"
+                    android:id="@+id/upcoming_IV"
+                    android:layout_height="@dimen/_180dp"
+                    android:layout_width="match_parent"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/wedding" />
+
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/advLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mar_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/upcomingWeddingLayout">
+
+
+            <TextView
+                android:id="@+id/advLabel_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="@dimen/_5dp"
+                android:text="Advice"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sp" />
+
+            <TextView
+                android:id="@+id/viewAllAdvice_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingRight="@dimen/_5dp"
+                android:text="@string/label_view_all"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sp"
+                android:paddingEnd="@dimen/_5dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_180dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_below="@+id/viewAllAdvice_TV">
+
+            <TextView
+                android:id="@+id/noadvice_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_16"
+                android:text="No upcoming wedding"/>
+
+            <ImageView
+                android:id="@+id/advice_IV"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200dp"
+
+                android:scaleType="fitXY"
+                android:elevation="4dp"/>
+        </RelativeLayout>
+
+        </RelativeLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

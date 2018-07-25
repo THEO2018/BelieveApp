@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_10dp"
+        android:background="@android:color/transparent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/redish_pink"
+            android:gravity="center"
+            android:padding="@dimen/_10dp"
+            android:text="Choose Option"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18sp" />
+
+        <ListView
+            android:id="@+id/optionList_LV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/light_grey"
+            android:dividerHeight="1dp"
+            android:background="@color/white"></ListView>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/cancel_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_cross_white"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"/>
+
+</RelativeLayout>

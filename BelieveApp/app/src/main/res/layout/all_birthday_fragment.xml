@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/divView"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:background="@color/light_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/bdayList_Container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10dp"
+        android:background="@drawable/shape_white_solid_pink"
+        android:orientation="vertical"
+
+        app:layout_constraintTop_toBottomOf="@+id/divView">
+
+
+        <RelativeLayout
+            android:id="@+id/optioNCont"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_90dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+
+            <ImageView
+                android:id="@+id/bdayLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/bday_background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.20"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/today_TV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Today's"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sp" />
+
+                    <View
+                        android:id="@+id/todaysView"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_margin="@dimen/_5dp"
+                        android:background="@drawable/line_brown" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/upcoming_TV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Upcoming"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sp" />
+
+                    <View
+                        android:id="@+id/upcomingView"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_margin="@dimen/_5dp"
+                        android:background="@drawable/line_brown" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/bdayList_RV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_10dp"
+            android:paddingLeft="@dimen/_2dp"
+            android:paddingRight="@dimen/_2dp" />
+
+            <TextView
+                android:id="@+id/nodata_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="#929292"
+                android:paddingTop="@dimen/pad20"
+                android:paddingBottom="@dimen/pad20"
+                android:text="Nobody's Birthday Today"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/divView"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:background="@color/light_grey" />
+
+
+    <TextView
+        android:id="@+id/cat_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mar_20"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_18"
+        android:gravity="center"
+        android:text="Category"
+
+        android:layout_marginLeft="@dimen/mar_10"
+        android:layout_marginRight="@dimen/mar_10"/>
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txt_nodata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="No Media found"
+        android:paddingTop="@dimen/_60dp"
+        android:paddingBottom="@dimen/_60dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_16" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/imageList_RV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+       />
+
+</RelativeLayout>
+
+
+
+
+</LinearLayout>

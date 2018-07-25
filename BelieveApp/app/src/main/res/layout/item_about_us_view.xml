@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="@dimen/_150dp"
+    android:layout_height="@dimen/_180dp"
+    android:layout_margin="@dimen/_10dp"
+    android:layout_gravity="center"
+    card_view:cardCornerRadius="4dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@drawable/square_shape_magenta">
+
+        <ImageView
+            android:id="@+id/catIcon_IV"
+            android:layout_width="@dimen/_90dp"
+            android:layout_height="@dimen/_90dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/catName_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Presentation"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            android:paddingTop="@dimen/_5dp"
+            android:layout_marginLeft="@dimen/margine_3"
+            android:layout_marginRight="@dimen/margine_3"
+            android:layout_below="@+id/catIcon_IV"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

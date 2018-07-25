@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/groupCount_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mar_10"
+        android:layout_marginTop="@dimen/mar_5"
+        android:layout_marginBottom="@dimen/mar_5"
+        android:text="0 Group Here"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txt_nodata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_16"
+            android:paddingTop="@dimen/_50dp"
+            android:paddingBottom="@dimen/_50dp"
+            android:layout_centerInParent="true"
+            android:text="No Group found"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/groupList_RV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/_10dp"
+            android:paddingRight="@dimen/pad10"
+            android:paddingTop="@dimen/pad5"
+            android:paddingBottom="@dimen/pad5"
+            />
+    </RelativeLayout>
+
+
+</LinearLayout>
