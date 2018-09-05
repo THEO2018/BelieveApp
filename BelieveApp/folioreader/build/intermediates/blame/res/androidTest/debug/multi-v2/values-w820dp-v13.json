@@ -1,10 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "/home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
+            "outputFile": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/build/intermediates/packaged_res/debug/values-w820dp-v13/values-w820dp-v13.xml",
+                    "source": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/build/intermediates/packaged_res/debug/values-w820dp-v13/values-w820dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "57",
+                        "endOffsets": "108"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/build/intermediates/res/merged/androidTest/debug/values-w820dp-v13/values-w820dp-v13.xml",
+            "map": [
+                {
+                    "source": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/build/intermediates/packaged_res/debug/values-w820dp-v13/values-w820dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

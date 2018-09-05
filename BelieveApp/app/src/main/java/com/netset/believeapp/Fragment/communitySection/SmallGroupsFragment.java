@@ -77,13 +77,13 @@ public class SmallGroupsFragment extends BaseFragment implements OnMapReadyCallb
     @BindView(R.id.grpList_RV)
     RecyclerView grpListRV;
     @BindView(R.id.smallgp_parent)
-    ConstraintLayout smallgpParent;
+    LinearLayout smallgpParent;
     @BindView(R.id.mapContainer)
     FrameLayout mapContainer;
     @BindView(R.id.txt_nodata)
     TextView txtNodata;
     @BindView(R.id.grpList_viewContainer)
-    ConstraintLayout grpListViewContainer;
+    LinearLayout grpListViewContainer;
     Unbinder unbinder;
     GoogleMap googleMap;
     Handler handler;

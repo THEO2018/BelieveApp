@@ -1,47 +1,47 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
-INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
-INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
-INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
-INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
-INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
-INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
+ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
+INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
+INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
+INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
+INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
+INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
+INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
 	package
-		ADDED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml:3:5-30
-		INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml
-		INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml
+		ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml:3:5-30
+		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml
+		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml
-		ADDED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
-		INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml
+		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml
+		ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
+		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml
-		ADDED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
-		INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml
+		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml
+		ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml:2:1-11:12
+		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml:2:11-69
+		ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml:2:11-69
 application
-ADDED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml:5:5-9:19
+ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml:5:5-9:19
 activity#com.folioreader.ui.folio.activity.ContentHighlightActivity
-ADDED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml:6:9-8:63
+ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml:6:9-8:63
 	android:configChanges
-		ADDED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml:8:13-61
+		ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml:8:13-61
 	android:theme
-		ADDED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml:7:13-69
+		ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml:7:13-69
 	android:name
-		ADDED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml:6:19-77
+		ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml:6:19-77
 uses-sdk
-INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml
-INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml
-INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml
-INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml
+INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml
+INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml
+INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml
+INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml
-		ADDED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml
-		INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml
+		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml
+		ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml
+		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml
-		ADDED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml
-		INJECTED from /home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/AndroidManifest.xml
+		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml
+		ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml
+		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/AndroidManifest.xml

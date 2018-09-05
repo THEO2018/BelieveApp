@@ -52,10 +52,10 @@ public class WeddingListAdapter extends RecyclerView.Adapter<WeddingListAdapter.
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-
+        if(blogList.size()>0) {
         holder.frstPrsnName_TV.setText(blogList.get(position).getTitle());
-        CommonDialogs.getSquareImage2(mContext,blogList.get(position).getCoverPhoto(),holder.frstPrsnImg_IV);
-
+        CommonDialogs.getSquareImage2(mContext, blogList.get(position).getCoverPhoto(), holder.frstPrsnImg_IV);
+        }
 
 
     }
@@ -66,7 +66,12 @@ public class WeddingListAdapter extends RecyclerView.Adapter<WeddingListAdapter.
         if (showFullList) {
             return blogList.size();
         } else {
-            return 3;
+            if(blogList.size()<=3){
+                return blogList.size();
+            }else{
+                return 3;
+            }
+
         }
     }
 }

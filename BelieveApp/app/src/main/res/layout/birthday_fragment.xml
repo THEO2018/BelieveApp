@@ -138,7 +138,7 @@
                 android:layout_alignParentRight="true"
                 android:paddingRight="@dimen/_10dp"
                 android:text="@string/label_view_all"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_14sp" />
 
             <android.support.v7.widget.RecyclerView
@@ -180,7 +180,7 @@
                 android:layout_alignParentRight="true"
                 android:paddingRight="@dimen/_10dp"
                 android:text="@string/label_view_all"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_14sp" />
 
             <android.support.v7.widget.RecyclerView

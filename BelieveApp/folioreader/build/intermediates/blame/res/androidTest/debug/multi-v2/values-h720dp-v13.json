@@ -1,7 +1,22 @@
 {
     "logs": [
         {
-            "outputFile": "/home/netset/MyProjects/BelieveApp/Android/BelieveAppCode/BelieveApp/folioreader/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/build/intermediates/res/merged/androidTest/debug/values-h720dp-v13/values-h720dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/folioreader/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
                     "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/values-h720dp-v13/values-h720dp-v13.xml",

@@ -1,0 +1,110 @@
+[
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/dracula_preview_bottom_toolbar_apply.xml",
+        "source": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/packaged_res/debug/color/dracula_preview_bottom_toolbar_apply.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_hint_foreground_material_dark.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_tint_spinner.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_primary_text_material_dark.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/dracula_bottom_toolbar_apply.xml",
+        "source": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/packaged_res/debug/color/dracula_bottom_toolbar_apply.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_tint_seek_thumb.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_tint_default.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_tint_default.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_hint_foreground_material_light.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/zhihu_preview_bottom_toolbar_apply.xml",
+        "source": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/packaged_res/debug/color/zhihu_preview_bottom_toolbar_apply.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/dracula_bottom_toolbar_preview.xml",
+        "source": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/packaged_res/debug/color/dracula_bottom_toolbar_preview.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_search_url_text.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_search_url_text.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_tint_btn_checkable.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/zhihu_bottom_toolbar_preview.xml",
+        "source": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/packaged_res/debug/color/zhihu_bottom_toolbar_preview.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/zhihu_bottom_toolbar_apply.xml",
+        "source": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/packaged_res/debug/color/zhihu_bottom_toolbar_apply.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_primary_text_material_light.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_tint_edittext.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_btn_colored_text_material.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_secondary_text_material_dark.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_secondary_text_material_light.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/switch_thumb_material_dark.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_tint_switch_track.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/switch_thumb_material_light.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "/media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/matisse/build/intermediates/res/merged/androidTest/debug/color/abc_btn_colored_borderless_text_material.xml",
+        "source": "/home/netset/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/8ea82857e7caccc5d11c920cf6f72fdf/res/color/abc_btn_colored_borderless_text_material.xml"
+    }
+]

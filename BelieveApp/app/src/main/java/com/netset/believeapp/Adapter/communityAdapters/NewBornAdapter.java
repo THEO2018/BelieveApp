@@ -64,7 +64,12 @@ public class NewBornAdapter extends RecyclerView.Adapter<NewBornAdapter.MyViewHo
         if (showFullList) {
             return blogList.size();
         } else {
-            return 2;
+            if(blogList.size()<=2){
+              return blogList.size();
+            }else{
+                return 2;
+            }
+
         }
     }
 

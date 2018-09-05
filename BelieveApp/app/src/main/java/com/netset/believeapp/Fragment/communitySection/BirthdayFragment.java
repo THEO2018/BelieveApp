@@ -155,9 +155,9 @@ public class BirthdayFragment extends BaseFragment implements ApiResponse {
         SpannableString content = new SpannableString(viewAll_TEXT);
         content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
         content.setSpan(clickableSpan_viewProduct, 0, content.length(), 0);
-        content.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.black)), 0, content.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        content.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, content.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         viewAllWBdayTV.setMovementMethod(LinkMovementMethod.getInstance());
-        viewAllWBdayTV.setTextColor(getResources().getColor(R.color.black));
+        viewAllWBdayTV.setTextColor(getResources().getColor(R.color.white));
         viewAllWBdayTV.setText(content);
     }
 
@@ -166,9 +166,9 @@ public class BirthdayFragment extends BaseFragment implements ApiResponse {
         SpannableString content = new SpannableString(viewAll_TEXT);
         content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
         content.setSpan(clickableSpan_moreNews, 0, content.length(), 0);
-        content.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.black)), 0, content.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        content.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, content.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         newBornList_TV.setMovementMethod(LinkMovementMethod.getInstance());
-        newBornList_TV.setTextColor(getResources().getColor(R.color.black));
+        newBornList_TV.setTextColor(getResources().getColor(R.color.white));
         newBornList_TV.setText(content);
     }
 
@@ -278,6 +278,13 @@ public class BirthdayFragment extends BaseFragment implements ApiResponse {
         bdayProList_RV.setAdapter(bdayProListAdapter);
         bdayProList_RV.setNestedScrollingEnabled(false);
 
+        if(result.sendData.birthdaylists.size()==0){
+            viewAllWBdayTV.setVisibility(View.GONE);
+            labelTV.setVisibility(View.GONE);
+        }else{
+            viewAllWBdayTV.setVisibility(View.VISIBLE);
+            labelTV.setVisibility(View.VISIBLE);
+        }
         bdayProList_RV.addOnItemTouchListener(new RecyclerTouchListener(baseActivity, bdayProList_RV, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
@@ -305,6 +312,14 @@ public class BirthdayFragment extends BaseFragment implements ApiResponse {
         newBornList_RV.setItemAnimator(new DefaultItemAnimator());
         newBornList_RV.setAdapter(newBornAdapter);
         newBornList_RV.setNestedScrollingEnabled(false);
+
+        if(result.sendData.birthNews.size()==0){
+            newBornList_TV.setVisibility(View.GONE);
+            newBornLabelTV.setVisibility(View.GONE);
+        }else{
+            newBornList_TV.setVisibility(View.VISIBLE);
+            newBornLabelTV.setVisibility(View.VISIBLE);
+        }
 
         newBornList_RV.addOnItemTouchListener(new RecyclerTouchListener(baseActivity, newBornList_RV, new RecyclerTouchListener.ClickListener() {
             @Override

@@ -138,9 +138,9 @@ public class MarriageFragment extends BaseFragment implements ApiResponse {
         SpannableString content = new SpannableString(viewAll_TEXT);
         content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
         content.setSpan(clickableSpan_ViewAll, 0, content.length(), 0);
-        content.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.black)), 0, content.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        content.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, content.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         viewAllTV.setMovementMethod(LinkMovementMethod.getInstance());
-        viewAllTV.setTextColor(getResources().getColor(R.color.black));
+        viewAllTV.setTextColor(getResources().getColor(R.color.white));
         viewAllTV.setText(content);
         viewAllWEdListSpannable();
     }
@@ -150,8 +150,9 @@ public class MarriageFragment extends BaseFragment implements ApiResponse {
         SpannableString content = new SpannableString(viewAll_TEXT);
         content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
         content.setSpan(clickableSpan_WedList_ViewAll, 0, content.length(), 0);
-        content.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.black)), 0, content.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        content.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, content.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         viewAllWedListTV.setMovementMethod(LinkMovementMethod.getInstance());
+        viewAllWedListTV.setTextColor(getResources().getColor(R.color.white));
         viewAllWedListTV.setText(content);
         viewAllUpcomingSpannable();
     }
@@ -161,9 +162,9 @@ public class MarriageFragment extends BaseFragment implements ApiResponse {
         SpannableString content = new SpannableString(viewAll_TEXT);
         content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
         content.setSpan(clickableSpan_Upcoming_ViewAll, 0, content.length(), 0);
-        content.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.black)), 0, content.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        content.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, content.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         viewAllUpcomingTV.setMovementMethod(LinkMovementMethod.getInstance());
-        viewAllTV.setTextColor(getResources().getColor(R.color.black));
+        viewAllUpcomingTV.setTextColor(getResources().getColor(R.color.white));
         viewAllUpcomingTV.setText(content);
         viewAllAdviceSpannable();
 
@@ -174,8 +175,9 @@ public class MarriageFragment extends BaseFragment implements ApiResponse {
         SpannableString content = new SpannableString(viewAll_TEXT);
         content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
         content.setSpan(clickableSpan_Advice_ViewAll, 0, content.length(), 0);
-        content.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.black)), 0, content.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        content.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.white)), 0, content.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         viewAllAdviceTV.setMovementMethod(LinkMovementMethod.getInstance());
+        viewAllAdviceTV.setTextColor(getResources().getColor(R.color.white));
         viewAllAdviceTV.setText(content);
     }
 
@@ -235,7 +237,6 @@ public class MarriageFragment extends BaseFragment implements ApiResponse {
         wedListRV.setAdapter(weddingListAdapter);
 
         if (result.getData().getWeddingLists().size() == 0) {
-
             viewAllWedListTV.setVisibility(View.GONE);
         } else {
             viewAllWedListTV.setVisibility(View.VISIBLE);
@@ -281,8 +282,13 @@ public class MarriageFragment extends BaseFragment implements ApiResponse {
 
 
         /////----------upcoming wedding---------
-        CommonDialogs.getSquareImage2(getActivity(), result.getData().getUpcomingMarriages().get(0).eventCover, upcomingImg_IV);
-
+        try {
+            if(result.getData().getUpcomingMarriages().size()>0) {
+                CommonDialogs.getSquareImage2(getActivity(), result.getData().getUpcomingMarriages().get(0).eventCover, upcomingImg_IV);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
         upcomingImg_IV.setOnClickListener(new View.OnClickListener() {
@@ -302,7 +308,13 @@ public class MarriageFragment extends BaseFragment implements ApiResponse {
 
 
         ///// -------Advice--------
-        CommonDialogs.getSquareImage2(getActivity(), result.getData().getAdvice().get(0).blogImage, adviceIV);
+        try {
+            if(result.getData().getAdvice().size()>0) {
+                CommonDialogs.getSquareImage2(getActivity(), result.getData().getAdvice().get(0).blogImage, adviceIV);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         adviceIV.setOnClickListener(new View.OnClickListener() {
             @Override

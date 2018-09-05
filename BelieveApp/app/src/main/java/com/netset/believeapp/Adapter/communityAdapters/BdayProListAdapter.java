@@ -62,7 +62,11 @@ public class BdayProListAdapter extends RecyclerView.Adapter<BdayProListAdapter.
         if (showFullList) {
             return blogList.size();
         } else {
-            return 3;
+            if(blogList.size()<=3){
+                return blogList.size();
+            }else{
+                return 3;
+            }
         }
     }
 }

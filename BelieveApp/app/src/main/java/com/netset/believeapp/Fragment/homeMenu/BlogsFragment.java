@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -44,6 +45,7 @@ public class BlogsFragment extends BaseFragment implements ApiResponse {
     RecyclerView blogsList_RV;
     Unbinder unbinder;
     BlogsAdapter blogsAdapter;
+    private TextView txtNodata;
     Call<JsonObject> getBlogs;
     BlogsListModel result;
     List<BlogsModel> blogList = new ArrayList<>();
@@ -60,7 +62,7 @@ public class BlogsFragment extends BaseFragment implements ApiResponse {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        txtNodata = (TextView) view.findViewById(R.id.txt_nodata);
         CallApi();
       //  setBlogAdapter();
     }
@@ -86,7 +88,11 @@ public class BlogsFragment extends BaseFragment implements ApiResponse {
         blogsList_RV.setLayoutManager(mLayoutManager);
         blogsList_RV.setItemAnimator(new DefaultItemAnimator());
         blogsList_RV.setAdapter(blogsAdapter);
-
+        if(result.getData().size() ==0 ){
+            txtNodata.setVisibility(View.VISIBLE);
+        }else{
+            txtNodata.setVisibility(View.GONE);
+        }
         blogsList_RV.addOnItemTouchListener(new RecyclerTouchListener(baseActivity, blogsList_RV, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
