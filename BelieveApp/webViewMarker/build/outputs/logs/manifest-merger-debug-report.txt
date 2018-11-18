@@ -1,37 +1,37 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:1-4:12
-INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:1-4:12
-INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:1-4:12
-INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:1-4:12
-INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:1-4:12
-INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:1-4:12
-INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:1-4:12
+ADDED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:1-4:12
+INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:1-4:12
+INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:1-4:12
+INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:1-4:12
+INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:1-4:12
+INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:1-4:12
+INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:1-4:12
 	package
-		ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:70-108
-		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
-		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:70-108
+		INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
 	android:versionName
-		ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:133-160
-		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
-		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:133-160
+		INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:11-69
 	android:versionCode
-		ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:109-132
-		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
-		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:2:109-132
+		INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
 uses-sdk
-ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:3:3-70
-INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:3:3-70
-INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:3:3-70
-INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:3:3-70
-INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:3:3-70
+ADDED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:3:3-70
+INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:3:3-70
+INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:3:3-70
+INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:3:3-70
+INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:3:3-70
 	android:targetSdkVersion
-		ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:3:39-68
-		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
-		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:3:39-68
+		INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:3:13-38
-		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
-		INJECTED from /media/netset/96fbbc52-7e1a-4427-a190-09c5fe7136a7/home/netset/MyProjects/BelieveAppGitHub/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml:3:13-38
+		INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/Documents/Workspace/Projets-Professionnels/BelieveApp/BelieveApp/webViewMarker/src/main/AndroidManifest.xml
