@@ -12,7 +12,7 @@
     android:layout_height="match_parent">
 
 
-    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/parent"
         android:layout_width="match_parent"
@@ -28,14 +28,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/coverImage_IV"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_215dp"
                 android:fitsSystemWindows="true"
                 android:scaleType="fitXY" />
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/profileIMG_IV"
                 android:layout_width="@dimen/_100dp"
                 android:layout_height="@dimen/_100dp"
@@ -49,7 +49,7 @@
 
         </RelativeLayout>
 
-        <android.support.v7.widget.LinearLayoutCompat
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/aboutUsContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageConatiner">
 
 
-            <android.support.v7.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/labelABoutUS_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="1">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/labelEmail_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -109,7 +109,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/email_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -133,7 +133,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="1">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.42"
@@ -142,7 +142,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/maritalStatus_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -163,7 +163,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="1">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/labelDOB_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -173,7 +173,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/dob_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -198,7 +198,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="1">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/labelGENDER_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -208,7 +208,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/gender_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -229,7 +229,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="1">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/labelCAMPUS_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -239,7 +239,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/campus_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -260,7 +260,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="1">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/labelSTATUS_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -270,7 +270,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/status_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -291,7 +291,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="1">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/labelPROFESSION_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -301,7 +301,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/profession_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -310,9 +310,9 @@
                     android:textSize="@dimen/_12sp" />
             </LinearLayout>
 
-        </android.support.v7.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <android.support.v7.widget.LinearLayoutCompat
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/contactInfoContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -332,7 +332,7 @@
             app:layout_constraintTop_toBottomOf="@+id/aboutUsContainer"
             app:layout_constraintVertical_bias="0.0">
 
-            <android.support.v7.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/labelContact_TV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -358,12 +358,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/labelContact_TV" />
 
 
-            <android.support.v7.widget.LinearLayoutCompat
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/labelADDRESS_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -373,7 +373,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/address_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -383,7 +383,7 @@
                     android:textSize="@dimen/_12sp"
                     android:text="Address" />
 
-            </android.support.v7.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
 
             <View
@@ -398,13 +398,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/labelADDRESS_TV" />
 
 
-            <android.support.v7.widget.LinearLayoutCompat
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="1">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/labelMobile_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -414,7 +414,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/mobPhone_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -423,9 +423,9 @@
                     android:layout_weight="0.58"
                     android:text="Mobile number"
                     android:textSize="@dimen/_13sp" />
-            </android.support.v7.widget.LinearLayoutCompat>
-        </android.support.v7.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 </LinearLayout>

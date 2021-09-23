@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/pad10">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/notesTitle_TV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

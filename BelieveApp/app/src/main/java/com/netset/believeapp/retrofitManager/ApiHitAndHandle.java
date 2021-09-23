@@ -312,7 +312,7 @@ public class ApiHitAndHandle implements Callback {
     }
 
     public Dialog oneButtonDialogone(Context c, String msg, String buttonTxt, DialogInterface.OnClickListener clickListener) {
-        android.support.v7.app.AlertDialog.Builder dialog = new android.support.v7.app.AlertDialog.Builder(c);
+        androidx.appcompat.app.AlertDialog.Builder dialog = new androidx.appcompat.app.AlertDialog.Builder(c);
         dialog.setMessage(msg);
         dialog.setCancelable(false);
         dialog.setNeutralButton(buttonTxt, clickListener);

@@ -15,7 +15,7 @@
         android:text="No birthday found"
         />
 
-    <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/birthList_RV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

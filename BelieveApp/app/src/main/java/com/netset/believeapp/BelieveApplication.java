@@ -2,16 +2,12 @@ package com.netset.believeapp;
 
 import android.app.Application;
 import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.support.multidex.MultiDex;
-import android.util.Log;
+import androidx.multidex.MultiDex;
 
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 import com.firebase.client.Firebase;
-import com.netset.believeapp.Utils.GeneralValues;
 import com.netset.believeapp.retrofitManager.ApiHitAndHandle;
 import com.netset.believeapp.retrofitManager.ApiInterface;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;

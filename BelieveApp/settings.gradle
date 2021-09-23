@@ -1,1 +1,1 @@
-include ':app', ':matisse', ':rssparser', ':folioreader', ':webViewMarker'
+include ':app', ':matisse', ':rssparser', ':webViewMarker'

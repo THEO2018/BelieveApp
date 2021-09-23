@@ -18,7 +18,7 @@
         android:layout_centerInParent="true"
         android:text="No event found"/>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/upcomingList_RV"
         android:layout_below="@+id/divView"
         android:layout_width="match_parent"

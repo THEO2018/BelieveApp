@@ -37,7 +37,7 @@
         android:textColor="@color/black"
      android:layout_toRightOf="@+id/pollImg_IV"/>
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/duration_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

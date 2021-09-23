@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <plurals name="error_over_count">
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <plurals name="error_over_count" ns1:ignore="MissingDefaultResource">
         <item quantity="one">Можно выбрать не более %1$d файла</item>
         <item quantity="few">Можно выбрать не более %1$d файлов</item>
         <item quantity="many">Можно выбрать не более %1$d файлов</item>

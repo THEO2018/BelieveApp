@@ -16,7 +16,7 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/appLogo_IM"
             android:layout_width="@dimen/_200dp"
             android:layout_height="@dimen/_100dp"
@@ -25,7 +25,7 @@
             android:layout_marginRight="8dp"
             android:src="@drawable/app_logo" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/acntExist_TV"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
@@ -36,7 +36,7 @@
             android:text="@string/label_acnt_exist"
             android:textColor="@color/white" />
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/login_BT"
             android:layout_width="@dimen/_280dp"
             android:layout_height="@dimen/_40dp"
@@ -50,7 +50,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/_18sp" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textView2"
             android:layout_width="@dimen/_50dp"
             android:layout_height="@dimen/_50dp"
@@ -64,7 +64,7 @@
             android:textSize="@dimen/_12sp"
             />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
             android:layout_gravity="center_horizontal"
             android:textColor="@color/white" />
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/signup_BT"
             android:layout_width="@dimen/_280dp"
             android:layout_height="@dimen/_40dp"
@@ -108,7 +108,7 @@
             android:paddingRight="@dimen/pad10"
             android:gravity="center_vertical">
 
-            <android.support.v7.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -121,7 +121,7 @@
                 android:layout_marginRight="8dp" />
 
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/appInfo_IM"
                 android:layout_width="@dimen/_30dp"
                 android:layout_height="@dimen/_30dp"

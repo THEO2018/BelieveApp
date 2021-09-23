@@ -18,7 +18,7 @@
             android:layout_width="@dimen/_40dp"
             android:layout_height="@dimen/_40dp">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/calendar_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
             android:layout_centerInParent="true"
             android:textStyle="bold" />
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/isevent"
             android:layout_width="@dimen/_7dp"
             android:layout_height="@dimen/_7dp"
@@ -41,7 +41,7 @@
             android:layout_marginBottom="@dimen/_2dp"/>
         </RelativeLayout>
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/counter_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

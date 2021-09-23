@@ -10,7 +10,7 @@
         android:paddingRight="@dimen/_10dp"
         android:paddingTop="@dimen/_10dp">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/message_TV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginTop="@dimen/_30dp">
 
-            <android.support.v7.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/no_TV"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/black" />
 
-            <android.support.v7.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/yes_TV"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"

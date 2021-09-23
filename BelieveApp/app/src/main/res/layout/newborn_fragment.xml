@@ -10,7 +10,7 @@
         android:background="@color/light_grey"
         android:layout_alignParentTop="true"/>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/newbornList_RV"
         android:layout_below="@+id/divView"
         android:layout_width="match_parent"

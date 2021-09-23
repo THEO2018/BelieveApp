@@ -7,14 +7,14 @@
     android:background="@drawable/bg_splash">
 
 
-    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/_5dp">
 
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/imageConatiner"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_240dp"
@@ -48,7 +48,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0" />
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <TextView
@@ -156,7 +156,7 @@
         </LinearLayout>
 -->
 
-        <android.support.v7.widget.LinearLayoutCompat
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/aboutUsContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -187,7 +187,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="1">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.42"
@@ -196,7 +196,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/maritalStatus_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -217,7 +217,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="1">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/labelAge_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -227,7 +227,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/age_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -252,7 +252,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="1">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/labelGENDER_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -262,7 +262,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/gender_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -283,7 +283,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="1">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/labelCAMPUS_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -293,7 +293,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/campus_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -314,7 +314,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="1">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/labelSTATUS_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -324,7 +324,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/status_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -345,7 +345,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="1">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/labelCITY_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -355,7 +355,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/usrCity_TV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -364,7 +364,7 @@
                     android:textSize="@dimen/_13sp" />
             </LinearLayout>
 
-        </android.support.v7.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
 
         <TextView
@@ -378,5 +378,5 @@
             android:padding="@dimen/_5dp"
             android:textColor="@color/black"
             android:textSize="@dimen/_14sp"/>
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -4,15 +4,16 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+
 android {
-    compileSdkVersion 27
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.netset.believeapp"
-        minSdkVersion 17
-        targetSdkVersion 27
+        minSdkVersion 21
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         multiDexEnabled true
     }
     buildTypes {
@@ -23,6 +24,11 @@ android {
     }
     dexOptions {
         javaMaxHeapSize "4g"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 android {
@@ -46,57 +52,59 @@ dependencies {
         all*.exclude group: 'com.android.support', module: 'support-v13'
     }
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     testImplementation 'junit:junit:4.12'
-    compile 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'de.hdodenhof:circleimageview:2.2.0'
-    compile 'it.neokree:MaterialTabs:0.11'
-    compile('com.facebook.android:facebook-android-sdk:+') {
+    implementation 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'it.neokree:MaterialTabs:0.11'
+    implementation('com.facebook.android:facebook-android-sdk:+') {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
-    compile 'com.google.android.gms:play-services:11.2.0'
-    compile 'com.google.android.gms:play-services-location:11.2.0'
-    compile 'com.google.android.gms:play-services-maps:11.2.0'
-    compile 'com.google.code.gson:gson:2.7'
+    implementation 'com.google.android.gms:play-services:11.2.0'
+    implementation 'com.google.android.gms:play-services-location:11.2.0'
+    implementation 'com.google.android.gms:play-services-maps:11.2.0'
+    implementation 'com.google.code.gson:gson:2.7'
     compile files('libs/PdfViewer.jar')
-    compile 'com.github.barteksc:android-pdf-viewer:2.8.2'
-    compile 'com.github.aerdy:Android-Viger_View_Pager_PDF_OpenSource:-SNAPSHOT'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    //compile 'com.github.aerdy:Android-Viger_View_Pager_PDF_OpenSource:-SNAPSHOT'
     /*   compile('com.crashlytics.sdk.android:crashlytics:2.7.1@aar') {
                 transitive = true
             }*/
-    compile project(':matisse')
+    implementation project(':matisse')
     // Include all the Twitter APIs
-    compile 'com.twitter.sdk.android:twitter:3.1.1'
-    compile('com.twitter.sdk.android:twitter-core:2.3.0@aar') {
+    implementation 'com.twitter.sdk.android:twitter:3.1.1'
+    implementation('com.twitter.sdk.android:twitter-core:2.3.0@aar') {
         transitive = true
     }
-    compile 'com.google.code.gson:gson:2.8.2'
-    compile 'com.android.support:appcompat-v7:27.1.0'
-    compile 'com.android.support:design:27.1.0'
-    compile 'com.google.firebase:firebase-core:11.2.0'
-    compile 'com.google.firebase:firebase-messaging:11.2.0'
-    compile 'com.firebase:firebase-client-android:2.5.1+'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    compile 'com.google.code.gson:gson:2.8.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile 'com.android.support:cardview-v7:27.1.0'
-    compile 'com.android.support:recyclerview-v7:27.1.0'
-    compile 'me.drakeet.materialdialog:library:1.3.1'
-    compile 'com.wdullaer:materialdatetimepicker:3.1.3'
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
-    compile 'com.squareup.okhttp3:okhttp:3.9.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.9.0'
-    compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0-RC2'
-    compile files('libs/universal-image-loader-1.9.5.jar')
-    compile 'org.apache.commons:commons-lang3:3.4'
-    compile 'com.tuyenmonkey:mkloader:1.+'
-    compile 'com.h6ah4i.android.widget.verticalseekbar:verticalseekbar:0.7.2'
-    compile 'com.github.yalantis:ucrop:2.2.2-native', {
+
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.firebase:firebase-core:11.2.0'
+    implementation 'com.google.firebase:firebase-messaging:11.2.0'
+    implementation 'com.firebase:firebase-client-android:2.5.1+'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'androidx.media:media:1.4.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'me.drakeet.materialdialog:library:1.3.1'
+    implementation 'com.wdullaer:materialdatetimepicker:3.1.3'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    implementation 'com.squareup.okhttp:okhttp-urlconnection:2.0.0-RC2'
+    implementation files('libs/universal-image-loader-1.9.5.jar')
+    implementation 'org.apache.commons:commons-lang3:3.4'
+    implementation 'com.tuyenmonkey:mkloader:1.+'
+    implementation 'com.h6ah4i.android.widget.verticalseekbar:verticalseekbar:0.7.2'
+    implementation 'com.github.yalantis:ucrop:2.2.2-native', {
         exclude group: 'com.android.support'
 
     }
@@ -112,8 +120,11 @@ dependencies {
     compile files('libs/aspectjrt-1.7.3.jar')
     compile files('libs/isoparser-1.0.6.jar')
     compile project(':rssparser')
-    implementation project(':folioreader')
-    implementation project(':webViewMarker')
+//    implementation project(':folioreader')
+   // implementation project(':webViewMarker')
+    implementation 'com.github.FolioReader:FolioReader-Android:0.5.4'
+    implementation 'com.android.support:multidex:1.0.3' // ( for androidx)
+
 }
 
 apply plugin: 'com.google.gms.google-services'

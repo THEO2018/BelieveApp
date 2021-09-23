@@ -7,7 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,10 +19,8 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.folioreader.FolioReader;
 import com.folioreader.model.HighLight;
-import com.folioreader.model.ReadPosition;
 import com.folioreader.ui.base.OnSaveHighlight;
 import com.folioreader.util.OnHighlightListener;
-import com.folioreader.util.ReadPositionListener;
 import com.google.gson.JsonObject;
 import com.netset.believeapp.Adapter.HomeAdapter;
 import com.netset.believeapp.Fragment.homeMenu.AboutUsFragment;
@@ -74,7 +72,7 @@ import retrofit2.Call;
  * Created by netset on 9/1/18.
  */
 
-public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlightListener, ReadPositionListener {
+public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlightListener {
 
     int[] menuItemIcons = {R.drawable.ic_community,
             R.drawable.ic_event,
@@ -112,7 +110,7 @@ public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlig
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.home_fragment, null);
         unbinder = ButterKnife.bind(this, rootView);
-        folioReader = FolioReader.getInstance(getActivity()).setOnHighlightListener(this).setReadPositionListener(this);
+        folioReader = FolioReader.get().setOnHighlightListener(this);
         ((HomeActivity) getActivity()).setToolbarTitle("", false, false, true, null);
         return rootView;
     }
@@ -332,12 +330,6 @@ public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlig
     public void onHighlight(HighLight highlight, HighLight.HighLightAction type) {
 
     }
-
-    @Override
-    public void saveReadPosition(ReadPosition readPosition) {
-
-    }
-
 
     private void showpDialog() {
         if (!pDialog.isShowing())

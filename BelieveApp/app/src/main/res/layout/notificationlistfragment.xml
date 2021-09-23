@@ -22,9 +22,9 @@
        android:layout_centerInParent="true"
        android:text="No Notification found"/>
 
-   <android.support.v7.widget.RecyclerView
+   <androidx.recyclerview.widget.RecyclerView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:id="@+id/notify_lv"></android.support.v7.widget.RecyclerView>
+       android:id="@+id/notify_lv"></androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

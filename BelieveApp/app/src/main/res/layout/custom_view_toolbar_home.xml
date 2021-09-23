@@ -6,7 +6,7 @@
     android:paddingLeft="10dp"
     android:paddingRight="10dp">
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/menu_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
         android:layout_centerInParent="true"
         >
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_toolbar_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
         android:gravity="center_horizontal"
         android:textColor="@color/white" />
 
-    <android.support.v7.widget.AppCompatImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/title_IM"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_30dp"
@@ -40,7 +40,7 @@
         android:textColor="@color/white" />
     </RelativeLayout>
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/actionNext_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

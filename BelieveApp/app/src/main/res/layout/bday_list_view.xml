@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_5dp"
         android:paddingBottom="@dimen/pad10">
-    <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/bdayList_RV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

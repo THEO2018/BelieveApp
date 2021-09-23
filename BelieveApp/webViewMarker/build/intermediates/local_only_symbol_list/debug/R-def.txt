@@ -1,0 +1,8 @@
+R_DEF: Internal format may change without notice
+local
+drawable text_select_handle_left
+drawable text_select_handle_right
+id dragLayer
+id endHandle
+id startHandle
+layout selection_drag_layer

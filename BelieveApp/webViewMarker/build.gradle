@@ -43,5 +43,5 @@ android {
     }
 }
 
-apply from: '../folioreader/bintray/installv1.gradle'
-apply from: '../folioreader/bintray/bintrayv1.gradle'
+//apply from: '../folioreader/bintray/installv1.gradle'
+//apply from: '../folioreader/bintray/bintrayv1.gradle'

@@ -1,6 +1,6 @@
 package com.netset.believeapp.Utils.recyclerCustomisation;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by netset on 11/1/18.

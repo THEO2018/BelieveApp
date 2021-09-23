@@ -16,9 +16,9 @@ import android.media.session.MediaSessionManager;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.support.v4.media.MediaMetadataCompat;
-import android.support.v4.media.session.MediaControllerCompat;
-import android.support.v4.media.session.MediaSessionCompat;
+//import android.support.v4.media.MediaMetadataCompat;
+//import android.support.v4.media.session.MediaControllerCompat;
+//import android.support.v4.media.session.MediaSessionCompat;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -52,8 +52,8 @@ public class MediaPlayerServiceMy extends Service implements MediaPlayer.OnCompl
 
     //MediaSession
     private MediaSessionManager mediaSessionManager;
-    private MediaSessionCompat mediaSession;
-    private MediaControllerCompat.TransportControls transportControls;
+//    private MediaSessionCompat mediaSession;
+//    private MediaControllerCompat.TransportControls transportControls;
 
     //AudioPlayer notification ID
     private static final int NOTIFICATION_ID = 101;
@@ -126,13 +126,13 @@ public class MediaPlayerServiceMy extends Service implements MediaPlayer.OnCompl
             stopSelf();
         }
         if (mediaSessionManager == null) {
-            try {
-                initMediaSession();
-                initMediaPlayer();
-            } catch (RemoteException e) {
-                e.printStackTrace();
-                stopSelf();
-            }
+//            try {
+//                initMediaSession();
+//                initMediaPlayer();
+//            } catch (RemoteException e) {
+//                e.printStackTrace();
+//                stopSelf();
+//            }
             buildNotification(PlaybackStatus.PLAYING);
         }
 
@@ -143,7 +143,7 @@ public class MediaPlayerServiceMy extends Service implements MediaPlayer.OnCompl
 
     @Override
     public boolean onUnbind(Intent intent) {
-        mediaSession.release();
+//        mediaSession.release();
         removeNotification();
         return super.onUnbind(intent);
     }
@@ -566,85 +566,85 @@ public class MediaPlayerServiceMy extends Service implements MediaPlayer.OnCompl
     /**
      * MediaSession and Notification actions
      */
-    private void initMediaSession() throws RemoteException {
-        if (mediaSessionManager != null) return; //mediaSessionManager exists
-
-        mediaSessionManager = (MediaSessionManager) getSystemService(Context.MEDIA_SESSION_SERVICE);
-        // Create a new MediaSession
-        mediaSession = new MediaSessionCompat(getApplicationContext(), "AudioPlayer");
-        //Get MediaSessions transport controls
-        transportControls = mediaSession.getController().getTransportControls();
-        //set MediaSession -> ready to receive media commands
-        mediaSession.setActive(true);
-        //indicate that the MediaSession handles transport control commands
-        // through its MediaSessionCompat.Callback.
-        mediaSession.setFlags(MediaSessionCompat.FLAG_HANDLES_TRANSPORT_CONTROLS);
-
-        //Set mediaSession's MetaData
-        updateMetaData();
-
-        // Attach Callback to receive MediaSession updates
-        mediaSession.setCallback(new MediaSessionCompat.Callback() {
-            // Implement callbacks
-            @Override
-            public void onPlay() {
-                super.onPlay();
-
-                resumeMedia();
-                buildNotification(PlaybackStatus.PLAYING);
-            }
-
-            @Override
-            public void onPause() {
-                super.onPause();
-
-                pauseMedia();
-                buildNotification(PlaybackStatus.PAUSED);
-            }
-
-            @Override
-            public void onSkipToNext() {
-                super.onSkipToNext();
-
-                skipToNext();
-                updateMetaData();
-                buildNotification(PlaybackStatus.PLAYING);
-            }
-
-            @Override
-            public void onSkipToPrevious() {
-                super.onSkipToPrevious();
-
-                skipToPrevious();
-                updateMetaData();
-                buildNotification(PlaybackStatus.PLAYING);
-            }
-
-            @Override
-            public void onStop() {
-                super.onStop();
-                removeNotification();
-                //Stop the service
-                stopSelf();
-            }
-
-            @Override
-            public void onSeekTo(long position) {
-                super.onSeekTo(position);
-            }
-        });
-    }
+//    private void initMediaSession() throws RemoteException {
+//        if (mediaSessionManager != null) return; //mediaSessionManager exists
+//
+//        mediaSessionManager = (MediaSessionManager) getSystemService(Context.MEDIA_SESSION_SERVICE);
+//        // Create a new MediaSession
+//        mediaSession = new MediaSessionCompat(getApplicationContext(), "AudioPlayer");
+//        //Get MediaSessions transport controls
+//        transportControls = mediaSession.getController().getTransportControls();
+//        //set MediaSession -> ready to receive media commands
+//        mediaSession.setActive(true);
+//        //indicate that the MediaSession handles transport control commands
+//        // through its MediaSessionCompat.Callback.
+//        mediaSession.setFlags(MediaSessionCompat.FLAG_HANDLES_TRANSPORT_CONTROLS);
+//
+//        //Set mediaSession's MetaData
+//        updateMetaData();
+//
+//        // Attach Callback to receive MediaSession updates
+////        mediaSession.setCallback(new MediaSessionCompat.Callback() {
+////            // Implement callbacks
+////            @Override
+////            public void onPlay() {
+////                super.onPlay();
+////
+////                resumeMedia();
+////                buildNotification(PlaybackStatus.PLAYING);
+////            }
+////
+////            @Override
+////            public void onPause() {
+////                super.onPause();
+////
+////                pauseMedia();
+////                buildNotification(PlaybackStatus.PAUSED);
+////            }
+////
+////            @Override
+////            public void onSkipToNext() {
+////                super.onSkipToNext();
+////
+////                skipToNext();
+////                updateMetaData();
+////                buildNotification(PlaybackStatus.PLAYING);
+////            }
+////
+////            @Override
+////            public void onSkipToPrevious() {
+////                super.onSkipToPrevious();
+////
+////                skipToPrevious();
+////                updateMetaData();
+////                buildNotification(PlaybackStatus.PLAYING);
+////            }
+////
+////            @Override
+////            public void onStop() {
+////                super.onStop();
+////                removeNotification();
+////                //Stop the service
+////                stopSelf();
+////            }
+////
+////            @Override
+////            public void onSeekTo(long position) {
+////                super.onSeekTo(position);
+////            }
+////        });
+//    }
 
     private void updateMetaData() {
         Bitmap albumArt = BitmapFactory.decodeResource(getResources(),
                 R.drawable.image5); //replace with medias albumArt
         // Update the current metadata
-        mediaSession.setMetadata(new MediaMetadataCompat.Builder()
-                .putBitmap(MediaMetadataCompat.METADATA_KEY_ALBUM_ART, albumArt)
-                .putString(MediaMetadataCompat.METADATA_KEY_ARTIST, activeAudio.getArtist())
-                .putString(MediaMetadataCompat.METADATA_KEY_ALBUM, activeAudio.getAlbum())
-                .putString(MediaMetadataCompat.METADATA_KEY_TITLE, activeAudio.getTitle())
-                .build());
+//        mediaSession.setMetadata(new MediaMetadataCompat.Builder()
+//                .putBitmap(MediaMetadataCompat.METADATA_KEY_ALBUM_ART, albumArt)
+//                .putString(MediaMetadataCompat.METADATA_KEY_ARTIST, activeAudio.getArtist())
+//                .putString(MediaMetadataCompat.METADATA_KEY_ALBUM, activeAudio.getAlbum())
+//                .putString(MediaMetadataCompat.METADATA_KEY_TITLE, activeAudio.getTitle())
+//                .build());
     }
 
     private void buildNotification(PlaybackStatus playbackStatus) {
@@ -733,20 +733,20 @@ public class MediaPlayerServiceMy extends Service implements MediaPlayer.OnCompl
     }
 
     private void handleIncomingActions(Intent playbackAction) {
-        if (playbackAction == null || playbackAction.getAction() == null) return;
-
-        String actionString = playbackAction.getAction();
-        if (actionString.equalsIgnoreCase(ACTION_PLAY)) {
-            transportControls.play();
-        } else if (actionString.equalsIgnoreCase(ACTION_PAUSE)) {
-            transportControls.pause();
-        } else if (actionString.equalsIgnoreCase(ACTION_NEXT)) {
-            transportControls.skipToNext();
-        } else if (actionString.equalsIgnoreCase(ACTION_PREVIOUS)) {
-            transportControls.skipToPrevious();
-        } else if (actionString.equalsIgnoreCase(ACTION_STOP)) {
-            transportControls.stop();
-        }
+//        if (playbackAction == null || playbackAction.getAction() == null) return;
+//
+//        String actionString = playbackAction.getAction();
+//        if (actionString.equalsIgnoreCase(ACTION_PLAY)) {
+//            transportControls.play();
+//        } else if (actionString.equalsIgnoreCase(ACTION_PAUSE)) {
+//            transportControls.pause();
+//        } else if (actionString.equalsIgnoreCase(ACTION_NEXT)) {
+//            transportControls.skipToNext();
+//        } else if (actionString.equalsIgnoreCase(ACTION_PREVIOUS)) {
+//            transportControls.skipToPrevious();
+//        } else if (actionString.equalsIgnoreCase(ACTION_STOP)) {
+//            transportControls.stop();
+//        }
     }
 
 

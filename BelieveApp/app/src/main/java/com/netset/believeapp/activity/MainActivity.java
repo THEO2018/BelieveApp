@@ -1,7 +1,7 @@
 package com.netset.believeapp.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.netset.believeapp.R;
 

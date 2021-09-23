@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
@@ -10,7 +10,7 @@
     android:layout_margin="@dimen/_5dp"
     card_view:cardCornerRadius="4dp">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/square_shape_magenta"
@@ -18,7 +18,7 @@
         android:paddingRight="@dimen/pad10"
         android:paddingBottom="@dimen/pad10">
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/grpIcon_IV"
             android:layout_width="@dimen/_65dp"
             android:layout_height="@dimen/_65dp"
@@ -33,7 +33,7 @@
             card_view:srcCompat="@drawable/ic_group_pic"
             android:layout_marginRight="5dp" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/grpName_TV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
             card_view:layout_constraintVertical_bias="0.0"
             android:layout_marginLeft="8dp" />
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/earth_IV"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -62,7 +62,7 @@
             card_view:layout_constraintStart_toStartOf="@+id/grpName_TV"
             card_view:layout_constraintTop_toBottomOf="@+id/grpName_TV" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/loc_TV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
             card_view:layout_constraintStart_toEndOf="@+id/earth_IV"
             card_view:layout_constraintTop_toTopOf="@+id/earth_IV" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/distance_TV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
             card_view:layout_constraintTop_toBottomOf="@+id/earth_IV"
             card_view:layout_constraintVertical_bias="0.0" />
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/joinGrp_BTN"
             android:layout_width="@dimen/_110dp"
             android:layout_height="@dimen/_38dp"
@@ -108,6 +108,6 @@
             card_view:layout_constraintStart_toEndOf="@+id/loc_TV"
             card_view:layout_constraintTop_toTopOf="parent"
             android:layout_marginLeft="8dp" />
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

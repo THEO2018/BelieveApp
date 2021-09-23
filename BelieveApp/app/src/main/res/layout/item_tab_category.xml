@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="bottom">
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tabItem_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
