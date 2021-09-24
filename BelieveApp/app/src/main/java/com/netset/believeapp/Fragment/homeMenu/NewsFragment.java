@@ -154,44 +154,48 @@ public class NewsFragment extends BaseFragment implements ApiResponse {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         result = gson.fromJson(object.toString(), NewsListModel.class);
 
-        urlString = result.data.newsUrl;
-        NewsLV.setLayoutManager(new LinearLayoutManager(getActivity()));
-        NewsLV.setItemAnimator(new DefaultItemAnimator());
-        NewsLV.setHasFixedSize(true);
+        if (result.data != null) {
+            urlString = result.data.newsUrl;
+            NewsLV.setLayoutManager(new LinearLayoutManager(getActivity()));
+            NewsLV.setItemAnimator(new DefaultItemAnimator());
+            NewsLV.setHasFixedSize(true);
 
-        mSwipeRefreshLayout.setColorSchemeResources(R.color.light_pink, R.color.dark_pink);
-        mSwipeRefreshLayout.canChildScrollUp();
-        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            mSwipeRefreshLayout.setColorSchemeResources(R.color.light_pink, R.color.dark_pink);
+            mSwipeRefreshLayout.canChildScrollUp();
+            mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
 
-            @Override
-            public void onRefresh() {
-                mAdapter.clearData();
-                mAdapter.notifyDataSetChanged();
-                mSwipeRefreshLayout.setRefreshing(true);
+                @Override
+                public void onRefresh() {
+                    mAdapter.clearData();
+                    mAdapter.notifyDataSetChanged();
+                    mSwipeRefreshLayout.setRefreshing(true);
+                    loadFeed();
+                }
+            });
+
+            if (!isNetworkAvailable()) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage(R.string.alert_message)
+                        .setTitle(R.string.alert_title)
+                        .setCancelable(false)
+                        .setPositiveButton(R.string.alert_positive,
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int id) {
+                                    }
+                                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+
+            } else if (isNetworkAvailable()) {
                 loadFeed();
             }
-        });
-
-        if (!isNetworkAvailable()) {
-
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setMessage(R.string.alert_message)
-                    .setTitle(R.string.alert_title)
-                    .setCancelable(false)
-                    .setPositiveButton(R.string.alert_positive,
-                            new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int id) {
-                                }
-                            });
-
-            AlertDialog alert = builder.create();
-            alert.show();
-
-        } else if (isNetworkAvailable()) {
-            loadFeed();
+        }else{
+            progressBar.setVisibility(View.GONE);
+            nodata.setVisibility(View.VISIBLE);
         }
-
 
     }
 

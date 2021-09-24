@@ -239,9 +239,7 @@ public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlig
                     folioReader.openBook(dir.getAbsolutePath());
                 } else {
                   //  new DownloadFile().execute(bibleUrl, "/myfile.epub");
-
                       new DownloadTask(getActivity()).execute(bibleUrl);
-
                 }
             }
 
@@ -412,7 +410,6 @@ public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlig
 
                 if (connection != null)
                     connection.disconnect();
-
             }
 
         }
@@ -429,8 +426,7 @@ public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlig
                 if (dir.exists()) {
                     folioReader.openBook(dir.getAbsolutePath());
                 } else {
-                    new DownloadTask(getActivity()).execute(bibleUrl);
-
+                   // new DownloadTask(getActivity()).execute(bibleUrl);
                 }
             }
 

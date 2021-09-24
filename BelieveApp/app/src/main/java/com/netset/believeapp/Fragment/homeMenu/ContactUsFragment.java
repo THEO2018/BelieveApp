@@ -132,8 +132,6 @@ public class ContactUsFragment extends BaseFragment implements ApiResponse {
         return new Intent(Intent.ACTION_VIEW, uri);
     }
 
-
-
     @OnClick({R.id.fb_IV, R.id.twitter_IV, R.id.insta_IV,R.id.email_TV,R.id.website_TV,R.id.direction_TV})
     public void onClick(View view) {
         switch (view.getId()) {
@@ -146,8 +144,6 @@ public class ContactUsFragment extends BaseFragment implements ApiResponse {
                     Log.e(">>>>>>>webUrl is",">>>>>>>"+Uri.parse(url));
                     Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
                     facebookIntent.setData(Uri.parse(url));
-
-
                     startActivity(facebookIntent);
                 }else{
                     String url = FbLink;
@@ -243,7 +239,6 @@ public class ContactUsFragment extends BaseFragment implements ApiResponse {
 
                 break;
 
-
         }
     }
 
@@ -252,14 +247,16 @@ public class ContactUsFragment extends BaseFragment implements ApiResponse {
         Log.e("Response body", ">>>>>>>>>" + object.toString());
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         result = gson.fromJson(object.toString(), ContactModel.class);
-        addressTV.setText(result.getData().getLocation());
-        contactTV.setText(result.getData().getPhone());
-        emailTV.setText(result.getData().getMail());
-        websiteTV.setText(result.getData().getWebsiteLink());
-        countryNameTV.setText(result.getData().getCountry());
-        FbLink = result.getData().getFacebookLink();
-        InstaLink = result.getData().getInstagramLink();
-        TwitterLink = result.getData().getTwitterLink();
+        if (result.getData() != null) {
+            addressTV.setText(result.getData().getLocation());
+            contactTV.setText(result.getData().getPhone());
+            emailTV.setText(result.getData().getMail());
+            websiteTV.setText(result.getData().getWebsiteLink());
+            countryNameTV.setText(result.getData().getCountry());
+            FbLink = result.getData().getFacebookLink();
+            InstaLink = result.getData().getInstagramLink();
+            TwitterLink = result.getData().getTwitterLink();
+        }
     }
 
     @Override

@@ -1,7 +1,5 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 
@@ -29,6 +27,9 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
     }
 }
 android {
@@ -114,7 +115,6 @@ dependencies {
         }
         maven { url 'http://maven.livotovlabs.pro/content/groups/public' }
         /*maven { url 'https://maven.fabric.io/public' }*/
-
 
     }
     compile files('libs/aspectjrt-1.7.3.jar')

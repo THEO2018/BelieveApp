@@ -88,7 +88,6 @@ public class ClassifiedFragment extends BaseFragment implements ApiResponse {
 
     private void showTabBar() {
 
-
         if(categoryList.size()>0) {
             categoryList.clear();
         }
@@ -157,74 +156,65 @@ public class ClassifiedFragment extends BaseFragment implements ApiResponse {
     private void displaySelectedTabView(int position) {
         Bundle args = new Bundle();
 
-        if(position == 0){
-            if(categoryList.get(0).getCatName().equals("Birth News")){
-                args.putString("id",categoryList.get(0).getId());
-                baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new BirthNewsFragment(),args);
-            }
-            else if(categoryList.get(0).getCatName().equals("jobs")){
-                args.putString("id",categoryList.get(0).getId());
-                baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(),args);
-            }else if(categoryList.get(position).getCatName().equals("Prayer Requests")){
-                args.putString("id",categoryList.get(0).getId());
-                baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new PrayerRequestFragment(),args);
-            }else{
-                args.putString("id",categoryList.get(position).getId());
-                baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(),args);
-            }
-        }
-        else if(position ==1){
-            if(categoryList.get(1).getCatName().equals("Birth News")){
-                args.putString("id",categoryList.get(1).getId());
-                baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new BirthNewsFragment(),args);
-            }
-            else if(categoryList.get(1).getCatName().equals("jobs")){
-                args.putString("id",categoryList.get(1).getId());
-                baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(),args);
-            }else if(categoryList.get(position).getCatName().equals("Prayer Requests")){
-                args.putString("id",categoryList.get(1).getId());
-                baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new PrayerRequestFragment(),args);
-            }
-            else{
-                args.putString("id",categoryList.get(position).getId());
-                baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(),args);
-            }
-        }
+        if( categoryList.size() > 0){
 
-        else if(position ==2){
-            if(categoryList.get(2).getCatName().equals("Birth News")){
-                args.putString("id",categoryList.get(2).getId());
-                baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new BirthNewsFragment(),args);
+            if (position == 0) {
+                if (categoryList.get(0).getCatName().equals("Birth News")) {
+                    args.putString("id", categoryList.get(0).getId());
+                    baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new BirthNewsFragment(), args);
+                } else if (categoryList.get(0).getCatName().equals("jobs")) {
+                    args.putString("id", categoryList.get(0).getId());
+                    baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(), args);
+                } else if (categoryList.get(position).getCatName().equals("Prayer Requests")) {
+                    args.putString("id", categoryList.get(0).getId());
+                    baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new PrayerRequestFragment(), args);
+                } else {
+                    args.putString("id", categoryList.get(position).getId());
+                    baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(), args);
+                }
+            } else if (position == 1) {
+                if (categoryList.get(1).getCatName().equals("Birth News")) {
+                    args.putString("id", categoryList.get(1).getId());
+                    baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new BirthNewsFragment(), args);
+                } else if (categoryList.get(1).getCatName().equals("jobs")) {
+                    args.putString("id", categoryList.get(1).getId());
+                    baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(), args);
+                } else if (categoryList.get(position).getCatName().equals("Prayer Requests")) {
+                    args.putString("id", categoryList.get(1).getId());
+                    baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new PrayerRequestFragment(), args);
+                } else {
+                    args.putString("id", categoryList.get(position).getId());
+                    baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(), args);
+                }
+            } else if (position == 2) {
+                if (categoryList.get(2).getCatName().equals("Birth News")) {
+                    args.putString("id", categoryList.get(2).getId());
+                    baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new BirthNewsFragment(), args);
+                } else if (categoryList.get(2).getCatName().equals("jobs")) {
+                    args.putString("id", categoryList.get(2).getId());
+                    baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(), args);
+                } else if (categoryList.get(position).getCatName().equals("Prayer Requests")) {
+                    args.putString("id", categoryList.get(2).getId());
+                    baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new PrayerRequestFragment(), args);
+                } else {
+                    args.putString("id", categoryList.get(position).getId());
+                    baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(), args);
+                }
+            } else {
+                if (categoryList.get(position).getCatName().equals("Birth News")) {
+                    args.putString("id", categoryList.get(position).getId());
+                    baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new BirthNewsFragment(), args);
+                } else if (categoryList.get(position).getCatName().equals("jobs")) {
+                    args.putString("id", categoryList.get(position).getId());
+                    baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(), args);
+                } else if (categoryList.get(position).getCatName().equals("Prayer Requests")) {
+                    args.putString("id", categoryList.get(position).getId());
+                    baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new PrayerRequestFragment(), args);
+                } else {
+                    args.putString("id", categoryList.get(position).getId());
+                    baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(), args);
+                }
             }
-            else if(categoryList.get(2).getCatName().equals("jobs")){
-                args.putString("id",categoryList.get(2).getId());
-                baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(),args);
-            }else if(categoryList.get(position).getCatName().equals("Prayer Requests")){
-                args.putString("id",categoryList.get(2).getId());
-                baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new PrayerRequestFragment(),args);
-            }
-            else{
-                args.putString("id",categoryList.get(position).getId());
-                baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(),args);
-            }
-        }
-        else{
-            if(categoryList.get(position).getCatName().equals("Birth News")){
-                args.putString("id",categoryList.get(position).getId());
-                baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new BirthNewsFragment(),args);
-            }
-            else if(categoryList.get(position).getCatName().equals("jobs")){
-                args.putString("id",categoryList.get(position).getId());
-                baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(),args);
-            }else if(categoryList.get(position).getCatName().equals("Prayer Requests")){
-                args.putString("id",categoryList.get(position).getId());
-                baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new PrayerRequestFragment(),args);
-            }else{
-                args.putString("id",categoryList.get(position).getId());
-                baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(),args);
-            }
-
-
         }
     }
 

@@ -95,22 +95,28 @@ public class AlbumLoader extends CursorLoader {
 
     @Override
     public Cursor loadInBackground() {
-        Cursor albums = super.loadInBackground();
-        MatrixCursor allAlbum = new MatrixCursor(COLUMNS);
-        int totalCount = 0;
-        String allAlbumCoverPath = "";
-        if (albums != null) {
-            while (albums.moveToNext()) {
-                totalCount += albums.getInt(albums.getColumnIndex(COLUMN_COUNT));
+        try {
+            Cursor albums = super.loadInBackground();
+            MatrixCursor allAlbum = new MatrixCursor(COLUMNS);
+            int totalCount = 0;
+            String allAlbumCoverPath = "";
+            if (albums != null) {
+                while (albums.moveToNext()) {
+                    totalCount += albums.getInt(albums.getColumnIndex(COLUMN_COUNT));
+                }
+                if (albums.moveToFirst()) {
+                    allAlbumCoverPath = albums.getString(albums.getColumnIndex(MediaStore.MediaColumns.DATA));
+                }
             }
-            if (albums.moveToFirst()) {
-                allAlbumCoverPath = albums.getString(albums.getColumnIndex(MediaStore.MediaColumns.DATA));
-            }
-        }
-        allAlbum.addRow(new String[]{Album.ALBUM_ID_ALL, Album.ALBUM_ID_ALL, Album.ALBUM_NAME_ALL, allAlbumCoverPath,
-                String.valueOf(totalCount)});
+            allAlbum.addRow(new String[]{Album.ALBUM_ID_ALL, Album.ALBUM_ID_ALL, Album.ALBUM_NAME_ALL, allAlbumCoverPath,
+                    String.valueOf(totalCount)});
 
-        return new MergeCursor(new Cursor[]{allAlbum, albums});
+            return new MergeCursor(new Cursor[]{allAlbum, albums});
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override
