@@ -38,6 +38,7 @@ import com.squareup.picasso.Picasso;
 import com.yalantis.ucrop.UCrop;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
+import com.zhihu.matisse.engine.impl.GlideEngine;
 import com.zhihu.matisse.engine.impl.PicassoEngine;
 import com.zhihu.matisse.internal.entity.CaptureStrategy;
 import com.zhihu.matisse.internal.utils.PathUtils;
@@ -260,13 +261,13 @@ public class EditProfile_PersonalFragment extends BaseFragment implements BaseAc
     private void selectMedia() {
         Matisse.from(this)
                 .choose(MimeType.ofImage(), false)
-                .countable(true).capture(true).video(false)
+                .countable(true).capture(true)
                 .captureStrategy(new CaptureStrategy(true, "com.netset.believeapp"))
                 .maxSelectable(1)
                 .gridExpectedSize(getResources().getDimensionPixelSize(R.dimen._120dp))
                 .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
                 .thumbnailScale(0.85f)
-                .imageEngine(new PicassoEngine()).forResult(REQUEST_CODE_CHOOSE);
+                .imageEngine(new GlideEngine()).forResult(REQUEST_CODE_CHOOSE);
     }
 
 

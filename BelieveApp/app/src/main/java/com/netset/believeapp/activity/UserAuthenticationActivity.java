@@ -37,7 +37,7 @@ public class UserAuthenticationActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         setUpToolbar();
-        runtimePermissions();
+        //runtimePermissions();
         navigateFragmentTransaction(R.id.authViewContainer, new TypeChooserFragment());
 
     }

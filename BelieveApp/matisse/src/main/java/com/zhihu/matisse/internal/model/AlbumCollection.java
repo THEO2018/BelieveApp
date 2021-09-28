@@ -34,14 +34,15 @@ public class AlbumCollection implements LoaderManager.LoaderCallbacks<Cursor> {
     private WeakReference<Context> mContext;
     private LoaderManager mLoaderManager;
     private AlbumCallbacks mCallbacks;
-    private int mCurrentSelection;
-
+    private int mCurrentSelection = 0;
+    private boolean mLoadFinished;
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         Context context = mContext.get();
         if (context == null) {
             return null;
         }
+        mLoadFinished = false;
         return AlbumLoader.newInstance(context);
     }
 
@@ -52,7 +53,10 @@ public class AlbumCollection implements LoaderManager.LoaderCallbacks<Cursor> {
             return;
         }
 
-        mCallbacks.onAlbumLoad(data);
+        if (!mLoadFinished) {
+            mLoadFinished = true;
+            mCallbacks.onAlbumLoad(data);
+        }
     }
 
     @Override

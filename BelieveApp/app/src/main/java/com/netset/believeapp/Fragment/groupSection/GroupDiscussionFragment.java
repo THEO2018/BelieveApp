@@ -367,7 +367,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
     private void selectMedia() {
         Matisse.from(this)
                 .choose(MimeType.ofAll(), false)
-                .countable(true).capture(true).video(false)
+                .countable(true).capture(true)
                 .captureStrategy(new CaptureStrategy(true, "com.netset.believeapp"))
                 .maxSelectable(1)
                 .gridExpectedSize(getResources().getDimensionPixelSize(R.dimen._120dp))
@@ -379,7 +379,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
     private void selectMedia2(){
         Matisse.from(this)
                 .choose(MimeType.ofAll(), false)
-                .countable(true).video(true).capture(true)
+                .countable(true).capture(true)
                 .captureStrategy(new CaptureStrategy(true, "com.netset.believeapp"))
                 .maxSelectable(1)
                 .gridExpectedSize(getResources().getDimensionPixelSize(R.dimen._120dp))

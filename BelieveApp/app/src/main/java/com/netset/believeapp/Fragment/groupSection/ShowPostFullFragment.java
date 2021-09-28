@@ -273,7 +273,7 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
     private void selectMedia() {
         Matisse.from(this)
                 .choose(MimeType.ofImage(), false)
-                .countable(true).capture(true).video(false)
+                .countable(true).capture(true)
                 .captureStrategy(new CaptureStrategy(true, "com.netset.believeapp"))
                 .maxSelectable(1)
                 .gridExpectedSize(getResources().getDimensionPixelSize(R.dimen._120dp))

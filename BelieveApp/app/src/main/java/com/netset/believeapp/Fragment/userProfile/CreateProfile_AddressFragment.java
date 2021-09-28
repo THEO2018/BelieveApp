@@ -147,16 +147,14 @@ public class CreateProfile_AddressFragment extends BaseFragment implements ApiRe
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         ((UserAuthenticationActivity) getActivity()).setToolbarTitle(SC_CREATE_PROFILE, false, false, null);
-        /*apiInterface    = ApiClient.getClient().create(ApiInterface.class);
-        apiHitAndHandle = ApiHitAndHandle.getInstance(getActivity());*/
-
         Calendar calendar = new GregorianCalendar();
         TimeZone timeZone = calendar.getTimeZone();
         timeZoneCurrent= (timeZone.getID());
+
         streetET.setFilters(new InputFilter[]{new CreateProfile_AddressFragment.EmojiExcludeFilter()});
         cityET.setFilters(new InputFilter[]{new CreateProfile_AddressFragment.EmojiExcludeFilter()});
+
         if (getArguments() != null)
             createProfile_Bundle = getArguments();
 
@@ -304,6 +302,7 @@ public class CreateProfile_AddressFragment extends BaseFragment implements ApiRe
 
     DialogAdapterPozo dialogListAdapter = null;
     ListView optionList_LV;
+
     public void showDailog(final Context mContext, final EditText editText, final int value) {
         final Dialog dialog = new Dialog(mContext);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -372,7 +371,6 @@ public class CreateProfile_AddressFragment extends BaseFragment implements ApiRe
             Constants.FBImage ="";
             getActivity().finish();
         } catch (JSONException e) {
-
 
         }
 

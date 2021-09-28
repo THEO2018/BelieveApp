@@ -3,6 +3,7 @@ package com.netset.believeapp.activity;
 import android.Manifest;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.Settings;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
@@ -21,6 +23,7 @@ import androidx.fragment.app.Fragment;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -28,10 +31,12 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.facebook.FacebookSdk;
 import com.netset.believeapp.R;
 import com.netset.believeapp.Utils.CommonFunctions;
@@ -40,6 +45,7 @@ import com.netset.believeapp.retrofitManager.ApiClient;
 import com.netset.believeapp.retrofitManager.ApiHitAndHandle;
 import com.netset.believeapp.retrofitManager.ApiInterface;
 
+import java.io.File;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
@@ -58,8 +64,8 @@ public class BaseActivity extends AppCompatActivity {
 
     String BASE_TAG = BaseActivity.class.getSimpleName();
     public View divView;
-   public  ApiHitAndHandle apiHitAndHandle;
-    public   ApiInterface apiInterface;
+    public ApiHitAndHandle apiHitAndHandle;
+    public ApiInterface apiInterface;
     AlertDialog alert11;
     String[] permissionsRequired = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA,
@@ -91,12 +97,10 @@ public class BaseActivity extends AppCompatActivity {
         permissionStatus = getSharedPreferences("permissionStatus", MODE_PRIVATE);
         generateHashKey();
         commonFunctions = CommonFunctions.getInstance();
-        apiClient=new ApiClient(getApplicationContext());
+        apiClient = new ApiClient(getApplicationContext());
         apiHitAndHandle = ApiHitAndHandle.getInstance(this);
         apiInterface = apiClient.getClient().create(ApiInterface.class);
     }
-
-
 
 
     /**
@@ -197,7 +201,7 @@ public class BaseActivity extends AppCompatActivity {
         builder1.setView(view);
         builder1.setCancelable(true);
 
-         alert11 = builder1.create();
+        alert11 = builder1.create();
         TextView message_TV = view.findViewById(R.id.message_TV);
         Button yes_TV = view.findViewById(R.id.yes_TV);
         Button no_TV = view.findViewById(R.id.no_TV);
@@ -245,6 +249,11 @@ public class BaseActivity extends AppCompatActivity {
      *
      * @return
      */
+
+    public void loadImageFromDevice(Context context, File path, ImageView imageView) {
+        Glide.with(context).load(Uri.fromFile(path)).centerCrop().into(imageView);
+    }
+
     public boolean runtimePermissions() {
 
         if (ActivityCompat.checkSelfPermission(this, permissionsRequired[0]) != PackageManager.PERMISSION_GRANTED
@@ -456,12 +465,12 @@ public class BaseActivity extends AppCompatActivity {
                         int temp_month = monthOfYear + 1;
                         int temp_year = year;
 
-                        date[0] = year + "-" + (monthOfYear + 1) + "-" + dayOfMonth ;
+                        date[0] = year + "-" + (monthOfYear + 1) + "-" + dayOfMonth;
                         Log.e("dateIs", "" + date[0]);
 
                         if (!isDob) {
                             datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
-                        }else {
+                        } else {
                             datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis() - 1000);
                         }
 
@@ -472,7 +481,7 @@ public class BaseActivity extends AppCompatActivity {
                         String currentDate = df.format(c.getTime());
                         Date cDate = null;
                         try {
-                             cDate = df.parse(currentDate);
+                            cDate = df.parse(currentDate);
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }
@@ -490,8 +499,8 @@ public class BaseActivity extends AppCompatActivity {
 
                         if (!isDob) {
                             //condition ...
-                            Log.e(">>>>>>>>>>>>",""+date_selected.getDate()+"diff"+">>>>>>"+date_s);
-                           if (l_diff < -1) {
+                            Log.e(">>>>>>>>>>>>", "" + date_selected.getDate() + "diff" + ">>>>>>" + date_s);
+                            if (l_diff < -1) {
 
                                 int currentYear = c.get(Calendar.YEAR);
                                 int currentMonth = c.get(Calendar.MONTH);
@@ -532,8 +541,7 @@ public class BaseActivity extends AppCompatActivity {
                                     }
                                 }
 
-                                }
-                             else {
+                            } else {
                                 showToast("Selected Date cannot be less than current date.");
                             }
                         } else {
@@ -655,7 +663,7 @@ public class BaseActivity extends AppCompatActivity {
                 }
             }
         }, hour, minute, false);//Yes 24 hour time
-       /* mTimePicker.setTitle("Select Time");*/
+        /* mTimePicker.setTitle("Select Time");*/
         mTimePicker.show();
 
     }

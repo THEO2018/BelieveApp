@@ -140,9 +140,6 @@ public class PostStatusFragment extends BaseFragment {
         if (inputUri.toString().contains("video") || inputUri.toString().contains("Movies") || inputUri.toString().contains("movies")) {
             profileImage = null;
             videoFile = new File(selectedFilePath);
-            // Bitmap bmThumbnail = ThumbnailUtils.createVideoThumbnail(selectedFilePath, MediaStore.Images.Thumbnails.);
-            // statusPicIV.setImageBitmap(getVideoFrame(selectedFilePath));
-
             Bitmap bmp = customCreatThumbnail(selectedFilePath);
             statusPicIV.setImageBitmap(bmp);
             Log.e("VIDEOURI", "" + inputUri);
@@ -151,7 +148,6 @@ public class PostStatusFragment extends BaseFragment {
         } else {
             videoFile = null;
             profileImage = new File(selectedFilePath);
-            Log.i("path--------", profileImage + "");
             Picasso.with(baseActivity).load(profileImage).into(statusPicIV);
             videoIConIV.setVisibility(View.GONE);
 

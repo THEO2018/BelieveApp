@@ -76,8 +76,6 @@ import static com.netset.believeapp.Utils.Constants.SC_WALL;
  */
 
 public class WallFragment extends BaseFragment implements CommentClickCallback, ApiResponse, LikeClickCallback {
-    String TAG = WallFragment.class.getSimpleName();
-
     @BindView(R.id.profile_image_IV)
     ImageView profileImageIV;
     @BindView(R.id.status_ET)
@@ -198,11 +196,12 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
 
     private void selectMedia() {
         Matisse.from(this)
-                .choose(MimeType.ofAll(), false)
-                .countable(true).capture(true).video(false)
+                .choose(MimeType.ofImage(), false)
+                .countable(true).capture(true)
                 .captureStrategy(new CaptureStrategy(true, "com.netset.believeapp"))
                 .maxSelectable(1)
                 .gridExpectedSize(getResources().getDimensionPixelSize(R.dimen._120dp))
+                .showSingleMediaType(true)
                 .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
                 .thumbnailScale(0.85f)
                 .imageEngine(new PicassoEngine()).forResult(REQUEST_CODE_CHOOSE);
@@ -211,11 +210,12 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
 
     private void selectMedia2(){
         Matisse.from(this)
-                .choose(MimeType.ofAll(), false)
-                .countable(true).video(true).capture(true)
+                .choose(MimeType.ofVideo(), false)
+                .countable(true).capture(true)
                 .captureStrategy(new CaptureStrategy(true, "com.netset.believeapp"))
                 .maxSelectable(1)
                 .gridExpectedSize(getResources().getDimensionPixelSize(R.dimen._120dp))
+                .showSingleMediaType(true)
                 .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
                 .thumbnailScale(0.85f)
                 .imageEngine(new PicassoEngine()).forResult(2);
