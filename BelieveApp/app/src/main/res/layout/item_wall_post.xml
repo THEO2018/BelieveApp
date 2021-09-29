@@ -134,7 +134,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_30dp"
                 android:orientation="horizontal"
                 android:weightSum="5"
                 android:gravity="center_vertical"
@@ -146,6 +146,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.3"
+                    android:paddingBottom="@dimen/_3dp"
                     android:gravity="">
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -153,7 +154,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="10"
-                        android:textSize="@dimen/_12sp" />
+                        android:textSize="@dimen/_14sp" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/comnt_label_TV"
@@ -163,15 +164,15 @@
                         android:layout_marginStart="@dimen/_5dp"
                         android:gravity="center"
                         android:text="Comments"
-                        android:textSize="@dimen/_12sp" />
+                        android:textSize="@dimen/_14sp" />
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/dot_IV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_5dp"
-                        android:layout_marginStart="@dimen/_5dp"
-                        android:layout_marginTop="@dimen/_5dp"
+                        android:layout_marginStart="@dimen/_3dp"
+                        android:layout_marginTop="@dimen/_2dp"
+                        android:layout_gravity="center_vertical"
                         app:srcCompat="@drawable/circle_dot_black" />
                 </LinearLayout>
 
@@ -179,6 +180,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.8"
+                    android:paddingBottom="@dimen/_3dp"
                     android:orientation="horizontal">
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -190,7 +192,7 @@
                         android:layout_marginTop="0dp"
                         android:gravity="center"
                         android:text="4"
-                        android:textSize="@dimen/_12sp" />
+                        android:textSize="@dimen/_14sp" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/likes_label_TV"
@@ -200,7 +202,7 @@
                         android:layout_marginStart="@dimen/_5dp"
                         android:gravity="center"
                         android:text="Likes "
-                        android:textSize="@dimen/_12sp" />
+                        android:textSize="@dimen/_14sp" />
 
                 </LinearLayout>
 
@@ -215,12 +217,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.9"
                     android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/_2dp"
                     android:orientation="horizontal">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/like_IV"
-                        android:layout_width="@dimen/_12dp"
-                        android:layout_height="@dimen/_12dp"
+                        android:layout_width="@dimen/_18sp"
+                        android:layout_height="@dimen/_18sp"
                         android:layout_marginEnd="@dimen/_5dp"
                         android:layout_marginRight="5dp"
                         android:gravity="center"
@@ -234,6 +237,7 @@
                         android:layout_marginRight="@dimen/_5dp"
                         android:gravity="center"
                         android:text="Like"
+                        android:paddingBottom="@dimen/_1dp"
                         android:textColor="@color/dark_grey"
                         android:textSize="@dimen/_14sp" />
 
@@ -245,12 +249,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1.3"
                     android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/_2dp"
                     android:orientation="horizontal">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/comnt_IV"
-                        android:layout_width="@dimen/_12dp"
-                        android:layout_height="@dimen/_12dp"
+                        android:layout_width="@dimen/_16dp"
+                        android:layout_height="@dimen/_16dp"
                         android:layout_marginRight="@dimen/_5dp"
                         app:srcCompat="@drawable/ic_comment" />
 
@@ -259,6 +264,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:paddingBottom="@dimen/_2dp"
                         android:text="Comment"
                         android:textSize="@dimen/_14sp"
                         android:textColor="@color/dark_grey" />

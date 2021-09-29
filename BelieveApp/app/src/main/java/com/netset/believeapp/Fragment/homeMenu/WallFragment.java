@@ -35,6 +35,7 @@ import com.netset.believeapp.Utils.CommonDialogs;
 import com.netset.believeapp.Utils.GeneralValues;
 import com.netset.believeapp.activity.HomeActivity;
 import com.netset.believeapp.activity.ShowFullPostActivity;
+import com.netset.believeapp.callbacks.CheckPermissionInterface;
 import com.netset.believeapp.callbacks.CommentClickCallback;
 import com.netset.believeapp.listeners.LikeClickCallback;
 import com.netset.believeapp.retrofitManager.ApiResponse;
@@ -75,7 +76,7 @@ import static com.netset.believeapp.Utils.Constants.SC_WALL;
  * Created by netset on 10/1/18.
  */
 
-public class WallFragment extends BaseFragment implements CommentClickCallback, ApiResponse, LikeClickCallback {
+public class WallFragment extends BaseFragment implements CommentClickCallback, ApiResponse, LikeClickCallback, CheckPermissionInterface {
     @BindView(R.id.profile_image_IV)
     ImageView profileImageIV;
     @BindView(R.id.status_ET)
@@ -128,6 +129,7 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
         /*apiInterface = ApiClient.getClient().create(ApiInterface.class);
         apiHitAndHandle = ApiHitAndHandle.getInstance(getActivity());*/
 
+        checkPermission=this;
         CallApi();
       //  setBlogAdapter();
     }
@@ -241,6 +243,7 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
             mSelected = Matisse.obtainResult(data);
             //   if(data != null && data.getData() != null){
             try {
+                Log.e("pathVideo",mSelected.get(0).getEncodedPath());
                 sendBackVideoPath(mSelected.get(0));
             } catch (Exception e) {
                 e.printStackTrace();
@@ -269,14 +272,17 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
     }
 
 
+    boolean clickedMediaPhoto=false;
     @OnClick({R.id.uploadPhoto_TV, R.id.uploadVideo_TV, R.id.button})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.uploadPhoto_TV:
-                selectMedia();
+                clickedMediaPhoto=true;
+               checkPermissionsForCamera();
                 break;
             case R.id.uploadVideo_TV:
-                selectMedia2();
+                clickedMediaPhoto=false;
+                checkPermissionsForCamera();
                 break;
             case R.id.button:
 
@@ -384,13 +390,14 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
                 {
                     AssetFileDescriptor videoAsset = getActivity().getContentResolver().openAssetFileDescriptor(inputUri, "r");
                     FileInputStream fis = videoAsset.createInputStream();
-                    File root=new File(Environment.getExternalStorageDirectory(),"Believe");
+                    File root=new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),"Believe");
                     if (!root.exists()) {
                         root.mkdirs();
                     }
                     File file;
                     videoFile =new File(root,"video_"+System.currentTimeMillis()+".mp4" );
                     selectedFilePath = ""+videoFile;
+                    Environment.getExternalStorageDirectory();
                     FileOutputStream fos = new FileOutputStream(videoFile);
                     byte[] buf = new byte[1024];
                     int len;
@@ -400,16 +407,18 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
                     fis.close();
                     fos.close();
                     Bitmap bitmap2 = ThumbnailUtils.createVideoThumbnail(videoFile.getAbsolutePath(), MediaStore.Video.Thumbnails.MICRO_KIND);
+                    uploadLay.setVisibility(View.VISIBLE);
+                    uploadImg.setImageBitmap(bitmap2);
                   //  setVideoThumbnail(bitmap2);
                    // Bitmap resizedbitmap = ThumbnailUtils.createVideoThumbnail(selectedFilePath, MediaStore.Video.Thumbnails.FULL_SCREEN_KIND);
-                    File thumbfile = new File(CommonDialogs.saveimagetosdcard(getActivity(), bitmap2));
-                    uploadLay.setVisibility(View.VISIBLE);
-                    MemoryCacheUtils.removeFromCache("" + thumbfile, ImageLoader.getInstance().getMemoryCache());
-                    DiskCacheUtils.removeFromCache("" + thumbfile, ImageLoader.getInstance().getDiskCache());
-                    Picasso.with(getActivity())
-                            .load(thumbfile)
-                            .skipMemoryCache()
-                            .into(uploadImg);
+//                    File thumbfile = new File(CommonDialogs.saveimagetosdcard(getActivity(), bitmap2));
+//                    uploadLay.setVisibility(View.VISIBLE);
+//                    MemoryCacheUtils.removeFromCache("" + thumbfile, ImageLoader.getInstance().getMemoryCache());
+//                    DiskCacheUtils.removeFromCache("" + thumbfile, ImageLoader.getInstance().getDiskCache());
+//                    Picasso.with(getActivity())
+//                            .load(thumbfile)
+//                            .skipMemoryCache()
+//                            .into(uploadImg);
                     //statusPicIV.setImageBitmap(bmp);
                     Log.e("VIDEOURI", "" + inputUri);
                 }
@@ -577,4 +586,14 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
     }
 
 
+    @Override
+    public void OnPermissionAccepted() {
+
+        if (clickedMediaPhoto){
+            selectMedia();
+        }
+        else {
+            selectMedia2();
+        }
+    }
 }

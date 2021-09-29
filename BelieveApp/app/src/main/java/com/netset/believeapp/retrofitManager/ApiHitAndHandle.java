@@ -7,11 +7,15 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.netset.believeapp.R;
 import com.netset.believeapp.Utils.CommonDialogs;
 import com.netset.believeapp.Utils.ConnectivityReceiver;
 import com.netset.believeapp.Utils.GeneralValues;
@@ -52,18 +56,28 @@ public class ApiHitAndHandle implements Callback {
     public void makeApiCall(Call call, ApiResponse response) {
         makeApiCall(call, true, response);
     }
-    public void makeApiCall(Call call, ApiResponse response,boolean isProgress) {
+
+    public void makeApiCall(Call call, ApiResponse response, boolean isProgress) {
         makeApiCall(call, isProgress, response);
     }
 
     public void makeApiCall(Call call, boolean showProgress, ApiResponse apiResponse) {
-        boolean isNetworkAvailable=checkConnection(mContext);
+        boolean isNetworkAvailable = checkConnection(mContext);
         if (isNetworkAvailable) {
             try {
                 apiResponseHashMap.put(call, apiResponse);
                 call.enqueue(this);
 
                 if (showProgress) {
+//                    pDialog = new Dialog(mContext);
+//                    if (pDialog.getWindow() != null) {
+//                        pDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+//                    }
+//                    pDialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+//                    pDialog.setContentView(R.layout.loader);
+//                    pDialog.setCancelable(false);
+//                    pDialog.setCanceledOnTouchOutside(false);
+//                    pDialog.show();
 
                     pDialog = new ProgressDialog(mContext, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
                     pDialog.setMessage("Loading..");
@@ -71,7 +85,7 @@ public class ApiHitAndHandle implements Callback {
                     pDialog.setIndeterminate(true);
                     pDialog.show();
 
-                   // CommonDialogs.progressDialogWithMessage(mContext, "Loading..");
+//                    CommonDialogs.progressDialogWithMessage(mContext, "Loading..");
                 }
                 //Logs post URL
                 log(call.request().url() + "");
@@ -88,8 +102,8 @@ public class ApiHitAndHandle implements Callback {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }else {
-            CommonDialogs.ShowErrorDialog(mContext,"No Internet Available");
+        } else {
+            CommonDialogs.ShowErrorDialog(mContext, "No Internet Available");
 //            apiResponse.onError(call,"No Internet Available",apiResponse);
         }
     }
@@ -135,13 +149,13 @@ public class ApiHitAndHandle implements Callback {
 //        if (!wasError) {
 //        apiResponse.onFinish();
 //        }
-        Log.e("response>>",response.code()+"");
-        int responseCode=response.code();
-        if (responseCode==401){
+        Log.e("response>>", response.code() + "");
+        int responseCode = response.code();
+        if (responseCode == 401) {
             try {
                 try {
                     try {
-                        if(pDialog.isShowing()){
+                        if (pDialog.isShowing()) {
                             pDialog.dismiss();
                         }
                     } catch (Exception e) {
@@ -149,8 +163,8 @@ public class ApiHitAndHandle implements Callback {
                     }
 
 
-                    JSONObject jsonObject=new JSONObject(response.errorBody().string());
-                    String message=jsonObject.optString("message");
+                    JSONObject jsonObject = new JSONObject(response.errorBody().string());
+                    String message = jsonObject.optString("message");
 
 
                     final MaterialDialog mMaterialDialog = new MaterialDialog(mContext);
@@ -161,9 +175,9 @@ public class ApiHitAndHandle implements Callback {
                         public void onClick(View v) {
                             mMaterialDialog.dismiss();
 
-                            GeneralValues.set_loginbool(mContext,false);
-                            GeneralValues.set_Access_Key(mContext,"");
-                            mContext.startActivity(new Intent(mContext,UserAuthenticationActivity.class));
+                            GeneralValues.set_loginbool(mContext, false);
+                            GeneralValues.set_Access_Key(mContext, "");
+                            mContext.startActivity(new Intent(mContext, UserAuthenticationActivity.class));
                             ((Activity) mContext).finish();
 
                         }
@@ -181,7 +195,8 @@ public class ApiHitAndHandle implements Callback {
                             dialogInterface.dismiss();
 
                         }
-                    }).show()*/;
+                    }).show()*/
+                    ;
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -191,11 +206,11 @@ public class ApiHitAndHandle implements Callback {
         }
 
 
-        if (responseCode==402){
+        if (responseCode == 402) {
             try {
                 try {
                     try {
-                        if(pDialog.isShowing()){
+                        if (pDialog.isShowing()) {
                             pDialog.dismiss();
                         }
                     } catch (Exception e) {
@@ -203,8 +218,8 @@ public class ApiHitAndHandle implements Callback {
                     }
 
 
-                    JSONObject jsonObject=new JSONObject(response.errorBody().string());
-                    String message=jsonObject.optString("message");
+                    JSONObject jsonObject = new JSONObject(response.errorBody().string());
+                    String message = jsonObject.optString("message");
 
 
                     final MaterialDialog mMaterialDialog = new MaterialDialog(mContext);
@@ -214,14 +229,14 @@ public class ApiHitAndHandle implements Callback {
                         @Override
                         public void onClick(View v) {
 
-                         mMaterialDialog.dismiss();
+                            mMaterialDialog.dismiss();
                             Intent intent = new Intent(Intent.ACTION_VIEW);
                             intent.setData(Uri.parse("https://play.google.com/store?hl=en"));
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             if (intent.resolveActivity(mContext.getPackageManager()) != null) {
                                 mContext.startActivity(intent);
                             } else {
-                                Toast.makeText(mContext,"Play store not found", Toast.LENGTH_LONG).show();
+                                Toast.makeText(mContext, "Play store not found", Toast.LENGTH_LONG).show();
                             }
 
                         }
@@ -239,7 +254,43 @@ public class ApiHitAndHandle implements Callback {
                             dialogInterface.dismiss();
 
                         }
-                    }).show()*/;
+                    }).show()*/
+                    ;
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (responseCode == 200) {
+            try {
+                pDialog.dismiss();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            apiResponse.onSuccess(call, response.body().toString());
+        } else {
+            try {
+                pDialog.dismiss();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                try {
+                    JSONObject jsonObject = new JSONObject(response.errorBody().string());
+                    String message = jsonObject.optString("message");
+                    final MaterialDialog mMaterialDialog = new MaterialDialog(mContext);
+                    mMaterialDialog.setTitle("Alert");
+                    mMaterialDialog.setMessage(message);
+                    mMaterialDialog.setPositiveButton("OK", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            mMaterialDialog.dismiss();
+
+                        }
+                    });
+
+                    mMaterialDialog.show();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -247,63 +298,21 @@ public class ApiHitAndHandle implements Callback {
                 e.printStackTrace();
             }
         }
-
-
-
-        else if (responseCode==200){
-            try {
-                pDialog.dismiss();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            apiResponse.onSuccess(call, response.body().toString());
-        }
-
-
-        else{
-            try {
-                    pDialog.dismiss();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-                try {
-                    try {
-                        JSONObject jsonObject=new JSONObject(response.errorBody().string());
-                        String message=jsonObject.optString("message");
-                        final MaterialDialog mMaterialDialog = new MaterialDialog(mContext);
-                        mMaterialDialog.setTitle("Alert");
-                        mMaterialDialog.setMessage(message);
-                        mMaterialDialog.setPositiveButton("OK", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                mMaterialDialog.dismiss();
-
-                            }
-                        });
-
-                        mMaterialDialog.show();
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-        }
         apiResponseHashMap.remove(call);
     }
 
     @Override
     public void onFailure(Call call, Throwable t) {
 //        ((BaseActivity) mContext).stopProgressDialog();
-        Log.e("response>>",t.getMessage());
-        Log.e("response>>",t.getLocalizedMessage());
+        Log.e("response>>", t.getMessage());
+        Log.e("response>>", t.getLocalizedMessage());
         try {
             pDialog.dismiss();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        CommonDialogs.customToast(mContext,"Server not responding. Please try again.");
+        CommonDialogs.customToast(mContext, "Server not responding. Please try again.");
 
         ApiResponse apiResponse = apiResponseHashMap.get(call);
         apiResponse.onError(call, t.getMessage(), apiResponse);
@@ -319,7 +328,7 @@ public class ApiHitAndHandle implements Callback {
         return dialog.create();
     }
 
-    private boolean checkConnection( Context context) {
+    private boolean checkConnection(Context context) {
         boolean isConnected = ConnectivityReceiver.isConnected(context);
         return isConnected;
     }

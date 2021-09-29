@@ -45,6 +45,7 @@ import com.netset.believeapp.R;
 import com.netset.believeapp.Utils.CommonDialogs;
 import com.netset.believeapp.Utils.GeneralValues;
 import com.netset.believeapp.activity.HomeActivity;
+import com.netset.believeapp.callbacks.CheckPermissionInterface;
 import com.netset.believeapp.retrofitManager.ApiResponse;
 
 import org.json.JSONException;
@@ -72,7 +73,7 @@ import retrofit2.Call;
  * Created by netset on 9/1/18.
  */
 
-public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlightListener {
+public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlightListener, CheckPermissionInterface {
 
     int[] menuItemIcons = {R.drawable.ic_community,
             R.drawable.ic_event,
@@ -122,6 +123,8 @@ public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlig
         pDialog.setMessage("Loading..");
         pDialog.setCancelable(false);
         setHomeMenu();
+        checkPermission=this;
+
     }
 
 
@@ -150,10 +153,13 @@ public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlig
      *
      * @param position
      */
+
+    boolean locationPermission=false;
     private void displayView(int position) {
         switch (position) {
             case 0:
-                baseActivity.navigateFragmentTransaction(R.id.homeContainer, new CommunityFragment());
+                locationPermission=true;
+                checkPermissionsForLocation();
                 break;
             case 1:
                 baseActivity.navigateFragmentTransaction(R.id.homeContainer, new EventsFragment());
@@ -337,6 +343,13 @@ public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlig
     private void hidepDialog() {
         if (pDialog.isShowing())
             pDialog.dismiss();
+    }
+
+    @Override
+    public void OnPermissionAccepted() {
+        if (locationPermission){
+            baseActivity.navigateFragmentTransaction(R.id.homeContainer, new CommunityFragment());
+        }
     }
 
     public class DownloadTask extends AsyncTask<String, Integer, String> {

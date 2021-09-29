@@ -303,7 +303,7 @@ public class CommonDialogs {
 		file = getOutputMediaFile();
 		try {
 			if(!file.exists()) {
-				file.createNewFile();
+				file.mkdirs();
 			}
 			output = new FileOutputStream(file);
 

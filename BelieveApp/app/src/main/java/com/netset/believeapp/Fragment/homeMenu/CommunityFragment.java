@@ -56,6 +56,7 @@ public class CommunityFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.community_fragment, null);
             unbinder = ButterKnife.bind(this, rootView);
