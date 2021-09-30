@@ -122,7 +122,8 @@ dependencies {
     compile project(':rssparser')
 //    implementation project(':folioreader')
    // implementation project(':webViewMarker')
-    implementation 'com.github.FolioReader:FolioReader-Android:0.5.4'
+//    implementation 'com.github.FolioReader:FolioReader-Android:0.5.4'
+    implementation "com.folioreader:folioreader:0.5.4"
     implementation 'com.android.support:multidex:1.0.3' // ( for androidx)
 
 
@@ -141,6 +142,7 @@ dependencies {
     implementation 'com.zhihu.android:matisse:0.5.3-beta3'
 //loader
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
 }
 
 apply plugin: 'com.google.gms.google-services'

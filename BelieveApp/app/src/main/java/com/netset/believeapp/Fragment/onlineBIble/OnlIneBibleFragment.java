@@ -1,6 +1,7 @@
 package com.netset.believeapp.Fragment.onlineBIble;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -114,18 +115,21 @@ public class OnlIneBibleFragment extends BaseFragment implements OnPageChangeLis
             JSONObject jsonObject = new JSONObject(object.toString());
             JSONObject jSon = jsonObject.getJSONObject("data");
             bibleUrl = jSon.getString("bible_url");
+            Log.d("urlResponse>>",bibleUrl);
 
-           /* Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(bibleUrl));
-            startActivity(browserIntent);*/
+//            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(bibleUrl));
+//            startActivity(browserIntent);
 
 
             String url = "http://docs.google.com/gview?embedded=true&url=" + bibleUrl;
-            String doc="<iframe src='"+url+"' width='100%' height='100%' style='border: none;'></iframe>";
+            Log.d("urlResponse>>",url);
+         //   String doc="<iframe src='"+url+"' width='100%' height='100%' style='border: none;'></iframe>";
 
-            pdfView.getSettings().setJavaScriptEnabled(true);
-            pdfView.getSettings().setJavaScriptEnabled(true);
-            pdfView.getSettings().setAllowFileAccess(true);
-            pdfView.loadData(doc, "text/html", "UTF-8");
+//            pdfView.getSettings().setJavaScriptEnabled(true);
+//            pdfView.getSettings().setJavaScriptEnabled(true);
+//            pdfView.getSettings().setAllowFileAccess(true);
+////            pdfView.loadData(doc, "text/html", "UTF-8");
+//            pdfView.loadUrl(url);
 
 
         } catch (JSONException e) {

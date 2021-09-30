@@ -5,4 +5,9 @@
         <domain includeSubdomains="true">192.168.2.61</domain>
         <domain includeSubdomains="true">198.211.110.165</domain>
     </domain-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
 </network-security-config>

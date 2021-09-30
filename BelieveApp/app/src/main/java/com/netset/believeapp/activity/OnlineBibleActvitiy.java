@@ -54,4 +54,5 @@ public class OnlineBibleActvitiy extends net.sf.andpdf.pdfviewer.PdfViewerActivi
     public int getPdfPageNumberEditField() {
         return 0;
     }
+
 }
