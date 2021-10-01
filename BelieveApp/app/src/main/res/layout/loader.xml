@@ -14,7 +14,18 @@
          app:layout_constraintStart_toStartOf="parent"
          app:layout_constraintTop_toTopOf="parent"
          android:layout_gravity="center"
-         app:SpinKit_Color="@color/redish_pinkDark" />
+         app:SpinKit_Color="@color/black_de" />
+   <!--  <com.airbnb.lottie.LottieAnimationView
+         android:id="@+id/lt_javrvis"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         app:lottie_autoPlay="true"
+         app:lottie_loop="true"
+         app:lottie_rawRes="" />-->
    <!-- <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleLarge"

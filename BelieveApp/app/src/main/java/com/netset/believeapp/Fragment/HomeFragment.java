@@ -1,13 +1,22 @@
 package com.netset.believeapp.Fragment;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
+
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +32,7 @@ import com.folioreader.ui.base.OnSaveHighlight;
 import com.folioreader.util.OnHighlightListener;
 import com.google.gson.JsonObject;
 import com.netset.believeapp.Adapter.HomeAdapter;
+import com.netset.believeapp.BuildConfig;
 import com.netset.believeapp.Fragment.homeMenu.AboutUsFragment;
 import com.netset.believeapp.Fragment.homeMenu.AppointmentFragment;
 import com.netset.believeapp.Fragment.homeMenu.BlogsFragment;
@@ -63,6 +73,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -123,7 +134,7 @@ public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlig
         pDialog.setMessage("Loading..");
         pDialog.setCancelable(false);
         setHomeMenu();
-        checkPermission=this;
+        checkPermission = this;
 
     }
 
@@ -154,11 +165,13 @@ public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlig
      * @param position
      */
 
-    boolean locationPermission=false;
+    boolean locationPermission = false;
+
     private void displayView(int position) {
+        assert baseActivity != null;
         switch (position) {
             case 0:
-                locationPermission=true;
+                locationPermission = true;
                 checkPermissionsForLocation();
                 break;
             case 1:
@@ -191,7 +204,7 @@ public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlig
                 break;
 
             case 9:
-                CallApi();
+                ReadBible();
                 //baseActivity.navigateFragmentTransaction(R.id.homeContainer, new OnlIneBibleFragment());
                 break;
             case 10:
@@ -218,11 +231,27 @@ public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlig
         }
     }
 
+    private void ReadBible() {
+        if (Environment.isExternalStorageManager()) {
+            CallApi();
+        } else {
+            showToast("Please allow permission to access to manage all files");
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.MANAGE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                Uri uri = Uri.parse("package:" + BuildConfig.APPLICATION_ID);
+                Intent intentSetting = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION, uri);
+                try {
+                    startActivity(intentSetting);
+                } catch (Exception e) {
+                    Log.d("exception", ">>>" + e);
+                }
+            }}
+    }
 
     public void CallApi() {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("access_token", GeneralValues.get_Access_Key(getActivity()));
-        getBible =  baseActivity.apiInterface.Get_Bible(map);
+        assert baseActivity != null;
+        getBible = baseActivity.apiInterface.Get_Bible(map);
         baseActivity.apiHitAndHandle.makeApiCall(getBible, this);
 
     }
@@ -244,8 +273,8 @@ public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlig
                 if (dir.exists()) {
                     folioReader.openBook(dir.getAbsolutePath());
                 } else {
-                  //  new DownloadFile().execute(bibleUrl, "/myfile.epub");
-                      new DownloadTask(getActivity()).execute(bibleUrl);
+                    //  new DownloadFile().execute(bibleUrl, "/myfile.epub");
+                    new DownloadTask(getActivity()).execute(bibleUrl);
                 }
             }
 
@@ -347,7 +376,7 @@ public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlig
 
     @Override
     public void OnPermissionAccepted() {
-        if (locationPermission){
+        if (locationPermission) {
             baseActivity.navigateFragmentTransaction(R.id.homeContainer, new CommunityFragment());
         }
     }
@@ -439,7 +468,7 @@ public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlig
                 if (dir.exists()) {
                     folioReader.openBook(dir.getAbsolutePath());
                 } else {
-                   // new DownloadTask(getActivity()).execute(bibleUrl);
+                    // new DownloadTask(getActivity()).execute(bibleUrl);
                 }
             }
 

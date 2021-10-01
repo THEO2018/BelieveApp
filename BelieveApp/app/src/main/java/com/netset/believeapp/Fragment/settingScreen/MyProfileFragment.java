@@ -8,6 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -95,18 +96,23 @@ public class MyProfileFragment extends BaseFragment implements ApiResponse {
     /*ApiInterface apiInterface;
     ApiHitAndHandle apiHitAndHandle;*/
     Call<JsonObject> GetProfile;
+    Handler handler;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.my_profile_fragment, null);
         unbinder = ButterKnife.bind(this, rootView);
+        handler = new Handler();
+
         Bundle b = getArguments();
         if(b.getString("From").equals("setting")){
             ((HomeActivity) getActivity()).setToolbarTitle("Profile", true, true, false, null);
         }else{
             ((HomeActivity) getActivity()).setToolbarTitle("Profile", true, false, false, null);
         }
+        GetProfileApi();
+        handler.postDelayed(this::visibleLayout, 600);
 
         /*apiInterface = ApiClient.getClient().create(ApiInterface.class);
         apiHitAndHandle = ApiHitAndHandle.getInstance(getActivity());*/
@@ -116,18 +122,18 @@ public class MyProfileFragment extends BaseFragment implements ApiResponse {
     @Override
     public void onResume() {
         super.onResume();
-        GetProfileApi();
+
+    }
+    private void visibleLayout(){
+        parent.setVisibility(View.VISIBLE);
     }
 
     public void GetProfileApi(){
-
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("access_token", GeneralValues.get_Access_Key(getActivity()));
         GetProfile =  baseActivity.apiInterface.GetMyProfile(map);
         baseActivity.apiHitAndHandle.makeApiCall(GetProfile, this);
     }
-
-
 
     @SuppressLint("NewApi")
     @Override
