@@ -1,11 +1,13 @@
 package com.netset.believeapp.Fragment.musicSection;
 
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +40,7 @@ public class AlbumsFragment extends BaseFragment implements ApiResponse {
     @BindView(R.id.albumList_RV)
     RecyclerView albumList_RV;
     @BindView(R.id.nodata_TV)
-            TextView NodataText;
+    TextView NodataText;
     Unbinder unbinder;
 
     AlbumsAdapter albumsAdapter;
@@ -46,7 +48,7 @@ public class AlbumsFragment extends BaseFragment implements ApiResponse {
     @BindView(R.id.label_songs)
     TextView labelSongs;
 
-    Call<JsonObject> GetRecent,GetArtistAlbum;
+    Call<JsonObject> GetRecent, GetArtistAlbum;
     AlbumModel result;
 
     @Nullable
@@ -75,15 +77,15 @@ public class AlbumsFragment extends BaseFragment implements ApiResponse {
     public void GetAlbum() {
 
         Bundle b = getArguments();
-        if(b.getString("From").equals("main")){
+        if (b.getString("From").equals("main")) {
             HashMap<String, String> map = new HashMap<String, String>();
             map.put("access_token", GeneralValues.get_Access_Key(getActivity()));
             GetRecent = baseActivity.apiInterface.Get_MusicAlbums(map);
             baseActivity.apiHitAndHandle.makeApiCall(GetRecent, this);
-        }else{
+        } else {
             ((HomeActivity) getActivity()).setToolbarTitle(b.getString("name"), true, false, false, null);
             HashMap<String, String> map = new HashMap<String, String>();
-            map.put("artist_id",b.getString("id"));
+            map.put("artist_id", b.getString("id"));
             map.put("access_token", GeneralValues.get_Access_Key(getActivity()));
             GetArtistAlbum = baseActivity.apiInterface.Get_ArtistsAlbum(map);
             baseActivity.apiHitAndHandle.makeApiCall(GetArtistAlbum, this);
@@ -91,21 +93,16 @@ public class AlbumsFragment extends BaseFragment implements ApiResponse {
 
     }
 
-
-
     @Override
     public void onSuccess(Call call, Object object) {
-
-
-
-        if(call == GetRecent) {
+        if (call == GetRecent) {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             result = gson.fromJson(object.toString(), AlbumModel.class);
 
-            if(result.data.size()==0){
+            if (result.data.size() == 0) {
                 NodataText.setText("No album found");
                 NodataText.setVisibility(View.VISIBLE);
-            }else{
+            } else {
                 NodataText.setVisibility(View.GONE);
             }
 
@@ -132,9 +129,7 @@ public class AlbumsFragment extends BaseFragment implements ApiResponse {
 
                 }
             }));
-        }
-
-        else if(call == GetArtistAlbum){
+        } else if (call == GetArtistAlbum) {
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             result = gson.fromJson(object.toString(), AlbumModel.class);
@@ -163,9 +158,6 @@ public class AlbumsFragment extends BaseFragment implements ApiResponse {
             }));
 
         }
-
-
-
     }
 
     @Override

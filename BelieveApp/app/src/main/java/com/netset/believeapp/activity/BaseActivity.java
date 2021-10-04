@@ -668,7 +668,6 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
-
     /**
      * Interface ...
      */

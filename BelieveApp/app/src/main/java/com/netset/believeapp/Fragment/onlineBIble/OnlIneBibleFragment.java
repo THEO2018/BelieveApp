@@ -80,7 +80,6 @@ public class OnlIneBibleFragment extends BaseFragment implements OnPageChangeLis
 
     }
 
-
     public void CallApi() {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("access_token", GeneralValues.get_Access_Key(getActivity()));
@@ -88,9 +87,6 @@ public class OnlIneBibleFragment extends BaseFragment implements OnPageChangeLis
         baseActivity.apiHitAndHandle.makeApiCall(getBible, this);
 
     }
-
-
-
 
     @Override
     public void loadComplete(int nbPages) {
