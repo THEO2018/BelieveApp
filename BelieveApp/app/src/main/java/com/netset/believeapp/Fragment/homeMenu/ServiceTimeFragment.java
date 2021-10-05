@@ -102,83 +102,89 @@ public class ServiceTimeFragment extends BaseFragment implements ApiResponse {
 
     @OnClick({R.id.fb_IV, R.id.twitter_IV, R.id.insta_IV})
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.fb_IV:
-                if (appInstalledOrNot("com.facebook.katana")) {
-                    String url = FbLink;
-                    if (!url.startsWith("http://") && !url.startsWith("https://")){
-                        url = "http://" + url;
-                    }
-                    Log.e(">>>>>>>webUrl is",">>>>>>>"+ Uri.parse(url));
-                    Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
-                    facebookIntent.setData(Uri.parse(url));
-
-
-                    startActivity(facebookIntent);
-                }else{
-                    String url = FbLink;
-                    if (!url.startsWith("http://") && !url.startsWith("https://")){
-                        url = "http://" + url;
-                    }
-                    startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(url)));
-                    // CommonDialogs.customToast(getActivity(),"Facebook is not installed on your device");
-                }
-                break;
-
-            case R.id.twitter_IV:
-                if (appInstalledOrNot("com.twitter.android")) {
-
-                    try {
-                        Intent sendIntent = new Intent();
-                        sendIntent.setAction(Intent.ACTION_VIEW);
-                        sendIntent.setPackage("com.twitter.android");
-
-                        String url = TwitterLink;
+        if (result!=null){
+            switch (view.getId()) {
+                case R.id.fb_IV:
+                    if (appInstalledOrNot("com.facebook.katana")) {
+                        String url = FbLink;
                         if (!url.startsWith("http://") && !url.startsWith("https://")){
                             url = "http://" + url;
                         }
-                        sendIntent.setData(Uri.parse(url));
-                        startActivity(sendIntent);
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                        Log.e(">>>>>>>webUrl is",">>>>>>>"+ Uri.parse(url));
+                        Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
+                        facebookIntent.setData(Uri.parse(url));
+
+
+                        startActivity(facebookIntent);
+                    }else{
+                        String url = FbLink;
+                        if (!url.startsWith("http://") && !url.startsWith("https://")&&url!=null){
+                            url = "http://" + url;
+                        }
+                        startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(url)));
+                        // CommonDialogs.customToast(getActivity(),"Facebook is not installed on your device");
+                    }
+                    break;
+
+                case R.id.twitter_IV:
+                    if (appInstalledOrNot("com.twitter.android")) {
+
+                        try {
+                            Intent sendIntent = new Intent();
+                            sendIntent.setAction(Intent.ACTION_VIEW);
+                            sendIntent.setPackage("com.twitter.android");
+
+                            String url = TwitterLink;
+                            if (!url.startsWith("http://") && !url.startsWith("https://")&&url!=null){
+                                url = "http://" + url;
+                            }
+                            sendIntent.setData(Uri.parse(url));
+                            startActivity(sendIntent);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                    }else{
+                        String url = TwitterLink;
+                        if (!url.startsWith("http://") && !url.startsWith("https://")&&url!=null){
+                            url = "http://" + url;
+                        }
+                        startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(url)));
+                        // CommonDialogs.customToast(getActivity(),"Twitter is not installed on your device");
+
                     }
 
-                }else{
-                    String url = TwitterLink;
-                    if (!url.startsWith("http://") && !url.startsWith("https://")){
-                        url = "http://" + url;
+                    break;
+                case R.id.insta_IV:
+                    if(appInstalledOrNot("com.instagram.android")) {
+                        Intent likeIng = new Intent(Intent.ACTION_VIEW);
+                        String url = InstaLink;
+                        if (!url.startsWith("http://") && !url.startsWith("https://")&&url!=null){
+                            url = "http://" + url;
+                        }
+                        likeIng.setData(Uri.parse(url));
+                        likeIng.setPackage("com.instagram.android");
+                        startActivity(likeIng);
+
                     }
-                    startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(url)));
-                    // CommonDialogs.customToast(getActivity(),"Twitter is not installed on your device");
-
-                }
-
-                break;
-            case R.id.insta_IV:
-                if(appInstalledOrNot("com.instagram.android")) {
-                    Intent likeIng = new Intent(Intent.ACTION_VIEW);
-                    String url = InstaLink;
-                    if (!url.startsWith("http://") && !url.startsWith("https://")){
-                        url = "http://" + url;
+                    else{
+                        String url = InstaLink;
+                        if (!url.startsWith("http://") && !url.startsWith("https://")&&url!=null){
+                            url = "http://" + url;
+                        }
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
                     }
-                    likeIng.setData(Uri.parse(url));
-                    likeIng.setPackage("com.instagram.android");
-                    startActivity(likeIng);
 
-                }
-                else{
-                    String url = InstaLink;
-                    if (!url.startsWith("http://") && !url.startsWith("https://")){
-                        url = "http://" + url;
-                    }
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
-                }
-
-                break;
+                    break;
 
 
 
+            }
         }
+        else {
+            showToast("Link not found");
+        }
+
     }
 
     @Override
@@ -187,12 +193,18 @@ public class ServiceTimeFragment extends BaseFragment implements ApiResponse {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         result = gson.fromJson(object.toString(), ServiceTimeModel.class);
 
-        timingTV.setText(result.getData().getTime());
-        addressTV.setText(result.getData().getVenue());
-        contactTV.setText(result.getData().getPhone());
-        FbLink = result.getData().getFacebookLink();
-        InstaLink = result.getData().getInstagramLink();
-        TwitterLink = result.getData().getTwitterLink();
+        if (result!=null){
+            timingTV.setText(result.getData().getTime());
+            addressTV.setText(result.getData().getVenue());
+            contactTV.setText(result.getData().getPhone());
+            FbLink = result.getData().getFacebookLink();
+            InstaLink = result.getData().getInstagramLink();
+            TwitterLink = result.getData().getTwitterLink();
+        }
+        else {
+            showToast("Service details not found");
+        }
+
     }
 
     @Override

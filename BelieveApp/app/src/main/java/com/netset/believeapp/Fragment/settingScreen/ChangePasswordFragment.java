@@ -25,6 +25,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -78,6 +79,7 @@ public class ChangePasswordFragment extends BaseFragment implements ApiResponse 
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.save_BTN:
+                CommonDialogs.hideSoftKeyboard(requireActivity());
                 validateChangePassword();
                 break;
             case R.id.delete_TV:
@@ -153,6 +155,7 @@ public class ChangePasswordFragment extends BaseFragment implements ApiResponse 
             oldPasswordET.setText("");
             confirmPasswordET.setText("");
             CommonDialogs.customToast(getActivity(), jsonObject.getString("message"));
+            requireFragmentManager().popBackStack();
         } catch (JSONException e) {
             e.printStackTrace();
         }

@@ -232,11 +232,15 @@ public class HomeFragment extends BaseFragment implements ApiResponse, OnHighlig
     }
 
     private void ReadBible() {
-        if (Environment.isExternalStorageManager()) {
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.Q ){
             CallApi();
-        } else {
+        }
+       else if (Environment.isExternalStorageManager()) {
+            CallApi();
+        }
+       else {
             showToast("Please allow permission to access to manage all files");
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.MANAGE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.MANAGE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 Uri uri = Uri.parse("package:" + BuildConfig.APPLICATION_ID);
                 Intent intentSetting = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION, uri);
                 try {

@@ -6,6 +6,8 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -117,5 +119,6 @@ public class AboutUsFragment extends BaseFragment implements ApiResponse {
     @Override
     public void onError(Call call, String errorMessage, ApiResponse apiResponse) {
 
+        Log.d("errorApi",""+errorMessage);
     }
 }
