@@ -118,11 +118,15 @@ public class CommonDialogs {
 	}
 
 	public static void hideSoftKeyboard(Activity activity) {
-		InputMethodManager inputMethodManager =
-				(InputMethodManager) activity.getSystemService(
-						Activity.INPUT_METHOD_SERVICE);
-		inputMethodManager.hideSoftInputFromWindow(
-				activity.getCurrentFocus().getWindowToken(), 0);
+		try{
+			InputMethodManager inputMethodManager =
+					(InputMethodManager) activity.getSystemService(
+							Activity.INPUT_METHOD_SERVICE);
+			inputMethodManager.hideSoftInputFromWindow(
+					activity.getCurrentFocus().getWindowToken(), 0);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
 	}
 	public static void logout(final Activity mContext, String message){
 		

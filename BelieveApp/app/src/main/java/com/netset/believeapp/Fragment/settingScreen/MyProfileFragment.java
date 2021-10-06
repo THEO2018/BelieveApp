@@ -112,18 +112,13 @@ public class MyProfileFragment extends BaseFragment implements ApiResponse {
             ((HomeActivity) getActivity()).setToolbarTitle("Profile", true, false, false, null);
         }
         GetProfileApi();
-        handler.postDelayed(this::visibleLayout, 600);
+        handler.postDelayed(this::visibleLayout, 800);
 
         /*apiInterface = ApiClient.getClient().create(ApiInterface.class);
         apiHitAndHandle = ApiHitAndHandle.getInstance(getActivity());*/
         return rootView;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-
-    }
     private void visibleLayout(){
         parent.setVisibility(View.VISIBLE);
     }

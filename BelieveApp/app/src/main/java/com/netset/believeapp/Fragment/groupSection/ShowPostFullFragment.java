@@ -83,8 +83,6 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
     AppCompatTextView comntCountTV;
     @BindView(R.id.comnt_label_TV)
     AppCompatTextView comntLabelTV;
-    @BindView(R.id.dot_IV)
-    AppCompatImageView dotIV;
     @BindView(R.id.likeCount_TV)
     AppCompatTextView likeCountTV;
     @BindView(R.id.likes_label_TV)

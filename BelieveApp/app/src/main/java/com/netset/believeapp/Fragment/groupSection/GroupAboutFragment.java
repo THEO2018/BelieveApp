@@ -4,9 +4,12 @@ import android.content.Context;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +49,8 @@ public class GroupAboutFragment extends BaseFragment implements ApiResponse {
     TextView descTextTV;
     @BindView(R.id.linearLayout3)
     LinearLayout linearLayout3;
+    @BindView(R.id.mainLayoutAboutId)
+    ConstraintLayout mainLayoutAboutId;
     @BindView(R.id.label_grpType)
     TextView labelGrpType;
     @BindView(R.id.grpType_TV)
@@ -65,20 +70,14 @@ public class GroupAboutFragment extends BaseFragment implements ApiResponse {
     String groupId,description,members,type,id,user_image,user_id,joinStatus;
     Call<JsonObject> about;
     List<BlogsModel> blogList = new ArrayList<>();
+    Handler handler;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.grp_about_view, null);
         unbinder = ButterKnife.bind(this, rootView);
-        return rootView;
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-
+        handler = new Handler();
         Bundle b = getArguments();
         if(b != null) {
             groupId = b.getString("groupid");
@@ -88,6 +87,12 @@ public class GroupAboutFragment extends BaseFragment implements ApiResponse {
             about = baseActivity.apiInterface.GroupDetail_About(map);
             baseActivity.apiHitAndHandle.makeApiCall(about, this);
         }
+        handler.postDelayed(this::visibility, 800);
+        return rootView;
+    }
+
+    private void visibility(){
+        mainLayoutAboutId.setVisibility(View.VISIBLE);
     }
 
 

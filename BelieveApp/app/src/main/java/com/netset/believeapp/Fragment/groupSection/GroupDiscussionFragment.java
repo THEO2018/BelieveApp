@@ -61,6 +61,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -157,7 +158,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
             map.put("group_id", groupId);
             map.put("access_token", GeneralValues.get_Access_Key(getActivity()));
             Detail = baseActivity.apiInterface.GroupDetail_Discussion(map);
-            baseActivity.apiHitAndHandle.makeApiCall(Detail, this);
+            baseActivity.apiHitAndHandle.makeApiCall(Detail, true,this);
 
 
         }
@@ -190,6 +191,8 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
                         map.put("group_post_status", statusET.getText().toString().trim());
                         AddPost = baseActivity.apiInterface.AddGroupPost1(map);
                         baseActivity.apiHitAndHandle.makeApiCall(AddPost, this);
+                        CommonDialogs.hideSoftKeyboard(requireActivity());
+
                     }
 
                 } else {
@@ -366,7 +369,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
 
     private void selectMedia() {
         Matisse.from(this)
-                .choose(MimeType.ofAll(), false)
+                .choose(MimeType.ofImage(), false)
                 .countable(true).capture(true)
                 .captureStrategy(new CaptureStrategy(true, "com.netset.believeapp"))
                 .maxSelectable(1)
@@ -378,14 +381,16 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
 
     private void selectMedia2(){
         Matisse.from(this)
-                .choose(MimeType.ofAll(), false)
+                .choose(MimeType.ofVideo(), false)
                 .countable(true).capture(true)
                 .captureStrategy(new CaptureStrategy(true, "com.netset.believeapp"))
                 .maxSelectable(1)
                 .gridExpectedSize(getResources().getDimensionPixelSize(R.dimen._120dp))
+                .showSingleMediaType(true)
                 .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
                 .thumbnailScale(0.85f)
                 .imageEngine(new PicassoEngine()).forResult(2);
+
     }
 
     @Override
@@ -474,16 +479,18 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
                     fis.close();
                     fos.close();
                     Bitmap bitmap2 = ThumbnailUtils.createVideoThumbnail(videoFile.getAbsolutePath(), MediaStore.Video.Thumbnails.MICRO_KIND);
+                    uploadLay.setVisibility(View.VISIBLE);
+                    uploadImg.setImageBitmap(bitmap2);
+
                     //  setVideoThumbnail(bitmap2);
                     // Bitmap resizedbitmap = ThumbnailUtils.createVideoThumbnail(selectedFilePath, MediaStore.Video.Thumbnails.FULL_SCREEN_KIND);
-                    File thumbfile = new File(CommonDialogs.saveimagetosdcard(getActivity(), bitmap2));
-                    uploadLay.setVisibility(View.VISIBLE);
-                    MemoryCacheUtils.removeFromCache("" + thumbfile, ImageLoader.getInstance().getMemoryCache());
-                    DiskCacheUtils.removeFromCache("" + thumbfile, ImageLoader.getInstance().getDiskCache());
-                    Picasso.with(getActivity())
-                            .load(thumbfile)
-                            .skipMemoryCache()
-                            .into(uploadImg);
+//                    File thumbfile = new File(CommonDialogs.saveimagetosdcard(getActivity(), bitmap2));
+//                    MemoryCacheUtils.removeFromCache("" + thumbfile, ImageLoader.getInstance().getMemoryCache());
+//                    DiskCacheUtils.removeFromCache("" + thumbfile, ImageLoader.getInstance().getDiskCache());
+//                    Picasso.with(getActivity())
+//                            .load(thumbfile)
+//                            .skipMemoryCache()
+//                            .into(uploadImg);
                     //statusPicIV.setImageBitmap(bmp);
                     Log.e("VIDEOURI", "" + inputUri);
                 }

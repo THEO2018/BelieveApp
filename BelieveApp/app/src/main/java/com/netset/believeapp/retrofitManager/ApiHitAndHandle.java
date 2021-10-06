@@ -90,7 +90,7 @@ public class ApiHitAndHandle implements Callback {
                 //Logs post URL
                 log(call.request().url() + "");
                 //Logs post params of Multipart request
-                log("Post Params >>>> \n" + bodyToString(call.request().body())
+                /*log("Post Params >>>> \n" + bodyToString(call.request().body())
                         .replace("\r", "")
                         .replaceAll("--+[a-zA-Z0-9-\\/:=;\\ ]+\\n", "")
                         .replaceAll("Content+[a-zA-Z0-9-\\/:=;\\ ]+;\\s", "")
@@ -98,7 +98,7 @@ public class ApiHitAndHandle implements Callback {
                         .replaceAll("charset+[a-zA-Z0-9-\\/:=;\\ ]+\\n", "")
                         .replace("name=", "")
                         .replace("\n\n", "--> ")
-                );
+                );*/
             } catch (Exception e) {
                 e.printStackTrace();
             }

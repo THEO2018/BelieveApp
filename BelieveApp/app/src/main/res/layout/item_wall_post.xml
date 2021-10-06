@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/_4dp">
@@ -125,7 +124,6 @@
             android:id="@+id/postAction_Container"
             android:layout_width="match_parent"
             android:paddingTop="@dimen/_2dp"
-            android:layout_marginTop="@dimen/mar_15"
             android:paddingBottom="@dimen/_2dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_8dp"
@@ -148,7 +146,7 @@
                     android:layout_weight="1.3"
                     android:layout_marginStart="@dimen/_1dp"
                     android:paddingBottom="@dimen/_3dp"
-                    android:gravity="">
+                    android:gravity="center_vertical">
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/comntCount_TV"
@@ -179,7 +177,6 @@
                         android:id="@+id/likeCount_TV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_8dp"
                         android:layout_marginStart="@dimen/_8dp"
                         android:layout_marginTop="0dp"
                         android:gravity="center"
@@ -190,7 +187,6 @@
                         android:id="@+id/likes_label_TV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/_5dp"
                         android:layout_marginStart="@dimen/_5dp"
                         android:gravity="center"
                         android:text="Likes "
@@ -217,7 +213,6 @@
                         android:layout_width="@dimen/_18sp"
                         android:layout_height="@dimen/_18sp"
                         android:layout_marginEnd="@dimen/_5dp"
-                        android:layout_marginRight="5dp"
                         android:gravity="center"
                         android:background="@drawable/ic_unlike" />
 
@@ -226,7 +221,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/_5dp"
-                        android:layout_marginRight="@dimen/_5dp"
                         android:gravity="center"
                         android:text="Like"
                         android:paddingBottom="@dimen/_1dp"
@@ -248,7 +242,7 @@
                         android:id="@+id/comnt_IV"
                         android:layout_width="@dimen/_16dp"
                         android:layout_height="@dimen/_16dp"
-                        android:layout_marginRight="@dimen/_5dp"
+                        android:layout_marginEnd="@dimen/_5dp"
                         app:srcCompat="@drawable/ic_comment" />
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -309,13 +303,6 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/_14sp"
                 android:layout_marginLeft="@dimen/_8dp" />
-                app_icon-app:layout_constraintBottom_toBottomOf="@+id/comnt_userPic_IV"
-            app_icon app:layout_constraintEnd_toEndOf="parent"
-            app_icon app:layout_constraintHorizontal_bias="0.0"
-            app_icon app:layout_constraintStart_toEndOf="@+id/comnt_userPic_IV"
-            app_icon app:layout_constraintTop_toTopOf="parent"
-            app_icon app:layout_constraintVertical_bias="0.100000024"-->
-
 
             <RelativeLayout
                 android:layout_width="wrap_content"

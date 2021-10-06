@@ -30,6 +30,8 @@
         android:supportsRtl="true"
         android:networkSecurityConfig="@xml/network_sec"
         android:usesCleartextTraffic="true"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
         android:sharedUserId="android.uid.system"
         android:preserveLegacyExternalStorage="true"
         android:requestLegacyExternalStorage="true"
@@ -103,7 +105,8 @@
         <activity android:name=".activity.ShowFullPostActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan|stateHidden"
+            />
 
         <activity android:name=".activity.CouplesActivity"
             android:launchMode="singleTask"

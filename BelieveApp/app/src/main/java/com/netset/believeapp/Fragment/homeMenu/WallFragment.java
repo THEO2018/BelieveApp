@@ -295,6 +295,8 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
                         map.put("wall_post_status", statusET.getText().toString().trim());
                         AddPost = baseActivity.apiInterface.AddWallPost1(map);
                         baseActivity.apiHitAndHandle.makeApiCall(AddPost, this);
+                        CommonDialogs.hideSoftKeyboard(requireActivity());
+
                     }
 
                 } else {
@@ -313,11 +315,13 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
                     }
                     if(isClicked.equals("Video")){
                         jsonbody.put("wall_post_media_type", getRequestBodyParam("V"));
+
                         RequestBody body = RequestBody.create(MediaType.parse("multipart/form-data"), videoFile);
                         jsonbody.put("wall_post_media\"; filename=\"" + videoFile.getName() + "\" ", body);
                     }
                     AddPost1 = baseActivity.apiInterface.AddWallPost(jsonbody);
                     baseActivity.apiHitAndHandle.makeApiCall(AddPost1, this);
+                    CommonDialogs.hideSoftKeyboard(requireActivity());
                 }
 
                 break;

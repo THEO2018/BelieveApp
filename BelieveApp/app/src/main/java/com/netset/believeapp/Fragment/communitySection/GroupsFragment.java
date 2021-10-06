@@ -75,7 +75,7 @@ public class GroupsFragment extends BaseFragment implements ApiResponse {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("access_token", GeneralValues.get_Access_Key(getActivity()));
         Group = baseActivity.apiInterface.GetGroup(map);
-        baseActivity.apiHitAndHandle.makeApiCall(Group, this);
+        baseActivity.apiHitAndHandle.makeApiCall(Group, true,this);
     }
 
     @Override

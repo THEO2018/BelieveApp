@@ -1,11 +1,14 @@
 package com.netset.believeapp.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.MimeTypeMap;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -76,6 +79,19 @@ public class ShowFullPostAdapter extends RecyclerView.Adapter<ShowFullPostAdapte
             MemoryCacheUtils.removeFromCache(model.getCommentimg(), ImageLoader.getInstance().getMemoryCache());
             DiskCacheUtils.removeFromCache(model.getCommentimg(), ImageLoader.getInstance().getDiskCache());
             CommonDialogs.getSquareImage(mContext,model.getCommentimg(),holder.imgComment);
+            holder.imgComment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String extension = MimeTypeMap.getFileExtensionFromUrl(model.getCommentimg());
+                    String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
+                    Intent mediaIntent = new Intent(Intent.ACTION_VIEW);
+                    mediaIntent.setDataAndType(Uri.parse(model.getCommentimg()), mimeType);
+                    if (null != mediaIntent.resolveActivity(mContext.getPackageManager())) {
+                        mContext.startActivity(mediaIntent);
+                    }
+                }
+            });
+
         }else{
             holder.imgComment.setVisibility(View.GONE);
             holder.cmnt_Text_TV.setVisibility(View.VISIBLE);
