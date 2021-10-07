@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.webkit.MimeTypeMap;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -49,6 +50,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -141,6 +143,11 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
     }
 
     @Override
+    public void onCreate( Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -209,7 +216,26 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
     }
 
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        requireActivity().getWindow()
+                .setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+    }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        try {
+            //   socketObj.destroySocket()
+            requireActivity().getWindow()
+                    .setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+
+            CommonDialogs.hideSoftKeyboard(getActivity());
+        } catch ( Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @OnClick({R.id.camera_IV, R.id.actionSend_TV,R.id.lay_like})
     public void onClick(View view) {
@@ -236,6 +262,7 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
 
                 SendComment = baseActivity.apiInterface.AddGroupPostComment(map);
                 baseActivity.apiHitAndHandle.makeApiCall(SendComment, this);
+                CommonDialogs.hideSoftKeyboard(requireActivity());
                 break;
 
             case R.id.lay_like:
@@ -286,7 +313,13 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
 
         if (requestCode == REQUEST_CODE_CHOOSE && resultCode == getActivity().RESULT_OK) {
             mSelected = Matisse.obtainResult(data);
-            sendBackImagePath(mSelected.get(0));
+            try {
+                sendBackImagePath(mSelected.get(0));
+            }
+            catch (Exception e){
+                e.printStackTrace();
+                Log.d("camera>>",""+e);
+            }
         }
     }
 

@@ -21,7 +21,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -252,6 +251,7 @@ public class SmallGroupsFragment extends BaseFragment implements OnMapReadyCallb
             mapFragment = (SupportMapFragment) getChildFragmentManager()
                     .findFragmentById(R.id.map);
         }
+        assert mapFragment != null;
         mapFragment.getMapAsync(SmallGroupsFragment.this);
 
     }

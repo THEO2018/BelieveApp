@@ -261,9 +261,9 @@ public class CommonDialogs {
 	public  static void getSquareImage(Context context, String string, ImageView imgView){
 
 		DisplayImageOptions options = new DisplayImageOptions.Builder()
-				.showImageForEmptyUri(R.drawable.app_logo)
-				.showImageOnLoading(R.drawable.app_logo)
-				.showImageOnFail(R.drawable.app_logo).cacheInMemory(true)
+				.showImageForEmptyUri(R.drawable.placeholder)
+				.showImageOnLoading(R.drawable.placeholder)
+				.showImageOnFail(R.drawable.placeholder).cacheInMemory(true)
 				.cacheOnDisk(true).considerExifParams(true)
 				.displayer(new SimpleBitmapDisplayer())
 				.build();
