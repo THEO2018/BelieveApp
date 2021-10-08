@@ -8,6 +8,7 @@ import android.os.Handler;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatEditText;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -48,6 +49,7 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -77,7 +79,7 @@ public class SmallGroupsFragment extends BaseFragment implements OnMapReadyCallb
     @BindView(R.id.smallgp_parent)
     LinearLayout smallgpParent;
     @BindView(R.id.mapContainer)
-    FrameLayout mapContainer;
+    ConstraintLayout mapContainer;
     @BindView(R.id.txt_nodata)
     TextView txtNodata;
     @BindView(R.id.grpList_viewContainer)
@@ -339,13 +341,19 @@ public class SmallGroupsFragment extends BaseFragment implements OnMapReadyCallb
         this.googleMap = googleMap;
         new Thread(new Runnable() {
             public void run(){
-                getActivity().runOnUiThread(new Runnable() {
+                requireActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        for (int i = 0; i < result.getData().size(); i++) {
-                            createMarker(googleMap,Double.parseDouble(result.getData().get(i).getVenueLatitude()),Double.parseDouble(result.getData().get(i).getVenueLongitude()), result.getData().get(i).getSmallGroupImage());
-                            //  Marker mark = map.addMarker(new MarkerOptions().position(new LatLng(modelmaps.get(i).getLatitude(),modelmaps.get(i).getLongitude()))); //...
+                        try {
+                            for (int i = 0; i < result.getData().size(); i++) {
+                                createMarker(googleMap,Double.parseDouble(result.getData().get(i).getVenueLatitude()),Double.parseDouble(result.getData().get(i).getVenueLongitude()), result.getData().get(i).getSmallGroupImage());
+                                //  Marker mark = map.addMarker(new MarkerOptions().position(new LatLng(modelmaps.get(i).getLatitude(),modelmaps.get(i).getLongitude()))); //...
+                            }
                         }
+                        catch (Exception e){
+                            e.printStackTrace();
+                        }
+
                         //          mainAsyncTask.cancelCommonDialog();
                     }
                 });

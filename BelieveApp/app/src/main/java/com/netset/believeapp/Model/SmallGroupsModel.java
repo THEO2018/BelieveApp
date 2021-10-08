@@ -44,7 +44,6 @@ public class SmallGroupsModel {
         this.data = data;
     }
 
-
     public class User {
 
         @SerializedName("_id")
