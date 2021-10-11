@@ -338,8 +338,6 @@ public class BirthdayFragment extends BaseFragment implements ApiResponse {
 
             }
         }));
-
-
     }
 
     @OnClick({R.id.today_TV, R.id.upcoming_TV})
@@ -372,7 +370,12 @@ public class BirthdayFragment extends BaseFragment implements ApiResponse {
         upcomingTV.setText("Upcoming");
         todaysView.setVisibility(View.VISIBLE);
         upcomingView.setVisibility(View.INVISIBLE);
-        loadtodayList();
+        try {
+            loadtodayList();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 
@@ -382,7 +385,13 @@ public class BirthdayFragment extends BaseFragment implements ApiResponse {
         todayTV.setText("Today's");
         upcomingView.setVisibility(View.VISIBLE);
         todaysView.setVisibility(View.INVISIBLE);
-        loadupcomingList();
+        try {
+            loadupcomingList();
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @Override

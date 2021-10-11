@@ -321,7 +321,7 @@ public class SmallGroupsFragment extends BaseFragment implements OnMapReadyCallb
         float animateZomm = currentZoomLevel + 5;
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude, longitude), 10));
-        googleMap.animateCamera(CameraUpdateFactory.zoomTo(10), 2000, null);
+        googleMap.animateCamera(CameraUpdateFactory.zoomTo(animateZomm), 2000, null);
         return marker;
     }
 

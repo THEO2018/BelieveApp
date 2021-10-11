@@ -208,7 +208,7 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
                         map.put("post_id",PostId);
                         map.put("access_token", GeneralValues.get_Access_Key(getActivity()));
                         GetPostDetail = baseActivity.apiInterface.GetGroupPost_Detail(map);
-                    baseActivity.apiHitAndHandle.makeApiCall(GetPostDetail,this);
+                    baseActivity.apiHitAndHandle.makeApiCall(GetPostDetail,this,true);
 
                 }
             }
@@ -348,7 +348,7 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
             RequestBody body = RequestBody.create(MediaType.parse("multipart/form-data"), profileImage);
             jsonbody.put("group_post_comment_img\"; filename=\"" + profileImage.getName() + "\" ", body);
             SendComment = baseActivity.apiInterface.AddGroupPostComment2(jsonbody);
-            baseActivity.apiHitAndHandle.makeApiCall(SendComment, this);
+            baseActivity.apiHitAndHandle.makeApiCall(SendComment, this,false);
 
         } else {
             showToast("Only Images are Acceptable");

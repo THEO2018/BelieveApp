@@ -25,7 +25,9 @@ public class ApiClient {
  //   public static String BASE_URL="http://104.236.127.72:3000";
 
     //Local SERVER
+//    192.168.2.95
     public static String BASE_URL="http://198.211.110.165:5009";
+//    public static String BASE_URL="http://192.168.2.95:5009";
 //    public static String BASE_URL="http://192.168.2.61:5009";
 //    public static String BASE_URL="https://calm-springs-62159.herokuapp.com";
 
