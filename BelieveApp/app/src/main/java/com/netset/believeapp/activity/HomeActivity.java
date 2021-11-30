@@ -12,7 +12,10 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.netset.believeapp.CommonConst;
 import com.netset.believeapp.Fragment.HomeFragment;
+import com.netset.believeapp.Fragment.classifiedSection.JobDescriptionFragment;
+import com.netset.believeapp.Fragment.classifiedSection.JobsFragment;
 import com.netset.believeapp.R;
 
 import static com.netset.believeapp.R.drawable.ic_back;
@@ -141,6 +144,9 @@ public class HomeActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.homeContainer);
+
+
+
         if (fragment instanceof HomeFragment) {
             backPressValue++;
             if (backPressValue == 2) {
@@ -149,7 +155,8 @@ public class HomeActivity extends BaseActivity {
             } else {
                 showToast("Press again to exit.");
             }
-        } else {
+        }
+        else {
             super.onBackPressed();
         }
     }

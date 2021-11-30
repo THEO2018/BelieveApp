@@ -125,11 +125,10 @@ dependencies {
     compile files('libs/isoparser-1.0.6.jar')
     compile project(':rssparser')
 //    implementation project(':folioreader')
-   // implementation project(':webViewMarker')
+    // implementation project(':webViewMarker')
 //    implementation 'com.github.FolioReader:FolioReader-Android:0.5.4'
     implementation "com.folioreader:folioreader:0.5.4"
     implementation 'com.android.support:multidex:1.0.3' // ( for androidx)
-
 
     //ImagePicker
     implementation 'com.github.dhaval2404:imagepicker-support:1.7.1'
@@ -140,8 +139,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
     //Run time Permissions
-    implementation 'com.karumi:dexter:6.2.2'
-//
+    implementation 'com.karumi:dexter:6.2.3'
+
     //Picker
     implementation 'com.zhihu.android:matisse:0.5.3-beta3'
 //loader

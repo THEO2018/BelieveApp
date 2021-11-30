@@ -269,8 +269,15 @@ public class MarriageFragment extends BaseFragment implements ApiResponse {
                     @Override
                     public void onClick(View view, int position) {
                         Uri uri = Uri.parse(result.getData().getWeddingLists().get(position).getUrlOnlineSite()); // missing 'http://' will cause crashed
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        startActivity(intent);
+                        if (uri.toString().startsWith("http://")||uri.toString().startsWith("https://")){
+                            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                            startActivity(intent);
+                        }
+                        else {
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://"+ uri));
+                            startActivity(intent);
+                        }
+
 
                     }
 

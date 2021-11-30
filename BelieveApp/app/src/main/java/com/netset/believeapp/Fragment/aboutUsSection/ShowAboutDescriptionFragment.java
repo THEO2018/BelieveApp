@@ -166,7 +166,10 @@ public class ShowAboutDescriptionFragment extends BaseFragment implements ApiRes
         CommonDialogs.getSquareImage(getActivity(),result.getData().getAboutCoverImage(),catImageIV);
         catNameTV.setText(result.getData().getTitle());
         catTextTV.setText(result.getData().getDescription());
-        About_Text = result.getSocialContent().getContent()+"\n     "+result.getData().getDescription();
+        if (result.getSocialContent()!=null){
+            About_Text = result.getSocialContent().getContent()+"\n     "+result.getData().getDescription();
+
+        }
         About_Title = result.getData().getTitle();
     }
 

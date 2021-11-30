@@ -17,6 +17,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.netset.believeapp.Adapter.TabsAdapter;
+import com.netset.believeapp.CommonConst;
 import com.netset.believeapp.Fragment.BaseFragment;
 import com.netset.believeapp.Fragment.classifiedSection.BirthNewsFragment;
 import com.netset.believeapp.Fragment.classifiedSection.JobsFragment;
@@ -24,13 +25,16 @@ import com.netset.believeapp.Fragment.classifiedSection.PrayerRequestFragment;
 import com.netset.believeapp.GsonModel.ClassifiedCatModel;
 import com.netset.believeapp.Model.TabBarModel;
 import com.netset.believeapp.R;
+import com.netset.believeapp.Utils.CommonDialogs;
 import com.netset.believeapp.Utils.GeneralValues;
 import com.netset.believeapp.Utils.recyclerCustomisation.RecyclerTouchListener;
 import com.netset.believeapp.activity.HomeActivity;
+import com.netset.believeapp.retrofitManager.ApiHitAndHandle;
 import com.netset.believeapp.retrofitManager.ApiResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -54,18 +58,21 @@ public class ClassifiedFragment extends BaseFragment implements ApiResponse {
     ArrayList<TabBarModel> categoryList = new ArrayList();
     TabsAdapter tabsAdapter;
     int selected_TabPosition = 0;
-
     Call<JsonObject> GetCategories;
     ClassifiedCatModel result;
+    private View rootView;
 
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.classified_fragment, null);
-        unbinder = ButterKnife.bind(this, rootView);
-        ((HomeActivity) getActivity()).setToolbarTitle(SC_CLASSIFIED, false, false, false, null);
+        if (rootView == null) {
+            rootView = inflater.inflate(R.layout.classified_fragment, null);
+            unbinder = ButterKnife.bind(this, rootView);
+            ((HomeActivity) getActivity()).setToolbarTitle(SC_CLASSIFIED, false, false, false, null);
+            CallApi();
+        }
         return rootView;
     }
 
@@ -73,7 +80,15 @@ public class ClassifiedFragment extends BaseFragment implements ApiResponse {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        CallApi();
+
+/*
+            if (CommonConst.Companion.getPositionMain()!=0){
+                highlightSelectedTab(CommonConst.Companion.getPositionMain());
+//                displaySelectedTabView(CommonConst.Companion.getPositionMain());
+
+            }*/
+
+
 
     }
 
@@ -109,6 +124,7 @@ public class ClassifiedFragment extends BaseFragment implements ApiResponse {
         tabListRV.setLayoutManager(mLayoutManager);
         tabListRV.setItemAnimator(new DefaultItemAnimator());
         tabListRV.setAdapter(tabsAdapter);
+        tabsAdapter.notifyDataSetChanged();
         displaySelectedTabView(selected_TabPosition);
 
 
@@ -212,6 +228,7 @@ public class ClassifiedFragment extends BaseFragment implements ApiResponse {
                     baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new PrayerRequestFragment(), args);
                 } else {
                     args.putString("id", categoryList.get(position).getId());
+                    CommonConst.Companion.setPositionMain(position);
                     baseActivity.navigateFragmentNoBackStack_ARG(R.id.tabSelection_Container, new JobsFragment(), args);
                 }
             }

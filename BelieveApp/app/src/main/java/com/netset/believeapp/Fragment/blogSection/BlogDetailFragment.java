@@ -192,8 +192,11 @@ public class BlogDetailFragment extends BaseFragment implements ApiResponse {
         CommonDialogs.getSquareImage(getActivity(),result.getData().getBlogImage(),blogImageIV);
         blogNameTV.setText(result.getData().getBlogTitle());
         blogTextTV.setText(Html.fromHtml(Html.fromHtml(result.getData().getBlog()).toString()));
-        BlogText = result.getSocialContent().getContent()+"\n     "+(Html.fromHtml(Html.fromHtml(result.getData().getBlog()).toString()));
-        BlogTitle = result.getData().getBlogTitle();
+        if (result.getSocialContent()!=null){
+            BlogText = result.getSocialContent().getContent()+"\n "+(Html.fromHtml(Html.fromHtml(result.getData().getBlog()).toString()));
+            BlogTitle = result.getData().getBlogTitle();
+        }
+
         ((HomeActivity) getActivity()).setToolbarTitle(BlogTitle, true, false, false, null);
     }
 
