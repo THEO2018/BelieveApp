@@ -81,15 +81,6 @@ public class ClassifiedFragment extends BaseFragment implements ApiResponse {
         super.onViewCreated(view, savedInstanceState);
 
 
-/*
-            if (CommonConst.Companion.getPositionMain()!=0){
-                highlightSelectedTab(CommonConst.Companion.getPositionMain());
-//                displaySelectedTabView(CommonConst.Companion.getPositionMain());
-
-            }*/
-
-
-
     }
 
     public void CallApi() {

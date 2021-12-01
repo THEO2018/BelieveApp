@@ -11,6 +11,8 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.facebook.common.Common;
 import com.google.gson.JsonObject;
 import com.netset.believeapp.Adapter.ShowFullPostAdapter;
 import com.netset.believeapp.Fragment.BaseFragment;
@@ -120,6 +123,7 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
     @BindView(R.id.media_lay)
     RelativeLayout mediaLay;
     Unbinder unbinder;
+    Handler mHandler=new Handler();
 
     String PostId,type;
     ShowFullPostAdapter showFullPostAdapter;
@@ -310,11 +314,12 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (requestCode == REQUEST_CODE_CHOOSE && resultCode == getActivity().RESULT_OK) {
             mSelected = Matisse.obtainResult(data);
             try {
+
                 sendBackImagePath(mSelected.get(0));
+
             }
             catch (Exception e){
                 e.printStackTrace();
@@ -349,6 +354,18 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
             jsonbody.put("group_post_comment_img\"; filename=\"" + profileImage.getName() + "\" ", body);
             SendComment = baseActivity.apiInterface.AddGroupPostComment2(jsonbody);
             baseActivity.apiHitAndHandle.makeApiCall(SendComment, this,false);
+           /* mHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(2000);
+                        CallApi();
+
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });*/
 
         } else {
             showToast("Only Images are Acceptable");

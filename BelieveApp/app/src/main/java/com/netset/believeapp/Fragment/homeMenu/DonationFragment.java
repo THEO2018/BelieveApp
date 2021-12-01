@@ -116,7 +116,10 @@ public class DonationFragment extends BaseFragment implements ApiResponse {
         teachingList_RV.addItemDecoration(new SimpleDividerItemDecorationBlue(baseActivity));
         teachingList_RV.setItemAnimator(new DefaultItemAnimator());
         teachingList_RV.setAdapter(teachingsAdapter);
-        GivingLink = result.getData().getGiving().getGivingUrl();
+        if (result.getData().getGiving()!=null){
+            GivingLink = result.getData().getGiving().getGivingUrl();
+
+        }
         teachingList_RV.addOnItemTouchListener(new RecyclerTouchListener(baseActivity, teachingList_RV, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
