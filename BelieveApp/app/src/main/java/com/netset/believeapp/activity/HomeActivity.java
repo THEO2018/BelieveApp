@@ -145,8 +145,6 @@ public class HomeActivity extends BaseActivity {
     public void onBackPressed() {
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.homeContainer);
 
-
-
         if (fragment instanceof HomeFragment) {
             backPressValue++;
             if (backPressValue == 2) {

@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.netset.believeapp.GsonModel.DonationModel;
+import com.netset.believeapp.Model.DonationModelNew;
+import com.netset.believeapp.Model.Teaching;
 import com.netset.believeapp.R;
 import com.netset.believeapp.Utils.CommonDialogs;
 
@@ -19,7 +21,7 @@ import java.util.List;
  */
 
 public class TeachingsAdapter extends RecyclerView.Adapter<TeachingsAdapter.MyViewHolder>  {
-    List<DonationModel.Teaching> apnt_List;
+    List<Teaching> apnt_List;
     Context mContext;
 
 
@@ -37,7 +39,7 @@ public class TeachingsAdapter extends RecyclerView.Adapter<TeachingsAdapter.MyVi
         }
     }
 
-    public TeachingsAdapter(Context mContext, List<DonationModel.Teaching> apnt_List) {
+    public TeachingsAdapter(Context mContext, List<Teaching> apnt_List) {
         this.mContext = mContext;
         this.apnt_List = apnt_List;
     }
@@ -53,11 +55,11 @@ public class TeachingsAdapter extends RecyclerView.Adapter<TeachingsAdapter.MyVi
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
 
-        holder.blogTitle_TV.setText(apnt_List.get(position).getBlogTitle());
+        holder.blogTitle_TV.setText(apnt_List.get(position).getBlog_title());
 
-        holder.blogTiming_TV.setText(apnt_List.get(position).getTimeAgo());
+        holder.blogTiming_TV.setText(apnt_List.get(position).getTime_ago());
         holder.blogHashTags_TV.setText("#GIVING");
-        CommonDialogs.getSquareImage(mContext,apnt_List.get(position).getBlogImage(),holder.blogImg_IV);
+        CommonDialogs.getSquareImage(mContext,apnt_List.get(position).getBlog_image(),holder.blogImg_IV);
 
     }
 

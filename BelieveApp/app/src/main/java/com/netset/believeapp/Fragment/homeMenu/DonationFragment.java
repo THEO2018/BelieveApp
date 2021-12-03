@@ -21,6 +21,7 @@ import com.netset.believeapp.Fragment.BaseFragment;
 import com.netset.believeapp.Fragment.blogSection.BlogDetailFragment;
 import com.netset.believeapp.GsonModel.DonationModel;
 import com.netset.believeapp.Model.BlogsModel;
+import com.netset.believeapp.Model.DonationModelNew;
 import com.netset.believeapp.R;
 import com.netset.believeapp.Utils.GeneralValues;
 import com.netset.believeapp.Utils.recyclerCustomisation.RecyclerTouchListener;
@@ -58,7 +59,7 @@ public class DonationFragment extends BaseFragment implements ApiResponse {
     @BindView(R.id.parent)
     LinearLayout parent;
     Unbinder unbinder;
-    DonationModel result;
+    DonationModelNew result;
 
     Call<JsonObject> Getdonation,AddNotes;
     TeachingsAdapter teachingsAdapter;
@@ -108,7 +109,7 @@ public class DonationFragment extends BaseFragment implements ApiResponse {
         Log.e("Response body", ">>>>>>>>>" + object.toString());
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        result = gson.fromJson(object.toString(), DonationModel.class);
+        result = gson.fromJson(object.toString(), DonationModelNew.class);
 
         teachingsAdapter = new TeachingsAdapter(baseActivity, result.getData().getTeaching());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(baseActivity);
@@ -117,7 +118,7 @@ public class DonationFragment extends BaseFragment implements ApiResponse {
         teachingList_RV.setItemAnimator(new DefaultItemAnimator());
         teachingList_RV.setAdapter(teachingsAdapter);
         if (result.getData().getGiving()!=null){
-            GivingLink = result.getData().getGiving().getGivingUrl();
+            GivingLink=result.getData().getGiving().get(0).getGiving_url();
 
         }
         teachingList_RV.addOnItemTouchListener(new RecyclerTouchListener(baseActivity, teachingList_RV, new RecyclerTouchListener.ClickListener() {
@@ -125,7 +126,7 @@ public class DonationFragment extends BaseFragment implements ApiResponse {
             public void onClick(View view, int position) {
 
                 Bundle args = new Bundle();
-                args.putString("blogid", result.getData().getTeaching().get(position).getId());
+                args.putString("blogid", result.getData().getTeaching().get(position).get_id());
                 baseActivity.navigateFragmentTransaction_ARG(R.id.homeContainer, new BlogDetailFragment(), args);
             }
             @Override
