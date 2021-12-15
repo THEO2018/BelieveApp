@@ -116,6 +116,7 @@ public class ForgotPasswordFragment extends BaseFragment implements ApiResponse 
 
     @Override
     public void onError(Call call, String errorMessage, ApiResponse apiResponse) {
+        showToast(""+errorMessage);
 
     }
 }

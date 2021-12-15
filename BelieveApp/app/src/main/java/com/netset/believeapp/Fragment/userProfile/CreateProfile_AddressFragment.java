@@ -366,7 +366,8 @@ public class CreateProfile_AddressFragment extends BaseFragment implements ApiRe
         try {
             JSONObject jsonObject = new JSONObject(object.toString());
             GeneralValues.set_loginbool(getActivity(),true);
-            CommonDialogs.customToast(getActivity(),jsonObject.getString("message"));
+//            CommonDialogs.customToast(getActivity(),jsonObject.getString("message"));
+            CommonDialogs.customToast(getActivity(),"Profile created sucessfully");
             startActivity(new Intent(baseActivity, HomeActivity.class).putExtra("From", "profile"));
             Constants.FBImage ="";
             getActivity().finish();

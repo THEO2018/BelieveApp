@@ -47,7 +47,7 @@
             android:layout_marginStart="8dp"
             android:drawablePadding="@dimen/_10dp"
             android:drawableTint="@color/black"
-            android:text="03/15/2018"
+            android:text="03-15-2018"
             android:textColor="@color/black"
             android:textSize="@dimen/_12sp"
             android:layout_centerVertical="true"

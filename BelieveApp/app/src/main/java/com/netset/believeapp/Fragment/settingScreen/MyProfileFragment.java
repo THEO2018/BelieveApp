@@ -98,6 +98,13 @@ public class MyProfileFragment extends BaseFragment implements ApiResponse {
     Call<JsonObject> GetProfile;
     Handler handler;
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        GetProfileApi();
+
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -108,10 +115,10 @@ public class MyProfileFragment extends BaseFragment implements ApiResponse {
         Bundle b = getArguments();
         if(b.getString("From").equals("setting")){
             ((HomeActivity) getActivity()).setToolbarTitle("Profile", true, true, false, null);
-        }else{
+        }
+        else{
             ((HomeActivity) getActivity()).setToolbarTitle("Profile", true, false, false, null);
         }
-        GetProfileApi();
         handler.postDelayed(this::visibleLayout, 800);
 
         /*apiInterface = ApiClient.getClient().create(ApiInterface.class);
@@ -170,8 +177,11 @@ public class MyProfileFragment extends BaseFragment implements ApiResponse {
         addressTV.setText(result.getData().getStreet()+","+result.getData().getCity()+","+result.getData().getCountry());
 
       if(result.getData().getPhoneNumber().equals("")){
-          mobPhoneTV.setText("--");
+          mobPhoneTV.setVisibility(View.GONE);
+          labelMobileTV.setVisibility(View.GONE);
       }else{
+          mobPhoneTV.setVisibility(View.VISIBLE);
+          labelMobileTV.setVisibility(View.VISIBLE);
           mobPhoneTV.setText(result.getData().getPhoneNumber());
       }
 

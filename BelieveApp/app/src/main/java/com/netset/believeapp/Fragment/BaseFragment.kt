@@ -49,6 +49,16 @@ open class BaseFragment : Fragment() {
         val matcher = pattern.matcher(email)
         return matcher.matches()
     }
+    //basefragment
+
+    fun checkValidation(email: String?): Boolean {
+        val input: String = email.toString()
+        return if (input.contains("@")) {
+            Patterns.EMAIL_ADDRESS.matcher(input).matches()
+        } else {
+            Patterns.PHONE.matcher(input).matches()
+        }
+    }
 
     fun isValidMobile(phone: String?): Boolean {
         return Patterns.PHONE.matcher(phone).matches()

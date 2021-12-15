@@ -259,7 +259,10 @@ public class SignupFragment extends BaseFragment implements ApiResponse {
             } else if (!isValidText(password)) {
                 CommonDialogs.customToast(getActivity(),"Enter Password");
               //  showToast("Enter Password");
-            } else if (!password.equals(confirmPassword)) {
+            }
+            else if (!checkValidation(emailOrPhone)){
+                CommonDialogs.customToast(getActivity(),"Enter Valid Email or  Number");
+            }else if (!password.equals(confirmPassword)) {
                 CommonDialogs.customToast(getActivity(),"Passwords does't match");
                // showToast("Passwords doesnot match");
             }

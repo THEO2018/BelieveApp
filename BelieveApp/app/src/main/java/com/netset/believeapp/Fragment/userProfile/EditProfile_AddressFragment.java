@@ -27,6 +27,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.netset.believeapp.Adapter.DialogAdapterPozo;
 import com.netset.believeapp.Fragment.BaseFragment;
+import com.netset.believeapp.Fragment.settingScreen.MyProfileFragment;
 import com.netset.believeapp.R;
 import com.netset.believeapp.Utils.CommonDialogs;
 import com.netset.believeapp.Utils.GeneralValues;
@@ -361,7 +362,11 @@ public class EditProfile_AddressFragment extends BaseFragment implements ApiResp
         try {
             JSONObject jsonObject = new JSONObject(object.toString());
             CommonDialogs.customToast(getActivity(), jsonObject.getString("message"));
+            Bundle b = new Bundle();
+            b.putString("From","editProfile");
+
             getActivity().finish();
+//            baseActivity.navigateFragmentNoBackStack_ARG(R.id.editViewContainer,new MyProfileFragment(),b);
         } catch (JSONException e) {
             e.printStackTrace();
         }

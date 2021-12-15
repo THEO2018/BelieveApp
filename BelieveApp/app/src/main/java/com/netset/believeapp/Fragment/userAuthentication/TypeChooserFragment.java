@@ -50,8 +50,6 @@ public class TypeChooserFragment extends BaseFragment {
         parent.setBackgroundColor(getResources().getColor(android.R.color.transparent));
     }
 
-
-
     @OnClick({R.id.login_BT, R.id.signup_BT, R.id.appInfo_IM})
     public void onClick(View view) {
         switch (view.getId()) {
@@ -62,6 +60,7 @@ public class TypeChooserFragment extends BaseFragment {
                 baseActivity.navigateFragmentTransaction(R.id.authViewContainer, new SignupFragment());
                 break;
             case R.id.appInfo_IM:
+
                 break;
         }
     }

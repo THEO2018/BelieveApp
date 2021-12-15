@@ -48,6 +48,7 @@ import com.netset.believeapp.Utils.GeneralValues;
 import com.netset.believeapp.activity.HomeActivity;
 import com.netset.believeapp.activity.UserAuthenticationActivity;
 import com.netset.believeapp.retrofitManager.ApiResponse;
+import com.netset.believeapp.sociallogin.GPlusLoginActivity;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.utils.DiskCacheUtils;
 import com.nostra13.universalimageloader.utils.MemoryCacheUtils;
@@ -234,7 +235,7 @@ public class LoginFragment extends BaseFragment implements ApiResponse,GoogleApi
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-              //  startActivity(new Intent(baseActivity, GPlusLoginActivity.class));
+                startActivity(new Intent(baseActivity, GPlusLoginActivity.class));
                 break;
 
             case R.id.forgotPassword_TV:

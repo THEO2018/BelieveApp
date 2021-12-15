@@ -70,12 +70,12 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
 
         if(from.equals("event")){
             holder.blogTitle_TV.setText(blogList.get(position).getTitle());
-            holder.blogTiming_TV.setText(blogList.get(position).getDate());
+            holder.blogTiming_TV.setText(blogList.get(position).getDate().replace("/","-"));
             holder.blogLocation_TV.setText(blogList.get(position).getVenue());
         }
         else{
             holder.blogTitle_TV.setText(dataList.get(position).title);
-            holder.blogTiming_TV.setText(dataList.get(position).date);
+            holder.blogTiming_TV.setText(dataList.get(position).date.replace("/","-"));
             holder.blogLocation_TV.setText(dataList.get(position).venue);
         }
 
