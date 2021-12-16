@@ -157,7 +157,7 @@ public class ContactUsFragment extends BaseFragment implements ApiResponse {
                     break;
 
                 case R.id.twitter_IV:
-                    if (appInstalledOrNot("com.twitter.android")) {
+               /*     if (appInstalledOrNot("com.twitter.android")) {
 
                         try {
                             Intent sendIntent = new Intent();
@@ -166,7 +166,7 @@ public class ContactUsFragment extends BaseFragment implements ApiResponse {
 
                             String url = TwitterLink;
                             if (!url.startsWith("http://") && !url.startsWith("https://")){
-                                url = "http://" + url;
+                                url = "https://" + url;
                             }
                             sendIntent.setData(Uri.parse(url));
                             startActivity(sendIntent);
@@ -182,7 +182,25 @@ public class ContactUsFragment extends BaseFragment implements ApiResponse {
                         startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(url)));
                         // CommonDialogs.customToast(getActivity(),"Twitter is not installed on your device");
 
+                    }*/
+
+                    if (appInstalledOrNot("com.twitter.android")) {
+                        String url = TwitterLink;
+                        if (!url.startsWith("http://") && !url.startsWith("https://")){
+                            url = "http://" + url;
+                        }
+                        Log.e(">>>>>>>webUrl is",">>>>>>>"+Uri.parse(url));
+                        Intent twitterIntent = new Intent(Intent.ACTION_VIEW);
+                        twitterIntent.setData(Uri.parse(url));
+                        startActivity(twitterIntent);
+                    }else{
+                        String url = TwitterLink;
+                        if (!url.startsWith("http://") && !url.startsWith("https://")){
+                            url = "http://" + url;
+                        }
+                        startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(url)));
                     }
+
 
                     break;
                 case R.id.insta_IV:

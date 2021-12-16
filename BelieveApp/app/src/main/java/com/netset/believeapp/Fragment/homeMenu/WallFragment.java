@@ -562,7 +562,8 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
                 selectedFilePath = "";
                 uploadLay.setVisibility(View.GONE);
                 jsonObject = new JSONObject(object.toString());
-                CommonDialogs.customToast(getActivity(), jsonObject.getString("message"));
+//                CommonDialogs.customToast(getActivity(), jsonObject.getString("message"));
+                CommonDialogs.customToast(getActivity(), "Post added successfully");
                 statusET.setText("");
                 CallApi();
             } else if (call == AddPost1) {
@@ -570,7 +571,7 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
                 selectedFilePath = "";
                 uploadLay.setVisibility(View.GONE);
                 jsonObject = new JSONObject(object.toString());
-                CommonDialogs.customToast(getActivity(), jsonObject.getString("message"));
+                CommonDialogs.customToast(getActivity(), "Post added successfully");
                 statusET.setText("");
                 CallApi();
             }

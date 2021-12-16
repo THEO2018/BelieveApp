@@ -30,7 +30,7 @@
                     android:id="@+id/churchLOGO_IV"
                     android:layout_width="match_parent"
                     android:scaleType="fitXY"
-                    android:layout_height="@dimen/_130dp"
+                    android:layout_height="@dimen/_180dp"
                     android:paddingBottom="@dimen/_20dp"/>
                 <TextView
                     android:id="@+id/jobTitle_TV"

@@ -37,6 +37,7 @@ import com.netset.believeapp.R;
 import com.netset.believeapp.Utils.CommonDialogs;
 import com.netset.believeapp.Utils.GeneralValues;
 import com.netset.believeapp.activity.ShowFullPostActivity;
+import com.netset.believeapp.callbacks.CheckPermissionInterface;
 import com.netset.believeapp.callbacks.CommentClickCallback;
 import com.netset.believeapp.listeners.LikeClickCallback;
 import com.netset.believeapp.retrofitManager.ApiResponse;
@@ -78,7 +79,7 @@ import static com.netset.believeapp.Utils.Constants.REQUEST_CODE_CHOOSE;
  * Created by netset on 22/1/18.
  */
 
-public class GroupDiscussionFragment extends BaseFragment implements CommentClickCallback, ApiResponse, LikeClickCallback {
+public class GroupDiscussionFragment extends BaseFragment implements CommentClickCallback, ApiResponse, LikeClickCallback, CheckPermissionInterface {
 
 
     @BindView(R.id.profile_image_IV)
@@ -137,6 +138,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        checkPermission=this;
 
         Bundle b = getArguments();
         if(b!= null){
@@ -163,15 +165,18 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
 
         }
     }
+    boolean clickedMediaPhoto=false;
 
     @OnClick({R.id.uploadPhoto_TV, R.id.uploadVideo_TV, R.id.button})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.uploadPhoto_TV:
-                selectMedia();
+                clickedMediaPhoto=true;
+                checkPermissionsForCamera();
                 break;
             case R.id.uploadVideo_TV:
-                selectMedia2();
+                clickedMediaPhoto=false;
+                checkPermissionsForCamera();
                 break;
             case R.id.button:
 
@@ -226,6 +231,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
     public static RequestBody getRequestBodyParam(String value) {
         return RequestBody.create(MediaType.parse("text/form-data"), value);
     }
+
 
 
     @Override
@@ -550,6 +556,16 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
 
             return bitmap;
         }
+
+    @Override
+    public void OnPermissionAccepted() {
+        if (clickedMediaPhoto){
+            selectMedia();
+        }
+        else {
+            selectMedia2();
+        }
+    }
 
 
     private class VideoCompressor extends AsyncTask<Void, Void, Boolean> {

@@ -7,8 +7,7 @@
     android:background="@drawable/bg_splash">
 
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,8 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -178,13 +176,13 @@
                     android:paddingBottom="@dimen/_50dp"
                     android:layout_centerInParent="true"
                     android:text="No Posts found"/>
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/postList_RV"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
-                    android:background="@android:color/transparent"
-                    />
+                    android:background="@android:color/transparent" />
             </RelativeLayout>
 
 

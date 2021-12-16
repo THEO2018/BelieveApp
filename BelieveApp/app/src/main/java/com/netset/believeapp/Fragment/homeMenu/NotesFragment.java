@@ -212,7 +212,7 @@ public class NotesFragment extends BaseFragment implements ApiResponse {
         }
         else if(call == AddNotes){
             b.dismiss();
-            CommonDialogs.customToast(getActivity(),result.getMessage());
+            CommonDialogs.customToast(getActivity(),"Notes added successfully.");
             CallApi(false);
         }
 

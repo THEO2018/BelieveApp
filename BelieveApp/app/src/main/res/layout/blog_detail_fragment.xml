@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/blogImage_IV"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_180dp"
+            android:layout_height="@dimen/_220dp"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

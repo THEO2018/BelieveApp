@@ -249,6 +249,8 @@ public class ShowPollFragment extends BaseFragment implements ApiResponse {
 
             CommonDialogs.getDisplayImage(getActivity(), result.data.pollImage, pollImageIM, "#d3d3d3");
             pollTitleTV.setText(result.data.pollTitle);
+            ((HomeActivity) getActivity()).setToolbarTitle(result.data.pollTitle, true, false, false, null);
+
             pollTimeTV.setText(result.data.timeAgo);
             msgTextTV.setText(result.data.question);
             if (result.data.comments.size() == 0) {

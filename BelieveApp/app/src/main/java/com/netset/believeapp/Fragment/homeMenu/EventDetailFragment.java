@@ -198,7 +198,7 @@ public class EventDetailFragment extends BaseFragment implements OnMapReadyCallb
         txtEventName.setText(result.getData().getTitle());
         txtDescription.setText(result.getData().getDescription());
         txtCategory.setText(result.getData().getEventCategory().getName());
-        if(result.getData().getPrice().equals("")){
+        if(result.getData().getPriceStatus().equals("N")){
             txtPrice.setText("Free");
         }else{
             txtPrice.setText(result.getData().getPrice());
