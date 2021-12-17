@@ -67,9 +67,10 @@ public class FacebookLogin extends AppCompatActivity{
         AccessToken accessToken = AccessToken.getCurrentAccessToken();
         if (accessToken != null && !accessToken.isExpired()) {
             fbLoginButton.performClick();
-        } else {
-            LoginManager.getInstance().setLoginBehavior(LoginBehavior.WEB_VIEW_ONLY).logInWithReadPermissions(this, Arrays.asList("public_profile", "email"));
         }
+     /*   else {
+            LoginManager.getInstance().setLoginBehavior(LoginBehavior.WEB_VIEW_ONLY).logInWithReadPermissions(this, Arrays.asList("public_profile", "email"));
+        }*/
 
         fbLoginButton.registerCallback(callbackmanager, new FacebookCallback<LoginResult>() {
             @Override

@@ -129,7 +129,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
            rootView = inflater.inflate(R.layout.wall_fragment, null);
            unbinder = ButterKnife.bind(this, rootView);
 
-           CallApi();
+           CallApi(true);
        }
         return rootView;
     }
@@ -142,9 +142,11 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
 
         Bundle b = getArguments();
         if(b!= null){
-        if(b.getString("joinstatus").equals("true")){
+        if(b.getString("joinstatus").equals("true"))
+        {
           statusContainer.setVisibility(View.VISIBLE);
-        }else{
+        }
+        else{
             statusContainer.setVisibility(View.GONE);
         }
         }
@@ -152,7 +154,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
     }
 
 
-    public void CallApi() {
+    public void CallApi(Boolean loader) {
         Bundle b = getArguments();
         if (b != null) {
             this.groupId = b.getString("groupid");
@@ -160,8 +162,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
             map.put("group_id", groupId);
             map.put("access_token", GeneralValues.get_Access_Key(getActivity()));
             Detail = baseActivity.apiInterface.GroupDetail_Discussion(map);
-            baseActivity.apiHitAndHandle.makeApiCall(Detail, true,this);
-
+            baseActivity.apiHitAndHandle.makeApiCall(Detail, loader,this);
 
         }
     }
@@ -240,7 +241,11 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
         unbinder.unbind();
     }
 
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        CallApi(false);
+    }
 
     @Override
     public void onCommentClick(int position) {
@@ -267,7 +272,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
             map.put("like_status", "L");
         }
         LikePost = baseActivity.apiInterface.AddGroupPostLike(map);
-        baseActivity.apiHitAndHandle.makeApiCall(LikePost, this, false);
+        baseActivity.apiHitAndHandle.makeApiCall(LikePost, this);
     }
 
 
@@ -288,7 +293,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
                 user_Image = jsonObject2.getString("profile_image");
 
 
-                    CommonDialogs.getDisplayImage(getActivity(), user_Image, profileImageIV);
+                CommonDialogs.getDisplayImage(getActivity(), user_Image, profileImageIV);
 
 
                 blogList.clear();
@@ -300,7 +305,6 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
                     other_name = (jObj1.getString("first_name") + " " + jObj1.getString("last_name"));
                     other_image = jObj1.getString("profile_image");
                     other_id = jObj1.getString("_id");
-
                     post_id = jObj.getString("_id");
                     post_title = jObj.getString("group_post_status");
                     post_image = jObj.getString("group_post_media");
@@ -323,7 +327,6 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
                     media_status = jObj2.getString("media_status");
                     PostsModel model = new PostsModel(other_id, other_name, "", other_image, post_time, post_id, post_title, post_image, post_commentcount, post_likecount,
                             other_username, other_userid, other_user_image, other_usercomment, post_type, post_thumb, like_status, comment_img, media_status);
-
                     blogList.add(model);
                 }
 
@@ -344,7 +347,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
             } else if (call == LikePost) {
                 JSONObject jsonObject = new JSONObject(object.toString());
                 CommonDialogs.customToast(getActivity(), jsonObject.getString("message"));
-                CallApi();
+                CallApi(false);
             } else if (call == AddPost) {
                 profileImage = null;
                 selectedFilePath = "";
@@ -352,7 +355,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
                 JSONObject jsonObject = new JSONObject(object.toString());
                 CommonDialogs.customToast(getActivity(), jsonObject.getString("message"));
                 statusET.setText("");
-                CallApi();
+                CallApi(true);
             } else if (call == AddPost1) {
                 profileImage = null;
                 selectedFilePath = "";
@@ -360,7 +363,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
                 JSONObject jsonObject = new JSONObject(object.toString());
                 CommonDialogs.customToast(getActivity(), jsonObject.getString("message"));
                 statusET.setText("");
-                CallApi();
+                CallApi(true);
             }
 
         } catch (JSONException e) {

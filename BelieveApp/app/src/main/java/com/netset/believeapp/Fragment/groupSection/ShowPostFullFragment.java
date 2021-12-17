@@ -155,7 +155,6 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        CallApi();
         HomeActivity.isPostDetailVisible = true;
         Bundle b = getArguments();
         if(b!=null){
@@ -182,7 +181,7 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
     }
 
 
-    public void CallApi(){
+    public void CallApi(Boolean loader){
         Bundle b = getArguments();
         if(b != null) {
             this.PostId = b.getString("postid");
@@ -196,7 +195,7 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
             map.put("post_id",PostId);
             map.put("access_token", GeneralValues.get_Access_Key(getActivity()));
             GetPostDetail = baseActivity.apiInterface.GetGroupPost_Detail(map);
-            baseActivity.apiHitAndHandle.makeApiCall(GetPostDetail,this);
+            baseActivity.apiHitAndHandle.makeApiCall(GetPostDetail,this,loader);
         }else {
             Intent in = new Intent();
             if(in !=null) {
@@ -225,6 +224,7 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
         super.onResume();
         requireActivity().getWindow()
                 .setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        CallApi(false);
     }
 
     @Override
@@ -495,13 +495,13 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
             }
             if(call == SendComment){
                 addCmntET.setText("");
-                CallApi();
+                CallApi(false);
             }
 
             if(call == LikePost){
                 jsonObject = new JSONObject(object.toString());
                 CommonDialogs.customToast(getActivity(),jsonObject.getString("message"));
-                CallApi();
+                CallApi(false);
             }
         } catch (JSONException e) {
             e.printStackTrace();

@@ -20,7 +20,7 @@
 20    <uses-sdk
 21        android:minSdkVersion="14"
 21-->/home/netset/Desktop/beleiveApp/BelieveApp/BelieveApp/matisse/src/main/AndroidManifest.xml
-22        android:targetSdkVersion="27" />
+22        android:targetSdkVersion="31" />
 22-->/home/netset/Desktop/beleiveApp/BelieveApp/BelieveApp/matisse/src/main/AndroidManifest.xml
 23
 24    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />

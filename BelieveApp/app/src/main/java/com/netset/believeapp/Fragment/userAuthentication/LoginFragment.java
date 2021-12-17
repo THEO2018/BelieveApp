@@ -1,5 +1,6 @@
 package com.netset.believeapp.Fragment.userAuthentication;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -25,6 +26,7 @@ import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginBehavior;
@@ -48,6 +50,7 @@ import com.netset.believeapp.Utils.GeneralValues;
 import com.netset.believeapp.activity.HomeActivity;
 import com.netset.believeapp.activity.UserAuthenticationActivity;
 import com.netset.believeapp.retrofitManager.ApiResponse;
+import com.netset.believeapp.sociallogin.FacebookLogin;
 import com.netset.believeapp.sociallogin.GPlusLoginActivity;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.utils.DiskCacheUtils;
@@ -73,6 +76,7 @@ import butterknife.Unbinder;
 import retrofit2.Call;
 
 import static com.google.android.gms.internal.zzahf.runOnUiThread;
+import static com.google.firebase.crash.FirebaseCrash.log;
 import static com.netset.believeapp.Utils.Constants.SC_LOGIN;
 
 /**
@@ -135,6 +139,7 @@ public class LoginFragment extends BaseFragment implements ApiResponse,GoogleApi
         mPreferencees = getActivity().getSharedPreferences("Believe", getActivity().MODE_MULTI_PROCESS);
         mEdit = mPreferencees.edit();
         Constants.FBImage ="";
+        FacebookSdk.sdkInitialize(requireActivity());
         callbackManager = CallbackManager.Factory.create();
         image = BitmapFactory.decodeResource(baseActivity.getResources(),
                 R.drawable.profile);
@@ -184,6 +189,7 @@ public class LoginFragment extends BaseFragment implements ApiResponse,GoogleApi
         apiHitAndHandle = ApiHitAndHandle.getInstance(getActivity());*/
 
         mainlay.setOnTouchListener(new View.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 try {
@@ -216,7 +222,7 @@ public class LoginFragment extends BaseFragment implements ApiResponse,GoogleApi
                 break;
             case R.id.fbLogin_BT:
                 accessUserdata();
-               // startActivity(new Intent(baseActivity, FacebookLogin.class));
+//                startActivity(new Intent(baseActivity, FacebookLogin.class));
                 break;
             case R.id.googleLogin_BT:
 
@@ -329,13 +335,12 @@ public class LoginFragment extends BaseFragment implements ApiResponse,GoogleApi
         } catch (Exception e) {
             e.printStackTrace();
         }
-        AccessToken accessToken = AccessToken.getCurrentAccessToken();
-        if (accessToken != null && !accessToken.isExpired()) {
+  //      AccessToken accessToken = AccessToken.getCurrentAccessToken();
+     //   if (accessToken != null && !accessToken.isExpired()) {
             loginBT.performClick();
 
-        } else {
-            LoginManager.getInstance().setLoginBehavior(LoginBehavior.WEB_VIEW_ONLY).logInWithReadPermissions(this, Arrays.asList("public_profile", "email"));
-        }
+//        }
+
 
         loginBT.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -371,13 +376,17 @@ public class LoginFragment extends BaseFragment implements ApiResponse,GoogleApi
                                 name = object.getString("name");
 
                             }
-                            url = "https://graph.facebook.com/" + id + "/picture?type=large";
+//                            url = "https://graph.facebook.com/" + id + "/picture?type=large";
                             socialLoginType = "F";
 
                             map.put("social_media_id", id);
                             map.put("first_name", firstname);
                             map.put("last_name", lastname);
                             map.put("register_type", "F");
+                            Calendar calendar = new GregorianCalendar();
+                            TimeZone timeZone = calendar.getTimeZone();
+                            timeZoneCurrent= (timeZone.getID());
+
                             map.put("time_zone",timeZoneCurrent);
                             map.put("device_id", mPreferencees.getString("Device_Id",""));
                             map.put("device_type", "A");
@@ -385,13 +394,15 @@ public class LoginFragment extends BaseFragment implements ApiResponse,GoogleApi
                             map.put("app_version", "0.1");
                             map.put("access_token", "9a218c9b5dfdae8b5abc11a41905ed48");
                             map.put("email", emailtext);
-                            if(!url.equals("") || url!= null){
+                           /* if(!url.equals("") || url!= null){
                                 new DownloadImage().execute(url);
                             }
                            else{
                                 signUp =  baseActivity.apiInterface.Signup(map);
                                 baseActivity.apiHitAndHandle.makeApiCall(signUp, LoginFragment.this,true);
-                            }
+                            }*/
+                            signUp =  baseActivity.apiInterface.Signup(map);
+                            baseActivity.apiHitAndHandle.makeApiCall(signUp, LoginFragment.this,true);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -409,11 +420,13 @@ public class LoginFragment extends BaseFragment implements ApiResponse,GoogleApi
 
             @Override
             public void onCancel() {
+                Log.d("Facebook error :","csdd");
             }
 
             @Override
             public void onError(FacebookException error) {
-
+                error.printStackTrace();
+                log("Facebook error :" + error.toString());
             }
 
         });
@@ -493,13 +506,14 @@ public class LoginFragment extends BaseFragment implements ApiResponse,GoogleApi
                             }
                             if(!url.equals("") || url!= null){
                                 new DownloadImage().execute(url);
+
                             }
                             else{
                                 signUp2 =  baseActivity.apiInterface.Signup(map);
                                 baseActivity.apiHitAndHandle.makeApiCall(signUp2, LoginFragment.this,true);
                             }
-                            /*signUp2 = apiInterface.Signup(map);
-                            apiHitAndHandle.makeApiCall(signUp2,LoginFragment.this,true);*/
+                            signUp2 = baseActivity.apiInterface.Signup(map);
+                            baseActivity.apiHitAndHandle.makeApiCall(signUp2,LoginFragment.this,true);
 
                         }
                     });

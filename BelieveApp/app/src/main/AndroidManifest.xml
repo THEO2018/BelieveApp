@@ -41,7 +41,8 @@
         android:preserveLegacyExternalStorage="true"
         android:requestLegacyExternalStorage="true"
         android:theme="@style/BelieveAppMaterialTheme"
-        tools:replace="android:networkSecurityConfig">
+        tools:replace="android:networkSecurityConfig"
+        tools:targetApi="r">
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
