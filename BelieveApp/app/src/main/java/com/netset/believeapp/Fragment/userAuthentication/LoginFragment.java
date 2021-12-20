@@ -68,6 +68,7 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.TimeZone;
+import java.util.regex.Pattern;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -286,7 +287,7 @@ public class LoginFragment extends BaseFragment implements ApiResponse,GoogleApi
         Log.e("Time zone string","="+timeZoneCurrent);
 
         if (isValidText(email) && isValidText(password)) {
-            if (isValidEmail(email) || isValidMobile(email)) {
+            if (checkValidationsForEmailMobile(email) || checkValidationsForEmailMobile(email)) {
                 HashMap<String, String> map = new HashMap<String, String>();
                 map.put("password", password);
                 map.put("device_id",  mPreferencees.getString("Device_Id",""));
@@ -320,6 +321,20 @@ public class LoginFragment extends BaseFragment implements ApiResponse,GoogleApi
             } else if (isValidText(password)) {
                 showToast("Password cannot be empty");
             }
+        }
+    }
+    private boolean checkValidationsForEmailMobile(String email)
+    {
+        if(email.contains("@"))
+        {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+        }
+        else
+        {
+            if(!Pattern.matches("[a-zA-Z]+", email)) {
+                return email.length() > 6 && email.length() <= 13;
+            }
+            return false;
         }
     }
 

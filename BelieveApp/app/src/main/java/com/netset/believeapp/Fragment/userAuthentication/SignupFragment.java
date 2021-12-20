@@ -218,7 +218,7 @@ public class SignupFragment extends BaseFragment implements ApiResponse {
         if (isValidText(fName) && isValidText(lName) && isValidText(emailOrPhone) && isValidText(password)
                 && password.equals(confirmPassword)) {
 
-           // if (isValidEmail(emailOrPhone) || isValidMobile(emailOrPhone)) {
+            if (checkValidationsForEmailMobile(emailOrPhone) || checkValidationsForEmailMobile(emailOrPhone)) {
                 HashMap<String, String> map = new HashMap<String, String>();
                 map.put("social_media_id", "1");
                 map.put("first_name", fName);
@@ -229,7 +229,7 @@ public class SignupFragment extends BaseFragment implements ApiResponse {
                 map.put("device_type", "A");
                 map.put("app_version", "0.1");
                 map.put("access_token","9a218c9b5dfdae8b5abc11a41905ed48");
-            if(isEmailValid(emailOrPhone)){
+            if(checkValidationsForEmailMobile(emailOrPhone)){
                 map.put("email", emailOrPhone);
                 map.put("registered_by", "E");
             }else{
@@ -238,13 +238,16 @@ public class SignupFragment extends BaseFragment implements ApiResponse {
             }
                 signUp =  baseActivity.apiInterface.Signup(map);
             baseActivity.apiHitAndHandle.makeApiCall(signUp, this);
-           // }
+            }
+            else {
+                showToast("Enter Valid Email or Phone Number");
+            }
         } else {
-            /*if (!isValidEmail(emailOrPhone)) {
+            if (!checkValidationsForEmailMobile(emailOrPhone)) {
                 showToast("Enter Valid Email or Phone Number");
-            } else if (!isValidMobile(emailOrPhone)) {
+            } else if (!checkValidationsForEmailMobile(emailOrPhone)) {
                 showToast("Enter Valid Email or Phone Number");
-            } else*/ if (!isValidText(fName)) {
+            } else if (!isValidText(fName)) {
                 CommonDialogs.customToast(getActivity(),"Enter First Name");
 
             } else if (!isValidText(lName)) {
@@ -273,7 +276,20 @@ public class SignupFragment extends BaseFragment implements ApiResponse {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
-
+    private boolean checkValidationsForEmailMobile(String email)
+    {
+        if(email.contains("@"))
+        {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+        }
+        else
+        {
+            if(!Pattern.matches("[a-zA-Z]+", email)) {
+                return email.length() > 6 && email.length() <= 13;
+            }
+            return false;
+        }
+    }
     @Override
     public void onSuccess(Call call, Object object) {
 

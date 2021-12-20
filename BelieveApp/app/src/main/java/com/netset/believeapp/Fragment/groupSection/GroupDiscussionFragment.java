@@ -135,6 +135,12 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        CallApi(false);
+    }
+
+    @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -241,11 +247,6 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
         unbinder.unbind();
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        CallApi(false);
-    }
 
     @Override
     public void onCommentClick(int position) {
@@ -347,13 +348,13 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
             } else if (call == LikePost) {
                 JSONObject jsonObject = new JSONObject(object.toString());
                 CommonDialogs.customToast(getActivity(), jsonObject.getString("message"));
-                CallApi(false);
+                CallApi(true);
             } else if (call == AddPost) {
                 profileImage = null;
                 selectedFilePath = "";
                 uploadLay.setVisibility(View.GONE);
                 JSONObject jsonObject = new JSONObject(object.toString());
-                CommonDialogs.customToast(getActivity(), jsonObject.getString("message"));
+                CommonDialogs.customToast(getActivity(), "Post added succesfully.");
                 statusET.setText("");
                 CallApi(true);
             } else if (call == AddPost1) {
@@ -361,7 +362,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
                 selectedFilePath = "";
                 uploadLay.setVisibility(View.GONE);
                 JSONObject jsonObject = new JSONObject(object.toString());
-                CommonDialogs.customToast(getActivity(), jsonObject.getString("message"));
+                CommonDialogs.customToast(getActivity(), "Post added successfully.");
                 statusET.setText("");
                 CallApi(true);
             }

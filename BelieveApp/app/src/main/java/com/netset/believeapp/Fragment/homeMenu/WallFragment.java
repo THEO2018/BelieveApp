@@ -124,13 +124,20 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        CallApi(false);
+
+    }
+
+    @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         /*apiInterface = ApiClient.getClient().create(ApiInterface.class);
         apiHitAndHandle = ApiHitAndHandle.getInstance(getActivity());*/
 
         checkPermission=this;
-        CallApi();
+        CallApi(true);
       //  setBlogAdapter();
     }
 
@@ -144,12 +151,12 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
     }*/
 
 
-    public void CallApi() {
+    public void CallApi(Boolean loader) {
 
             HashMap<String, String> map = new HashMap<String, String>();
             map.put("access_token", GeneralValues.get_Access_Key(getActivity()));
             Detail = baseActivity.apiInterface.GetWallPost(map);
-        baseActivity.apiHitAndHandle.makeApiCall(Detail, this);
+        baseActivity.apiHitAndHandle.makeApiCall(Detail, this,loader);
 
 
     }
@@ -554,7 +561,7 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
             else if (call == LikePost) {
                  jsonObject = new JSONObject(object.toString());
                 CommonDialogs.customToast(getActivity(), jsonObject.getString("message"));
-                CallApi();
+                CallApi(true);
             }
 
             else if (call == AddPost) {
@@ -565,7 +572,7 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
 //                CommonDialogs.customToast(getActivity(), jsonObject.getString("message"));
                 CommonDialogs.customToast(getActivity(), "Post added successfully");
                 statusET.setText("");
-                CallApi();
+                CallApi(true);
             } else if (call == AddPost1) {
                 profileImage = null;
                 selectedFilePath = "";
@@ -573,7 +580,7 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
                 jsonObject = new JSONObject(object.toString());
                 CommonDialogs.customToast(getActivity(), "Post added successfully");
                 statusET.setText("");
-                CallApi();
+                CallApi(true);
             }
 
 

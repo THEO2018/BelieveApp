@@ -30,6 +30,7 @@ import com.netset.believeapp.R;
 import com.netset.believeapp.Utils.GeneralValues;
 import com.netset.believeapp.activity.BaseActivity;
 import com.netset.believeapp.activity.EditProfileActivity;
+import com.netset.believeapp.callbacks.CheckPermissionInterface;
 import com.netset.believeapp.retrofitManager.ApiResponse;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.utils.DiskCacheUtils;
@@ -75,7 +76,7 @@ import static com.netset.believeapp.Utils.Constants.SC_EDIT_PROFILE;
  * Created by netset on 2/2/18.
  */
 
-public class EditProfile_PersonalFragment extends BaseFragment implements BaseActivity.OnCreateProfileListener, ApiResponse {
+public class EditProfile_PersonalFragment extends BaseFragment implements BaseActivity.OnCreateProfileListener, ApiResponse,CheckPermissionInterface {
 
 
     Unbinder unbinder;
@@ -132,6 +133,10 @@ public class EditProfile_PersonalFragment extends BaseFragment implements BaseAc
     String[] maritalArray, genderArray, statusArray;
     String maritalStatusOptional = "", gender = "", status = "", professionalOptional = "", campusOptional = "", dateOfBirth = "";
 
+    @Override
+    public void OnPermissionAccepted() {
+        selectMedia();
+    }
 
 
     private class EmojiExcludeFilter implements InputFilter {
@@ -165,10 +170,12 @@ public class EditProfile_PersonalFragment extends BaseFragment implements BaseAc
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.edit_profile_personal_fragment, null);
         }
+
         unbinder = ButterKnife.bind(this, rootView);
         parent.setBackgroundResource(0);
         getActivity().getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+
         return rootView;
     }
 
@@ -178,6 +185,7 @@ public class EditProfile_PersonalFragment extends BaseFragment implements BaseAc
         /*apiInterface = ApiClient.getClient().create(ApiInterface.class);
         apiHitAndHandle = ApiHitAndHandle.getInstance(getActivity());*/
 
+        checkPermission=this;
         firstNameET.setFilters(new InputFilter[]{new EditProfile_PersonalFragment.EmojiExcludeFilter()});
         lastNameET.setFilters(new InputFilter[]{new EditProfile_PersonalFragment.EmojiExcludeFilter()});
         professionET.setFilters(new InputFilter[]{new EditProfile_PersonalFragment.EmojiExcludeFilter()});
@@ -200,8 +208,8 @@ public class EditProfile_PersonalFragment extends BaseFragment implements BaseAc
     @OnClick({R.id.selectImage_IM, R.id.maritalStatus_ET, R.id.gender_ET, R.id.status_ET, R.id.dob_ET})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.selectImage_IM:
-                selectMedia();
+            case R.id.selectImage_IM:checkPermissionsForCamera();
+//                selectMedia();
                 break;
             case R.id.maritalStatus_ET:
                 maritalArray = getResources().getStringArray(R.array.marital_status_array);
@@ -300,7 +308,12 @@ public class EditProfile_PersonalFragment extends BaseFragment implements BaseAc
     }
 
     void sendBackImagePath(Uri inputUri) {
-        selectedFilePathOptional = PathUtils.getPath(baseActivity, inputUri);
+        try {
+            selectedFilePathOptional = PathUtils.getPath(baseActivity, inputUri);
+
+        }catch (Exception e){
+            Log.d("excepImg",""+e);
+        }
         if (!inputUri.toString().contains("video") || !inputUri.toString().contains("Movies") || !inputUri.toString().contains("movies")) {
             videoFile = null;
          //   profileImage = new File(selectedFilePathOptional);

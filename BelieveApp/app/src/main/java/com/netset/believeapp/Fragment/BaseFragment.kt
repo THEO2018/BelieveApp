@@ -61,7 +61,7 @@ open class BaseFragment : Fragment() {
     }
 
     fun isValidMobile(phone: String?): Boolean {
-        return Patterns.PHONE.matcher(phone).matches()
+        return Patterns.PHONE.matcher(phone!!).matches()
     }
 
     fun checkPermissionsForCamera() {
