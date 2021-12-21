@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.netset.believeapp.CommonConst;
 import com.netset.believeapp.Fragment.birthdaySection.SelectedUserProfileFragment;
 import com.netset.believeapp.Fragment.settingScreen.MyProfileFragment;
 import com.netset.believeapp.Model.PostsModel;
@@ -27,6 +28,8 @@ import com.nostra13.universalimageloader.utils.MemoryCacheUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * Created by netset on 22/1/18.
  */
@@ -38,7 +41,8 @@ public class ShowFullPostAdapter extends RecyclerView.Adapter<ShowFullPostAdapte
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView profile_image_IV,imgComment;
+        ImageView imgComment;
+        CircleImageView profile_image_IV;
         LinearLayout lay_user;
         TextView cmnt_UserName_TV, cmnt_Duration_TV, cmnt_Text_TV;
 
@@ -72,13 +76,16 @@ public class ShowFullPostAdapter extends RecyclerView.Adapter<ShowFullPostAdapte
         final PostsModel model = blogList.get(position);
         holder.cmnt_Duration_TV.setText(model.getTime());
         holder.cmnt_UserName_TV.setText(model.getOther_name());
-        CommonDialogs.getDisplayImage(mContext,model.getOther_image(),holder.profile_image_IV,"#d3d3d3");
+//        CommonDialogs.getDisplayImage(mContext,model.getOther_image(),holder.profile_image_IV,"#d3d3d3");
+        CommonConst.Companion.loadGlide(mContext,model.getOther_image(),R.drawable.empty).into(holder.profile_image_IV);
         if(model.getIsimagestatus().equals("true")){
             holder.imgComment.setVisibility(View.VISIBLE);
             holder.cmnt_Text_TV.setVisibility(View.GONE);
-            MemoryCacheUtils.removeFromCache(model.getCommentimg(), ImageLoader.getInstance().getMemoryCache());
-            DiskCacheUtils.removeFromCache(model.getCommentimg(), ImageLoader.getInstance().getDiskCache());
-            CommonDialogs.getSquareImage(mContext,model.getCommentimg(),holder.imgComment);
+//            MemoryCacheUtils.removeFromCache(model.getCommentimg(), ImageLoader.getInstance().getMemoryCache());
+//            DiskCacheUtils.removeFromCache(model.getCommentimg(), ImageLoader.getInstance().getDiskCache());
+//            CommonDialogs.getSquareImage(mContext,model.getCommentimg(),holder.imgComment);
+            CommonConst.Companion.loadGlide(mContext,model.getCommentimg(),R.drawable.empty).into(holder.imgComment);
+
             holder.imgComment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

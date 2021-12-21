@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.netset.believeapp.CommonConst;
 import com.netset.believeapp.Model.PhotosModel;
 import com.netset.believeapp.R;
 import com.netset.believeapp.Utils.CommonDialogs;
@@ -52,7 +53,9 @@ public class GroupPhotosAdapter extends RecyclerView.Adapter<GroupPhotosAdapter.
     @Override
     public void onBindViewHolder(GroupPhotosAdapter.MyViewHolder holder, final int position) {
 
-        CommonDialogs.getSquareImage2(mContext,imageList.get(position).getPhoto(),holder.image_IV);
+//        CommonDialogs.getSquareImage2(mContext,imageList.get(position).getPhoto(),holder.image_IV);
+        CommonConst.Companion.loadGlide(mContext,imageList.get(position).getPhoto(),R.drawable.empty).into(holder.image_IV);
+
 
         holder.image_IV.setOnClickListener(new View.OnClickListener() {
             @Override

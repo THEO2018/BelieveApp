@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.netset.believeapp.CommonConst;
 import com.netset.believeapp.Fragment.birthdaySection.SelectedUserProfileFragment;
 import com.netset.believeapp.Fragment.settingScreen.MyProfileFragment;
 import com.netset.believeapp.Model.PostsModel;
@@ -29,6 +30,8 @@ import com.nostra13.universalimageloader.utils.MemoryCacheUtils;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * Created by netset on 9/1/18.
  */
@@ -42,7 +45,8 @@ public class WallAdapter extends RecyclerView.Adapter<WallAdapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView blogImg_IV,myImage,other_UserImage,thumb_image,Like_IV,commentImg;
+        ImageView blogImg_IV,thumb_image,Like_IV,commentImg;
+        CircleImageView myImage,other_UserImage;
 
         TextView blogTitle_TV, blogCommentcount_TV,userName_TV,duration_TV,comentLabel_TV
                 ,likecount_TV,likeLabel_TV,otherUsername_TV,otherUserComment_Tv;
@@ -108,9 +112,11 @@ public class WallAdapter extends RecyclerView.Adapter<WallAdapter.MyViewHolder> 
                 likeClickCallback.onLikeClick(position);
             }
         });
-        MemoryCacheUtils.removeFromCache(model.getImage(), ImageLoader.getInstance().getMemoryCache());
-        DiskCacheUtils.removeFromCache(model.getImage(), ImageLoader.getInstance().getDiskCache());
-        CommonDialogs.getDisplayImage(mContext,model.getImage(),holder.myImage);
+//        MemoryCacheUtils.removeFromCache(model.getImage(), ImageLoader.getInstance().getMemoryCache());
+//        DiskCacheUtils.removeFromCache(model.getImage(), ImageLoader.getInstance().getDiskCache());
+//        CommonDialogs.getDisplayImage(mContext,model.getImage(),holder.myImage);
+        CommonConst.Companion.loadGlide(mContext,model.getImage(),R.drawable.user_pic).into(holder.myImage);
+
         holder.userName_TV.setText(model.getName());
         holder.duration_TV.setText(model.getTime());
         holder.blogTitle_TV.setText(model.getPost_message());
@@ -121,11 +127,15 @@ public class WallAdapter extends RecyclerView.Adapter<WallAdapter.MyViewHolder> 
         if(model.getMedia_status().equals("P")){
             holder.mediaLay.setVisibility(View.VISIBLE);
             holder.thumb_image.setVisibility(View.GONE);
-            CommonDialogs.getSquareImage(mContext,model.getPost_image(),holder.blogImg_IV);
+//            CommonDialogs.getSquareImage(mContext,model.getPost_image(),holder.blogImg_IV);
+            CommonConst.Companion.loadGlide(mContext,model.getPost_image(),R.drawable.empty).into(holder.blogImg_IV);
+
         }else if(model.getMedia_status().equals("V")){
             holder.mediaLay.setVisibility(View.VISIBLE);
             holder.thumb_image.setVisibility(View.VISIBLE);
-            CommonDialogs.getSquareImage(mContext,model.getPost_thumb(),holder.blogImg_IV);
+//            CommonDialogs.getSquareImage(mContext,model.getPost_thumb(),holder.blogImg_IV);
+            CommonConst.Companion.loadGlide(mContext,model.getPost_thumb(),R.drawable.empty).into(holder.blogImg_IV);
+
         }else{
             holder.mediaLay.setVisibility(View.GONE);
         }
@@ -180,14 +190,18 @@ public class WallAdapter extends RecyclerView.Adapter<WallAdapter.MyViewHolder> 
         if(model.getIsimagestatus().equals("true")){
             holder.commentImg.setVisibility(View.VISIBLE);
             holder.otherUserComment_Tv.setVisibility(View.GONE);
-            CommonDialogs.getSquareImage(mContext,model.getCommentimg(),holder.commentImg);
+//            CommonDialogs.getSquareImage(mContext,model.getCommentimg(),holder.commentImg);
+            CommonConst.Companion.loadGlide(mContext,model.getCommentimg(),R.drawable.empty).into(holder.commentImg);
+
         }else{
             holder.commentImg.setVisibility(View.GONE);
             holder.otherUserComment_Tv.setVisibility(View.VISIBLE);
             holder.otherUserComment_Tv.setText(model.getOther_comment());
         }
 
-        CommonDialogs.getDisplayImage(mContext,model.getOther_image(),holder.other_UserImage);
+//        CommonDialogs.getDisplayImage(mContext,model.getOther_image(),holder.other_UserImage);
+        CommonConst.Companion.loadGlide(mContext,model.getOther_image(),R.drawable.user_pic).into(holder.other_UserImage);
+
         holder.otherUsername_TV.setText(model.getOther_name());
 
 

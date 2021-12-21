@@ -37,5 +37,29 @@ class CommonConst {
                 )
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
         }
+        fun loadGlideCircular(context: Context, path: Any, placeHolder: Int?): RequestBuilder<Drawable> {
+            val circularProgressDrawable = CircularProgressDrawable(context)
+            circularProgressDrawable.strokeWidth = 5f
+            circularProgressDrawable.centerRadius = 30f
+            circularProgressDrawable.start()
+            return Glide.with(context).load(path)
+                .circleCrop()
+                .apply(
+                    RequestOptions().error(
+                        if (placeHolder != null) ContextCompat.getDrawable(
+                            context,
+                            placeHolder
+                        ) else circularProgressDrawable
+                    )
+                        .placeholder(
+                            if (placeHolder != null) ContextCompat.getDrawable(
+                                context,
+                                placeHolder
+                            ) else circularProgressDrawable
+                        )
+                        .centerCrop()
+                )
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+        }
     }
 }

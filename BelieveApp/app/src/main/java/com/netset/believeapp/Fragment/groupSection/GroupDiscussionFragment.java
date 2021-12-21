@@ -31,6 +31,7 @@ import android.widget.RelativeLayout;
 
 import com.google.gson.JsonObject;
 import com.netset.believeapp.Adapter.WallAdapter;
+import com.netset.believeapp.CommonConst;
 import com.netset.believeapp.Fragment.BaseFragment;
 import com.netset.believeapp.Model.PostsModel;
 import com.netset.believeapp.R;
@@ -68,6 +69,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import de.hdodenhof.circleimageview.CircleImageView;
 import me.drakeet.materialdialog.MaterialDialog;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
@@ -83,7 +85,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
 
 
     @BindView(R.id.profile_image_IV)
-    ImageView profileImageIV;
+    CircleImageView profileImageIV;
     @BindView(R.id.uploadPhoto_TV)
     AppCompatTextView uploadPhotoTV;
     @BindView(R.id.uploadVideo_TV)
@@ -202,7 +204,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
                         map.put("group_id", groupId);
                         map.put("group_post_status", statusET.getText().toString().trim());
                         AddPost = baseActivity.apiInterface.AddGroupPost1(map);
-                        baseActivity.apiHitAndHandle.makeApiCall(AddPost, this);
+                        baseActivity.apiHitAndHandle.makeApiCall(AddPost, this,true);
                         CommonDialogs.hideSoftKeyboard(requireActivity());
 
                     }
@@ -228,7 +230,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
                          jsonbody.put("group_post_media\"; filename=\"" + videoFile.getName() + "\" ", body);
                      }
                     AddPost1 = baseActivity.apiInterface.AddGroupPost(jsonbody);
-                    baseActivity.apiHitAndHandle.makeApiCall(AddPost1, this);
+                    baseActivity.apiHitAndHandle.makeApiCall(AddPost1, true,this);
                 }
                 break;
         }
@@ -273,7 +275,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
             map.put("like_status", "L");
         }
         LikePost = baseActivity.apiInterface.AddGroupPostLike(map);
-        baseActivity.apiHitAndHandle.makeApiCall(LikePost, this);
+        baseActivity.apiHitAndHandle.makeApiCall(LikePost, true,this);
     }
 
 
@@ -294,7 +296,8 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
                 user_Image = jsonObject2.getString("profile_image");
 
 
-                CommonDialogs.getDisplayImage(getActivity(), user_Image, profileImageIV);
+//                CommonDialogs.getDisplayImage(getActivity(), user_Image, profileImageIV);
+                    CommonConst.Companion.loadGlide(getContext(),user_Image,R.drawable.user_pic).into(profileImageIV);
 
 
                 blogList.clear();
@@ -354,7 +357,7 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
                 selectedFilePath = "";
                 uploadLay.setVisibility(View.GONE);
                 JSONObject jsonObject = new JSONObject(object.toString());
-                CommonDialogs.customToast(getActivity(), "Post added succesfully.");
+                CommonDialogs.customToast(getActivity(), "Post added successfully.");
                 statusET.setText("");
                 CallApi(true);
             } else if (call == AddPost1) {

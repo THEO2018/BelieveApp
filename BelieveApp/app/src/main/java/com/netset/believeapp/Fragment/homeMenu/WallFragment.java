@@ -28,6 +28,7 @@ import android.widget.TextView;
 
 import com.google.gson.JsonObject;
 import com.netset.believeapp.Adapter.WallAdapter;
+import com.netset.believeapp.CommonConst;
 import com.netset.believeapp.Fragment.BaseFragment;
 import com.netset.believeapp.Model.PostsModel;
 import com.netset.believeapp.R;
@@ -59,11 +60,13 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import de.hdodenhof.circleimageview.CircleImageView;
 import me.drakeet.materialdialog.MaterialDialog;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
@@ -78,7 +81,7 @@ import static com.netset.believeapp.Utils.Constants.SC_WALL;
 
 public class WallFragment extends BaseFragment implements CommentClickCallback, ApiResponse, LikeClickCallback, CheckPermissionInterface {
     @BindView(R.id.profile_image_IV)
-    ImageView profileImageIV;
+    CircleImageView profileImageIV;
     @BindView(R.id.status_ET)
     EditText statusET;
     @BindView(R.id.uploadPhoto_TV)
@@ -198,7 +201,7 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
             map.put("like_status", "L");
         }
         LikePost = baseActivity.apiInterface.AddGroupPostLike(map);
-        baseActivity.apiHitAndHandle.makeApiCall(LikePost, this, false);
+        baseActivity.apiHitAndHandle.makeApiCall(LikePost, this, true);
 
 
     }
@@ -265,8 +268,8 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
                 Log.e("path--------", profileImage + "");
 
                 uploadLay.setVisibility(View.VISIBLE);
-                MemoryCacheUtils.removeFromCache("" + profileImage, ImageLoader.getInstance().getMemoryCache());
-                DiskCacheUtils.removeFromCache("" + profileImage, ImageLoader.getInstance().getDiskCache());
+//                MemoryCacheUtils.removeFromCache("" + profileImage, ImageLoader.getInstance().getMemoryCache());
+//                DiskCacheUtils.removeFromCache("" + profileImage, ImageLoader.getInstance().getDiskCache());
                 Picasso.with(getActivity())
                         .load(profileImage)
                         .skipMemoryCache()
@@ -301,7 +304,7 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
                         map.put("access_token", GeneralValues.get_Access_Key(getActivity()));
                         map.put("wall_post_status", statusET.getText().toString().trim());
                         AddPost = baseActivity.apiInterface.AddWallPost1(map);
-                        baseActivity.apiHitAndHandle.makeApiCall(AddPost, this);
+                        baseActivity.apiHitAndHandle.makeApiCall(AddPost, true,this);
                         CommonDialogs.hideSoftKeyboard(requireActivity());
 
                     }
@@ -327,7 +330,7 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
                         jsonbody.put("wall_post_media\"; filename=\"" + videoFile.getName() + "\" ", body);
                     }
                     AddPost1 = baseActivity.apiInterface.AddWallPost(jsonbody);
-                    baseActivity.apiHitAndHandle.makeApiCall(AddPost1, this);
+                    baseActivity.apiHitAndHandle.makeApiCall(AddPost1, true,this);
                     CommonDialogs.hideSoftKeyboard(requireActivity());
                 }
 
@@ -502,7 +505,9 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
 
                 /*MemoryCacheUtils.removeFromCache(user_Image, ImageLoader.getInstance().getMemoryCache());
                 DiskCacheUtils.removeFromCache(user_Image, ImageLoader.getInstance().getDiskCache());*/
-                CommonDialogs.getDisplayImage(getActivity(), user_Image, profileImageIV);
+//                CommonDialogs.getDisplayImage(getActivity(), user_Image, profileImageIV);
+                CommonConst.Companion.loadGlide(requireContext(),user_Image,R.drawable.user_pic).into(profileImageIV);
+
 
                 blogList.clear();
                 JSONArray jsonArray = jsonObject1.getJSONArray("discussion");
