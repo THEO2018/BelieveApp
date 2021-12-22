@@ -501,7 +501,9 @@ public class LoginFragment extends BaseFragment implements ApiResponse,GoogleApi
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
-
+                            Calendar calendar = new GregorianCalendar();
+                            TimeZone timeZone = calendar.getTimeZone();
+                            timeZoneCurrent= (timeZone.getID());
                             socialLoginType = "G";
                             map.put("social_media_id", id);
                             map.put("first_name", firstname);
@@ -513,20 +515,20 @@ public class LoginFragment extends BaseFragment implements ApiResponse,GoogleApi
                             map.put("access_token","9a218c9b5dfdae8b5abc11a41905ed48");
                             map.put("email", emailtext);
 
-                            try {
-                                Uri url2 = acct.getPhotoUrl();
-                                url = url2.toString();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                            if(!url.equals("") || url!= null){
-                                new DownloadImage().execute(url);
-
-                            }
-                            else{
-                                signUp2 =  baseActivity.apiInterface.Signup(map);
-                                baseActivity.apiHitAndHandle.makeApiCall(signUp2, LoginFragment.this,true);
-                            }
+//                            try {
+//                                Uri url2 = acct.getPhotoUrl();
+//                                url = url2.toString();
+//                            } catch (Exception e) {
+//                                e.printStackTrace();
+//                            }
+//                            if(!url.equals("") || url!= null){
+//                                new DownloadImage().execute(url);
+//
+//                            }
+//                            else{
+//                                signUp2 =  baseActivity.apiInterface.Signup(map);
+//                                baseActivity.apiHitAndHandle.makeApiCall(signUp2, LoginFragment.this,true);
+//                            }
                             signUp2 = baseActivity.apiInterface.Signup(map);
                             baseActivity.apiHitAndHandle.makeApiCall(signUp2,LoginFragment.this,true);
 

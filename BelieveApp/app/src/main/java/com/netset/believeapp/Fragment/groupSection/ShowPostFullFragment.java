@@ -356,7 +356,7 @@ void pick(){
                     Toast.makeText(requireContext(), ImagePicker.Companion.getError(intent), Toast.LENGTH_SHORT)
                             .show();
                 } else {
-                    Toast.makeText(requireContext(), "Task Cancelled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(requireContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                 }
                 return null;
             } );
@@ -543,12 +543,12 @@ void pick(){
                 addCmntET.setText("");
                 CallApi(true);
 
-                mHandler.postDelayed(new Runnable() {
+                /*mHandler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                            CallApi(false);
                         }
-                    }, 3000);
+                    }, 3000);*/
             }
 
             if(call == LikePost){
