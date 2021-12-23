@@ -200,7 +200,9 @@ public class SignupFragment extends BaseFragment implements ApiResponse {
                 checkSignupValidation();
                 break;
             case R.id.termsPolicy_TV:
-
+                Intent browserIntent = null;
+                browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/"));
+                getActivity().startActivity(browserIntent);
                 break;
         }
 
@@ -243,11 +245,7 @@ public class SignupFragment extends BaseFragment implements ApiResponse {
                 showToast("Enter Valid Email or Phone Number");
             }
         } else {
-            if (!checkValidationsForEmailMobile(emailOrPhone)) {
-                showToast("Enter Valid Email or Phone Number");
-            } else if (!checkValidationsForEmailMobile(emailOrPhone)) {
-                showToast("Enter Valid Email or Phone Number");
-            } else if (!isValidText(fName)) {
+          if (!isValidText(fName)) {
                 CommonDialogs.customToast(getActivity(),"Enter First Name");
 
             } else if (!isValidText(lName)) {
@@ -256,6 +254,10 @@ public class SignupFragment extends BaseFragment implements ApiResponse {
             } else if (!isValidText(emailOrPhone)) {
                 CommonDialogs.customToast(getActivity(),"Enter Email or Phone Number");
                 //showToast("Enter Email or Phone Number");
+            }  else  if (!checkValidationsForEmailMobile(emailOrPhone)) {
+              CommonDialogs.customToast(getActivity(),"Enter Valid Email or Phone Number");
+            } else if (!checkValidationsForEmailMobile(emailOrPhone)) {
+                showToast("Enter Valid Email or Phone Number");
             } else if (!isValidText(password)) {
                 CommonDialogs.customToast(getActivity(),"Enter Password");
                // showToast("Enter Password");
@@ -264,7 +266,7 @@ public class SignupFragment extends BaseFragment implements ApiResponse {
               //  showToast("Enter Password");
             }
             else if (!checkValidation(emailOrPhone)){
-                CommonDialogs.customToast(getActivity(),"Enter Valid Email or  Number");
+                CommonDialogs.customToast(getActivity(),"Enter Valid Email or Number");
             }else if (!password.equals(confirmPassword)) {
                 CommonDialogs.customToast(getActivity(),"Passwords does't match");
                // showToast("Passwords doesnot match");

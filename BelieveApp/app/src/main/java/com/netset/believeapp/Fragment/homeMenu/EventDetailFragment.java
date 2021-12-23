@@ -219,7 +219,7 @@ public class EventDetailFragment extends BaseFragment implements OnMapReadyCallb
         }
 
 
-        txtDate.setText(""+(new SimpleDateFormat("yyyy-MM-dd")).format(date));
+        txtDate.setText(""+(new SimpleDateFormat("dd-MM-yyyy")).format(date));
 
         txtTime.setText(result.getData().getStartTime() + " - " + result.getData().getEndTime());
         TxtLoc.setText(result.getData().getVenue());

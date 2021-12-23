@@ -3,6 +3,9 @@ package com.netset.believeapp.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.netset.believeapp.CommonConst;
+import com.netset.believeapp.Fragment.ImageDialogFragment;
 import com.netset.believeapp.Model.PhotosModel;
 import com.netset.believeapp.R;
 import com.netset.believeapp.Utils.CommonDialogs;
@@ -60,10 +64,21 @@ public class GroupPhotosAdapter extends RecyclerView.Adapter<GroupPhotosAdapter.
         holder.image_IV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.setDataAndType(Uri.parse(imageList.get(position).getPhoto()), "image/*");
-                mContext.startActivity(intent);
+//                Intent intent = new Intent();
+//                intent.setAction(Intent.ACTION_VIEW);
+//                intent.setDataAndType(Uri.parse(imageList.get(position).getPhoto()), "image/*");
+//                mContext.startActivity(intent);
+
+                FragmentActivity activity = (FragmentActivity)(mContext);
+                FragmentManager fm = activity.getSupportFragmentManager();
+                ImageDialogFragment alertDialog = new ImageDialogFragment(imageList.get(position).getPhoto());
+                alertDialog.show(fm, "fragment_alert");
+
+//                ImageDialogFragment imageDialogFragment = new ImageDialogFragment(imageList.get(position).getPhoto());
+//                imageDialogFragment.show(
+//                       this.supportFragmentManager,
+//                        imageDialogFragment.tag
+//                );
             }
         });
     }

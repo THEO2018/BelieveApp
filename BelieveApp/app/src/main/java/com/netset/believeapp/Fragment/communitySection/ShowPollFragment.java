@@ -302,29 +302,28 @@ public class ShowPollFragment extends BaseFragment implements ApiResponse {
                     @Override
                     public void onClick(View view, int position) {
 
-                        if (result.data.settingMultipleChoice.equals(false)) {
-
+                        if (!result.data.settingMultipleChoice) {
+                            Boolean isSelected=false;
                             for (int i = 0; i < result.data.options.size(); i++) {
-                                if (result.data.options.get(position).myVotePoll.equals(true)) {
-                                    seletedPosition=position;
+                                if (result.data.options.get(i).myVotePoll) {
+                                    isSelected=true;
                                 }
                             }
-                            if (seletedPosition == -1) {
-                                seletedPosition = position;
-                                Bundle b = getArguments();
-                                HashMap<String, String> map = new HashMap<String, String>();
-                                map.put("poll_id", b.getString("id"));
-                                map.put("poll_option_id", result.data.options.get(position).id);
-                                map.put("access_token", GeneralValues.get_Access_Key(getActivity()));
-                                AddVote = baseActivity.apiInterface.add_VotePoll(map);
-                                baseActivity.apiHitAndHandle.makeApiCall(AddVote, ShowPollFragment.this, false);
+
+                            if (isSelected){
+                                return;
                             }
 
+                            Bundle b = getArguments();
+                            HashMap<String, String> map = new HashMap<String, String>();
+                            map.put("poll_id", b.getString("id"));
+                            map.put("poll_option_id", result.data.options.get(position).id);
+                            map.put("access_token", GeneralValues.get_Access_Key(getActivity()));
+                            AddVote = baseActivity.apiInterface.add_VotePoll(map);
+                            baseActivity.apiHitAndHandle.makeApiCall(AddVote, ShowPollFragment.this, false);
 
                         } else {
-                            if (result.data.options.get(position).myVotePoll.equals(true)) {
-
-                            } else {
+                            if (!result.data.options.get(position).myVotePoll) {
                                 Bundle b = getArguments();
                                 HashMap<String, String> map = new HashMap<String, String>();
                                 map.put("poll_id", b.getString("id"));
@@ -402,6 +401,18 @@ public class ShowPollFragment extends BaseFragment implements ApiResponse {
                             txt2Hr.setText(hr.substring(1, 2));
                         } catch (Exception e) {
                             e.printStackTrace();
+                        }
+
+                        if (hr.length() == 1){
+                            hr="0"+hr;
+                        }
+
+                        if (min.length() == 1){
+                            min="0"+min;
+                        }
+
+                        if (sec.length() == 1){
+                            sec="0"+sec;
                         }
                         txt1Min.setText(min.substring(0, 1));
                         txt2Min.setText(min.substring(1, 2));

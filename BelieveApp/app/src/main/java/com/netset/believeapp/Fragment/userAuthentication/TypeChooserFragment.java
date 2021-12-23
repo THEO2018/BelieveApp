@@ -1,5 +1,7 @@
 package com.netset.believeapp.Fragment.userAuthentication;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
@@ -60,6 +62,10 @@ public class TypeChooserFragment extends BaseFragment {
                 baseActivity.navigateFragmentTransaction(R.id.authViewContainer, new SignupFragment());
                 break;
             case R.id.appInfo_IM:
+                Intent browserIntent = null;
+                browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/"));
+                getActivity().startActivity(browserIntent);
+
 
                 break;
         }

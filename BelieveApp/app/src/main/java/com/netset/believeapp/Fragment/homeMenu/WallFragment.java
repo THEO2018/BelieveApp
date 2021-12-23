@@ -30,6 +30,7 @@ import com.google.gson.JsonObject;
 import com.netset.believeapp.Adapter.WallAdapter;
 import com.netset.believeapp.CommonConst;
 import com.netset.believeapp.Fragment.BaseFragment;
+import com.netset.believeapp.GalaryFilter;
 import com.netset.believeapp.Model.PostsModel;
 import com.netset.believeapp.R;
 import com.netset.believeapp.Utils.CommonDialogs;
@@ -159,7 +160,7 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
             HashMap<String, String> map = new HashMap<String, String>();
             map.put("access_token", GeneralValues.get_Access_Key(getActivity()));
             Detail = baseActivity.apiInterface.GetWallPost(map);
-        baseActivity.apiHitAndHandle.makeApiCall(Detail, this,loader);
+        baseActivity.apiHitAndHandle.makeApiCall(Detail, loader,this);
 
 
     }
@@ -223,7 +224,7 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
     private void selectMedia2(){
         Matisse.from(this)
                 .choose(MimeType.ofVideo(), false)
-                .countable(true).capture(true)
+                .countable(true).addFilter(new GalaryFilter())
                 .captureStrategy(new CaptureStrategy(true, "com.netset.believeapp"))
                 .maxSelectable(1)
                 .gridExpectedSize(getResources().getDimensionPixelSize(R.dimen._120dp))

@@ -14,7 +14,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/photoContainer"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_180dp"
+        android:layout_height="@dimen/_210dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -34,7 +34,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
+            android:scaleType="centerInside"
             android:background="@drawable/image_back"/>
         </RelativeLayout>
 

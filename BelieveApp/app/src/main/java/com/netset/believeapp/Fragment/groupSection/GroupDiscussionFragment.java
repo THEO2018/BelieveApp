@@ -1,6 +1,7 @@
 package com.netset.believeapp.Fragment.groupSection;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.AssetFileDescriptor;
@@ -26,13 +27,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.google.gson.JsonObject;
 import com.netset.believeapp.Adapter.WallAdapter;
 import com.netset.believeapp.CommonConst;
 import com.netset.believeapp.Fragment.BaseFragment;
+import com.netset.believeapp.GalaryFilter;
 import com.netset.believeapp.Model.PostsModel;
 import com.netset.believeapp.R;
 import com.netset.believeapp.Utils.CommonDialogs;
@@ -51,7 +52,10 @@ import com.yalantis.ucrop.UCrop;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
 import com.zhihu.matisse.engine.impl.PicassoEngine;
+import com.zhihu.matisse.filter.Filter;
 import com.zhihu.matisse.internal.entity.CaptureStrategy;
+import com.zhihu.matisse.internal.entity.IncapableCause;
+import com.zhihu.matisse.internal.entity.Item;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -61,9 +65,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
+import java.util.Set;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -395,9 +400,10 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
     private void selectMedia2(){
         Matisse.from(this)
                 .choose(MimeType.ofVideo(), false)
-                .countable(true).capture(true)
+                .countable(true)
                 .captureStrategy(new CaptureStrategy(true, "com.netset.believeapp"))
                 .maxSelectable(1)
+                .addFilter(new GalaryFilter())
                 .gridExpectedSize(getResources().getDimensionPixelSize(R.dimen._120dp))
                 .showSingleMediaType(true)
                 .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
@@ -610,3 +616,4 @@ public class GroupDiscussionFragment extends BaseFragment implements CommentClic
 
 
 }
+

@@ -141,6 +141,7 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
     String user_Id,user_Image,user_Firstname,user_Lastname,post_id,post_thumb,post_type,post_title,post_time,post_image,post_commentcount,
             post_likecount,other_userid,other_username,other_user_image,other_usercomment,other_commentid,like_status,comment_time,comment_img,media_status;
 
+    private Boolean isApiCalled=false;
 
     @Nullable
     @Override
@@ -148,6 +149,8 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
         View rootView = inflater.inflate(R.layout.show_post_full_fragment, null);
         unbinder = ButterKnife.bind(this, rootView);
         ((ShowFullPostActivity) getActivity()).setToolbarTitle("Comments", true, false);
+
+
         return rootView;
     }
 
@@ -171,6 +174,7 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
                 linearLayout6.setVisibility(View.GONE);
             }
         }}
+        CallApi(false);
 
     }
 
@@ -201,7 +205,7 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
             map.put("post_id",PostId);
             map.put("access_token", GeneralValues.get_Access_Key(getActivity()));
             GetPostDetail = baseActivity.apiInterface.GetGroupPost_Detail(map);
-            baseActivity.apiHitAndHandle.makeApiCall(GetPostDetail,this,loader);
+            baseActivity.apiHitAndHandle.makeApiCall(GetPostDetail,loader,this);
         }else {
             Intent in = new Intent();
             if(in !=null) {
@@ -230,7 +234,7 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
         super.onResume();
         requireActivity().getWindow()
                 .setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-        CallApi(false);
+
     }
 
     @Override
@@ -319,7 +323,7 @@ public class ShowPostFullFragment extends BaseFragment implements ApiResponse {
     }
 
 void pick(){
-    ImagePicker.Companion.with(this)
+    ImagePicker.Companion.with((ShowFullPostActivity)getActivity())
             .crop()	    			//Crop image(Optional), Check Customization for more option
             .compress(1024)			//Final image size will be less than 1 MB(Optional)
             .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
@@ -332,7 +336,6 @@ void pick(){
                         type = b1.getString("from");
                     }
 
-
                     HashMap<String, RequestBody> jsonbody = new HashMap<String, RequestBody>();
                     jsonbody.put("group_post_id", getRequestBodyParam(this.PostId));
                     if(type.equals("wall")){
@@ -344,6 +347,7 @@ void pick(){
                     jsonbody.put("access_token", getRequestBodyParam(GeneralValues.get_Access_Key(getActivity())));
                     RequestBody body = RequestBody.create(MediaType.parse("multipart/form-data"), profileImage);
                     jsonbody.put("group_post_comment_img\"; filename=\"" + profileImage.getName() + "\" ", body);
+                    isApiCalled=true;
                     SendComment = baseActivity.apiInterface.AddGroupPostComment2(jsonbody);
                     baseActivity.apiHitAndHandle.makeApiCall(SendComment, this,true);
                    /* mHandler.postDelayed(new Runnable() {
@@ -430,10 +434,10 @@ void pick(){
                 user_Firstname = jsonObject2.getString("first_name");
                 user_Lastname = jsonObject2.getString("last_name");
                 user_Image = jsonObject2.getString("profile_image");
-//                MemoryCacheUtils.removeFromCache(user_Image, ImageLoader.getInstance().getMemoryCache());
-//                DiskCacheUtils.removeFromCache(user_Image, ImageLoader.getInstance().getDiskCache());
-//                CommonDialogs.getDisplayImage(getActivity(), user_Image, profileImageIV,"#d3d3d3");
-                CommonConst.Companion.loadGlideCircular(requireContext(),user_Image,R.drawable.user_pic).into(profileImageIV);
+                MemoryCacheUtils.removeFromCache(user_Image, ImageLoader.getInstance().getMemoryCache());
+                DiskCacheUtils.removeFromCache(user_Image, ImageLoader.getInstance().getDiskCache());
+                CommonDialogs.getDisplayImage(getActivity(), user_Image, profileImageIV,"#d3d3d3");
+//                CommonConst.Companion.loadGlideCircular(getContext(),user_Image,R.drawable.user_pic).into(profileImageIV);
 
                 userNameTV.setText(user_Firstname + " " + user_Lastname);
 
@@ -509,13 +513,11 @@ void pick(){
                     blogList.add(model);
                 }
 
-                showFullPostAdapter = new ShowFullPostAdapter(getActivity(), blogList);
+                ShowFullPostAdapter showFullPostAdapter = new ShowFullPostAdapter(getActivity(), blogList);
                 LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
                 cmntList_RV.setLayoutManager(mLayoutManager);
                 cmntList_RV.setAdapter(showFullPostAdapter);
                 cmntList_RV.setNestedScrollingEnabled(false);
-                showFullPostAdapter.notifyDataSetChanged();
-
 
 
                 mediaLay.setOnClickListener(new View.OnClickListener() {
@@ -539,16 +541,10 @@ void pick(){
 
 
             }
-            if(call == SendComment){
+            if(call == SendComment || isApiCalled){
+                isApiCalled=false;
                 addCmntET.setText("");
                 CallApi(true);
-
-                /*mHandler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                           CallApi(false);
-                        }
-                    }, 3000);*/
             }
 
             if(call == LikePost){
@@ -558,7 +554,6 @@ void pick(){
             }
         } catch (JSONException e) {
             e.printStackTrace();
-
 
         }
 

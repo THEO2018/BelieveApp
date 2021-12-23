@@ -222,6 +222,7 @@ class CreateProfile_PersonalFragment : BaseFragment(), OnCreateProfileListener, 
                 .start { resultCode, data ->
                     if (resultCode == Activity.RESULT_OK) {
                         profileImage = ImagePicker.getFile(data)!!
+                        selectedFilePathOptional=profileImage.toString()
                         baseActivity?.loadImageFromDevice(baseActivity, profileImage, selectImage_IM)
                     } else if (resultCode == ImagePicker.RESULT_ERROR) {
                         Toast.makeText(requireContext(), ImagePicker.getError(data), Toast.LENGTH_SHORT)
