@@ -28,6 +28,7 @@ import android.widget.TextView;
 
 import com.google.gson.JsonObject;
 import com.netset.believeapp.Adapter.WallAdapter;
+import com.netset.believeapp.BelieveApplication;
 import com.netset.believeapp.CommonConst;
 import com.netset.believeapp.Fragment.BaseFragment;
 import com.netset.believeapp.GalaryFilter;
@@ -124,14 +125,14 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
         View rootView = inflater.inflate(R.layout.wall_fragment, null);
         unbinder = ButterKnife.bind(this, rootView);
         ((HomeActivity) getActivity()).setToolbarTitle(SC_WALL, false, false, false, null);
+        CallApi(true);
+
         return rootView;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        CallApi(false);
-
     }
 
     @Override
@@ -141,7 +142,6 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
         apiHitAndHandle = ApiHitAndHandle.getInstance(getActivity());*/
 
         checkPermission=this;
-        CallApi(true);
       //  setBlogAdapter();
     }
 
@@ -504,10 +504,10 @@ public class WallFragment extends BaseFragment implements CommentClickCallback, 
                 user_Lastname = jsonObject2.getString("last_name");
                 user_Image = jsonObject2.getString("profile_image");
 
-                /*MemoryCacheUtils.removeFromCache(user_Image, ImageLoader.getInstance().getMemoryCache());
-                DiskCacheUtils.removeFromCache(user_Image, ImageLoader.getInstance().getDiskCache());*/
-//                CommonDialogs.getDisplayImage(getActivity(), user_Image, profileImageIV);
-                CommonConst.Companion.loadGlide(requireContext(),user_Image,R.drawable.user_pic).into(profileImageIV);
+//                MemoryCacheUtils.removeFromCache(user_Image, ImageLoader.getInstance().getMemoryCache());
+//                DiskCacheUtils.removeFromCache(user_Image, ImageLoader.getInstance().getDiskCache());
+                //CommonDialogs.getDisplayImage(requireContext(), user_Image, profileImageIV);
+                CommonConst.Companion.loadGlide(BelieveApplication.mInstance,user_Image,R.drawable.user_pic).into(profileImageIV);
 
 
                 blogList.clear();

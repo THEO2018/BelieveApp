@@ -72,7 +72,7 @@ public class GroupPhotosAdapter extends RecyclerView.Adapter<GroupPhotosAdapter.
                 FragmentActivity activity = (FragmentActivity)(mContext);
                 FragmentManager fm = activity.getSupportFragmentManager();
                 ImageDialogFragment alertDialog = new ImageDialogFragment(imageList.get(position).getPhoto());
-                alertDialog.show(fm, "fragment_alert");
+                alertDialog.show(fm, "P");
 
 //                ImageDialogFragment imageDialogFragment = new ImageDialogFragment(imageList.get(position).getPhoto());
 //                imageDialogFragment.show(

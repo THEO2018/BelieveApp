@@ -1,7 +1,9 @@
 package com.netset.believeapp.activity;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.NotificationManager;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -32,6 +34,31 @@ public class ShowFullPostActivity extends BaseActivity {
     public static boolean isRefresh = false;
     SharedPreferences.Editor mEdit;
     SharedPreferences mPreferencees;
+    public ProgressDialog pDialog;
+    private Boolean isCalled=false;
+
+    public void dismissDialog(){
+        try{
+            if (pDialog !=null && pDialog.isShowing()){
+                pDialog.dismiss();
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void showDialog(){
+        try{
+            pDialog = new ProgressDialog(this, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
+            pDialog.setMessage("Loading..");
+            pDialog.setCancelable(false);
+            pDialog.setIndeterminate(true);
+            pDialog.show();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,9 +66,8 @@ public class ShowFullPostActivity extends BaseActivity {
         setContentView(R.layout.edit_profile_activity);
         mPreferencees = getApplicationContext().getSharedPreferences("Believe", MODE_PRIVATE);
         mEdit         = mPreferencees.edit();
+        isCalled=true;
         setUpToolbar();
-
-
     }
 
     @Override
@@ -82,13 +108,17 @@ public class ShowFullPostActivity extends BaseActivity {
                 mEdit.commit();
             }
             else{
-                Bundle args = new Bundle();
-                args.putString("from", "wall");
-                args.putString("postid", extras.getString("postid"));
-                mEdit.putString("postbool","true");
-                mEdit.putString("postId",extras.getString("postid"));
-                mEdit.commit();
-                navigateFragmentTransaction_ARG(R.id.editViewContainer, new ShowPostFullFragment(), args);
+                if (isCalled){
+                    isCalled=false;
+                    Bundle args = new Bundle();
+                    args.putString("from", "wall");
+                    args.putString("postid", extras.getString("postid"));
+                    mEdit.putString("postbool","true");
+                    mEdit.putString("postId",extras.getString("postid"));
+                    mEdit.commit();
+                    navigateFragmentTransaction_ARG(R.id.editViewContainer, new ShowPostFullFragment(), args);
+                }
+
             }
         }
         NotificationManager nMgr = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);

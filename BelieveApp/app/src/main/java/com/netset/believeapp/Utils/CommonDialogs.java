@@ -254,8 +254,6 @@ public class CommonDialogs {
 				.build();
 
 		ImageLoader.getInstance().displayImage(string, imgView, options);
-
-
 	}
 
 	public  static void getSquareImage(Context context, String string, ImageView imgView){

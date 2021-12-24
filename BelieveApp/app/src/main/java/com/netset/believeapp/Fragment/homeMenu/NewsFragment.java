@@ -107,8 +107,16 @@ public class NewsFragment extends BaseFragment implements ApiResponse {
             progressBar.setVisibility(View.VISIBLE);
 
         Parser parser = new Parser();
-      //  parser.execute("http://feeds.bbci.co.uk/news/world/rss.xml");
-        parser.execute(urlString);
+//        parser.execute("http://feeds.bbci.co.uk/news/world/rss.xml");
+        if (urlString.contains("https://")||urlString.contains("http://")){
+            parser.execute(urlString);
+
+        }
+        else {
+            String url="https://"+urlString;
+            parser.execute(url);
+
+        }
         parser.onFinish(new Parser.OnTaskCompleted() {
             //what to do when the parsing is done
             @Override
@@ -154,7 +162,7 @@ public class NewsFragment extends BaseFragment implements ApiResponse {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         result = gson.fromJson(object.toString(), NewsListModel.class);
 
-        if (result.data != null) {
+        if (result.data.newsUrl != null&& !result.data.newsUrl.equals("")) {
             urlString = result.data.newsUrl;
             NewsLV.setLayoutManager(new LinearLayoutManager(getActivity()));
             NewsLV.setItemAnimator(new DefaultItemAnimator());

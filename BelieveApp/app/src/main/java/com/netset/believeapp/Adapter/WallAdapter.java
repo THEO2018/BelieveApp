@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.netset.believeapp.CommonConst;
+import com.netset.believeapp.Fragment.ImageDialogFragment;
 import com.netset.believeapp.Fragment.birthdaySection.SelectedUserProfileFragment;
 import com.netset.believeapp.Fragment.settingScreen.MyProfileFragment;
 import com.netset.believeapp.Model.PostsModel;
@@ -145,17 +149,26 @@ public class WallAdapter extends RecyclerView.Adapter<WallAdapter.MyViewHolder> 
             @Override
             public void onClick(View view) {
                 if(model.getMedia_status().equals("V")){
-                    String extension = MimeTypeMap.getFileExtensionFromUrl(model.getPost_image());
-                    String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
-                    Intent mediaIntent = new Intent(Intent.ACTION_VIEW);
-                    mediaIntent.setDataAndType(Uri.parse(model.getPost_image()), mimeType);
-                    mContext.startActivity(mediaIntent);
+//                    String extension = MimeTypeMap.getFileExtensionFromUrl(model.getPost_image());
+//                    String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
+//                    Intent mediaIntent = new Intent(Intent.ACTION_VIEW);
+//                    mediaIntent.setDataAndType(Uri.parse(model.getPost_image()), mimeType);
+//                    mContext.startActivity(mediaIntent);
+
+                    FragmentActivity activity = (FragmentActivity)(mContext);
+                    FragmentManager fm = activity.getSupportFragmentManager();
+                    ImageDialogFragment imageDialogFragment = new ImageDialogFragment(model.getPost_image());
+                    imageDialogFragment.show(fm, "V");
                 }
                 else if(model.getMedia_status().equals("P")){
-                    Intent intent = new Intent();
-                    intent.setAction(Intent.ACTION_VIEW);
-                    intent.setDataAndType(Uri.parse(model.getPost_image()), "image/*");
-                    mContext.startActivity(intent);
+//                    Intent intent = new Intent();
+//                    intent.setAction(Intent.ACTION_VIEW);
+//                    intent.setDataAndType(Uri.parse(model.getPost_image()), "image/*");
+//                    mContext.startActivity(intent);
+                    FragmentActivity activity = (FragmentActivity)(mContext);
+                    FragmentManager fm = activity.getSupportFragmentManager();
+                    ImageDialogFragment imageDialogFragment = new ImageDialogFragment(model.getPost_image());
+                    imageDialogFragment.show(fm, "P");
                 }
             }
         });

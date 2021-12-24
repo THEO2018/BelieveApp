@@ -1,9 +1,13 @@
 package com.netset.believeapp.Adapter;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.netset.believeapp.CommonConst;
+import com.netset.believeapp.Fragment.ImageDialogFragment;
 import com.netset.believeapp.Fragment.birthdaySection.SelectedUserProfileFragment;
 import com.netset.believeapp.Fragment.settingScreen.MyProfileFragment;
 import com.netset.believeapp.Model.PostsModel;
@@ -89,13 +94,17 @@ public class ShowFullPostAdapter extends RecyclerView.Adapter<ShowFullPostAdapte
             holder.imgComment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String extension = MimeTypeMap.getFileExtensionFromUrl(model.getCommentimg());
-                    String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
-                    Intent mediaIntent = new Intent(Intent.ACTION_VIEW);
-                    mediaIntent.setDataAndType(Uri.parse(model.getCommentimg()), mimeType);
-                    if (null != mediaIntent.resolveActivity(mContext.getPackageManager())) {
-                        mContext.startActivity(mediaIntent);
-                    }
+//                    String extension = MimeTypeMap.getFileExtensionFromUrl(model.getCommentimg());
+//                    String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
+//                    Intent mediaIntent = new Intent(Intent.ACTION_VIEW);
+//                    mediaIntent.setDataAndType(Uri.parse(model.getCommentimg()), mimeType);
+//                    if (null != mediaIntent.resolveActivity(mContext.getPackageManager())) {
+//                        mContext.startActivity(mediaIntent);
+//                    }
+                    FragmentActivity activity = (FragmentActivity)(mContext);
+                    FragmentManager fm = activity.getSupportFragmentManager();
+                    ImageDialogFragment alertDialog = new ImageDialogFragment(model.getCommentimg());
+                    alertDialog.show(fm, "P");
                 }
             });
 

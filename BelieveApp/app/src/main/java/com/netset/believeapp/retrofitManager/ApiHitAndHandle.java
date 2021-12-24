@@ -61,6 +61,29 @@ public class ApiHitAndHandle implements Callback {
         makeApiCall(call, isProgress, response);
     }
 
+    public void dismissDialog(){
+        try{
+            if (pDialog !=null && pDialog.isShowing()){
+                pDialog.dismiss();
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void showDialog(){
+        try{
+            pDialog = new ProgressDialog(mContext, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
+            pDialog.setMessage("Loading..");
+            pDialog.setCancelable(false);
+            pDialog.setIndeterminate(true);
+            pDialog.show();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     public void makeApiCall(Call call, boolean showProgress, ApiResponse apiResponse) {
         boolean isNetworkAvailable = checkConnection(mContext);
         if (isNetworkAvailable) {

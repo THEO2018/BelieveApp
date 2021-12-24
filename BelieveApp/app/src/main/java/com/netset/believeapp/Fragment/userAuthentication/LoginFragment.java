@@ -346,14 +346,16 @@ public class LoginFragment extends BaseFragment implements ApiResponse,GoogleApi
     private void accessUserdata() {
 
         try {
-            LoginManager.getInstance().logOut();
+          LoginManager loginInstance  = LoginManager.getInstance();
+          loginInstance.logOut();
+          loginInstance.logInWithReadPermissions(this, Arrays.asList("public_profile","email"));
         } catch (Exception e) {
             e.printStackTrace();
         }
   //      AccessToken accessToken = AccessToken.getCurrentAccessToken();
      //   if (accessToken != null && !accessToken.isExpired()) {
-            loginBT.performClick();
-
+        //    loginBT.performClick();
+//        loginBT.setReadPermissions(Arrays.asList("email"));
 //        }
 
 
