@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+     <com.github.barteksc.pdfviewer.PDFView
+          android:id="@+id/pdfView"
+          android:layout_width="match_parent"
+         android:layout_below="@id/relMainId"
+         android:layout_marginTop="@dimen/_5dp"
+         android:layout_marginBottom="@dimen/_50dp"
+          android:layout_height="match_parent"/>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_alignParentBottom="true"
+    android:layout_height="@dimen/_50dp">
+    <Button
+        android:layout_width="@dimen/_40dp"
+        android:layout_height="@dimen/_40dp"
+        android:background="@drawable/ic_baseline_arrow_back_ios_24"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/_10sp"
+        android:layout_margin="@dimen/_10sp"
+        android:id="@+id/btnPrev"
+        />
+    <Button
+        android:layout_width="@dimen/_40dp"
+        android:layout_height="@dimen/_40dp"
+        android:background="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/_10sp"
+        android:layout_margin="@dimen/_10sp"
+        android:id="@+id/btnNext"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/100"
+        android:layout_centerVertical="true"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/totalPages_current"/>
+</RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:id="@+id/v1"
+        android:background="@color/white"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/v1"
+        android:id="@+id/relMainId"
+        android:background="@color/white"
+        android:layout_height="@dimen/_50dp">
+
+        <EditText
+            android:layout_width="@dimen/_70dp"
+            android:layout_height="@dimen/_40dp"
+            android:id="@+id/gotoPages"
+            android:inputType="number"
+            android:hint="page"
+            android:singleLine="true"
+            android:imeOptions="actionGo"
+            android:layout_marginLeft="@dimen/_5dp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_5dp"
+            android:background="@drawable/shape_edittext"
+            android:textColor="@color/redish_pink"
+            android:layout_alignParentStart="true"/>
+        <Button
+            android:layout_width="@dimen/_50dp"
+            android:layout_height="@dimen/_40dp"
+            android:text="Go"
+            android:textSize="@dimen/_12dp"
+            android:id="@+id/btnGo"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_magenta_round_edge"
+            android:layout_marginLeft="@dimen/_15sp"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@id/gotoPages"/>
+
+        <ImageView
+            android:layout_width="@dimen/_40dp"
+            android:layout_height="@dimen/_40dp"
+            android:src="@drawable/dark_mode"
+            android:id="@+id/darkMode"
+            android:layout_marginRight="@dimen/_5dp"
+            android:layout_toLeftOf="@+id/downloadPdf"
+            android:layout_centerVertical="true" />
+        <ImageView
+            android:layout_width="@dimen/_40dp"
+            android:layout_height="@dimen/_40dp"
+            android:src="@drawable/download_icon"
+            android:id="@+id/downloadPdf"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            app:tint="@color/redish_pink" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="visible"
+        android:indeterminateTint="@color/dark_pink"/>
+
+
+</RelativeLayout>

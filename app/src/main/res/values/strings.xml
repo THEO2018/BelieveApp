@@ -1,0 +1,502 @@
+<resources>
+    <string name="app_name">BelieveApp</string>
+    <string name="google_maps_key">AIzaSyBbEFuWTgu8VEkOCyEA_1GvFMCR5GSVzVg</string>
+    <string name="server_client_id">540735720253-33khrg3ao67r0i95r09db6v74ma3e1rr.apps.googleusercontent.com</string>
+    <string name="facebook_app_id">370367093429666</string>
+    <string name="fb_login_protocol_scheme">fb370367093429666</string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">3AnbIDMxd2C34IPpPqqqEq4rV</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">XM9J3sHYwqR7d4mGQyrAU81ycu5RNW3dBOUdzrgp3cIa0XjPDf</string>
+
+    <string name="not_sufficient_permissions">Permission is mandatory</string>
+    <string name="label_acnt_exist">Already have an account?</string>
+    <string name="label_new_user">New User?</string>
+    <string name="bt_log_in">Log in</string>
+    <string name="bt_sign_up">Sign up</string>
+    <string name="hint_emailOrPhone">Email/Phone</string>
+    <string name="label_or">OR</string>
+    <string name="label_app_info">Information about the application</string>
+    <string name="label_fill_info">Please enter the information below:</string>
+    <string name="hint_password">Password</string>
+    <string name="label_forgot_password">Forgot Password?</string>
+    <string name="label_signup_text">Great! you are few steps away from signup.</string>
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="label_terms_policy">By clicking on sign up button, you agree to our Terms of Service and Privacy Policy</string>
+    <string name="text_forgot_password">Forgot your password?</string>
+    <string name="bt_reset_password">Reset my password</string>
+    <string name="hint_marital_status">Marital Status(optional)</string>
+    <string name="hitn_gender">Gender</string>
+    <string name="hint_profession">Profession(optional)</string>
+    <string name="hint_status">Status</string>
+    <string name="hint_campus">Campus(optional)</string>
+    <string name="hint_dob">Date of Birth</string>
+    <string name="hint_street">Street</string>
+    <string name="hint_city">City</string>
+    <string name="hint_state">State(optional)</string>
+    <string name="hint_country">Country</string>
+    <string name="hint_postal_code">Postal Code(optional)</string>
+    <string name="btn_submit">Submit</string>
+
+
+    <string name="community">Community</string>
+    <string name="events">Events</string>
+    <string name="news">News</string>
+    <string name="wall">Wall</string>
+    <string name="brodacast">Broadcast Live</string>
+    <string name="podcast">Podcast</string>
+    <string name="music">Music</string>
+    <string name="donation">Donation</string>
+    <string name="classifieds">Classifieds</string>
+    <string name="store">Store</string>
+    <string name="blogs">Blogs</string>
+    <string name="bible">Online Bible</string>
+    <string name="about_us">About US</string>
+    <string name="media">Media</string>
+    <string name="notes">Notes</string>
+    <string name="setting">Setting</string>
+    <string name="service_time">Service Time</string>
+    <string name="appointment">Make Appointment</string>
+    <string name="contact">Contact</string>
+
+    <string name="notification">Messages and notifications</string>
+    <string name="my_profile">My Profile</string>
+    <string name="change_password">Change Password</string>
+    <string name="share_app">Share our App</string>
+    <string name="rate_app">Rate our App</string>
+    <string name="remove_account">Remove Account</string>
+    <string name="logout">Logout</string>
+    <string name="label_believe">Believe</string>
+    <string name="label_believe_1">Believe -</string>
+    <string name="label_title">Title</string>
+    <string name="hint_enter_title">Enter title here</string>
+    <string name="label_message">Message</string>
+    <string name="hint_enter_message">Enter message here</string>
+    <string name="btn_label_add">Add</string>
+    <string name="label_cancel">Cancel</string>
+    <string name="hint_status_text">What\'s on your mind?</string>
+    <string name="label_upload_photo">Upload Photo</string>
+    <string name="label_upload_video">Upload Video</string>
+    <string name="btn_post">Post</string>
+    <!--<string name="label_view_all">View All</string>-->
+    <string name="label_notification_sound">Notification Sound</string>
+    <string name="label_group_notifications">Group Notifications</string>
+    <string name="label_notifications">Notifications</string>
+    <string name="label_inbox">Inbox</string>
+    <string name="label_about_us">About Us</string>
+    <string name="label_contact_info">Contact Info</string>
+    <string name="label_address">Address:</string>
+    <string name="label_mobile_number">Mobile Number:</string>
+    <string name="label_email">Email:</string>
+    <string name="label_marital_status">Marital Status:</string>
+    <string name="label_date_of_birth">Date of Birth:</string>
+    <string name="label_gender">Gender:</string>
+    <string name="label_campus">Campus:</string>
+    <string name="label_status">Status:</string>
+    <string name="label_profession">Profession:</string>
+    <string name="hint_old_password">Old Password</string>
+    <string name="hint_confirm_new_password">Confirm New Password</string>
+    <string name="btn_label_save">Save</string>
+    <string name="label_delete">Delete</string>
+    <string name="btn_label_cancel">Cancel</string>
+
+    <!--Home String Array ...-->
+    <string-array name="home_item_names">
+        <item>@string/community</item>
+        <item>@string/events</item>
+        <item>@string/news</item>
+        <item>@string/wall</item>
+        <item>@string/music</item>
+        <item>@string/donation</item>
+        <item>@string/classifieds</item>
+        <item>@string/store</item>
+        <item>@string/blogs</item>
+        <item>@string/bible</item>
+        <item>@string/about_us</item>
+        <item>@string/media</item>
+        <item>@string/notes</item>
+        <item>@string/setting</item>
+        <item>@string/service_time</item>
+        <item>@string/appointment</item>
+        <item>@string/contact</item>
+    </string-array>
+
+
+    <!--    <item>@string/brodacast</item>
+    <item>@string/podcast</item>-->
+
+
+    <!--Setting String Array ...-->
+    <string-array name="setting_item_names">
+        <item>@string/notification</item>
+        <item>@string/my_profile</item>
+        <item>@string/change_password</item>
+        <item>@string/share_app</item>
+        <item>@string/rate_app</item>
+        <item>@string/remove_account</item>
+        <item>@string/logout</item>
+    </string-array>
+
+    <!--Days of Week...-->
+    <string name="sun">S</string>
+    <string name="mon">M</string>
+    <string name="tue">T</string>
+    <string name="wed">W</string>
+    <string name="thu">T</string>
+    <string name="fri">F</string>
+    <string name="sat">S</string>
+    <string name="btn_label_send_request">Send a Request</string>
+    <string name="label_list_view">List View</string>
+    <string name="label_map_view">Map View</string>
+    <string name="hint_search_here">Search here...</string>
+    <string name="btn_label_join_group">Join Group</string>
+    <string name="label_view_all">View All</string>
+    <string name="label_wedding_list">Wedding List</string>
+    <string name="label_upcoming_weddings">Upcoming Weddings</string>
+    <string name="label_birthday_list">Birthday List</string>
+    <string name="label_bday_today_her">Today is her birthday</string>
+    <string name="label_new_borns">New Borns</string>
+    <string name="send_welcome_message">Send welcome message</string>
+    <string name="label_active">Active</string>
+    <string name="label_closed">Closed</string>
+    <string name="label_posted_by">Posted by:</string>
+    <string name="label_ask_recommend">Ask for New Recommendation</string>
+    <string name="label_click_recommend">click to see letter of recommendation</string>
+    <string name="label_betrothed">Betrothed</string>
+    <string name="label_add_couple">Add a Couple</string>
+    <string name="label_search_by_name">Search by name...</string>
+    <string name="label_age">Age:</string>
+    <string name="label_add_contact">Add Contact</string>
+    <string name="label_send_message">Send Message</string>
+    <string name="label_join_group">Join Group</string>
+    <string name="label_request_sent">Request Sent</string>
+    <string name="label_description">Description</string>
+
+
+    <string name="dummy_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
+    <string name="label_location">Location</string>
+    <string name="label_responsible_or_leader">Responsible or Leader</string>
+    <string name="label_meeting_hours">Meeting Hours</string>
+    <string name="label_view_members_on_map">View members on map</string>
+    <string name="label_about">About</string>
+    <string name="label_discussion">Discussion</string>
+    <string name="label_photos">Photos</string>
+    <string name="label_events">Events</string>
+    <string name="label_group_type">Group Type</string>
+    <string name="label_members">Members</string>
+    <string name="label_add_photo">Add Photo</string>
+    <string name="label_recently_added">Recently Added</string>
+    <string name="label_playlist">Playlist</string>
+    <string name="label_songs">All Songs</string>
+    <string name="label_albums">Albums</string>
+    <string name="label_share_on">Share on:</string>
+    <string name="hint_enter_title_here">Enter title here</string>
+    <string name="label_when">When</string>
+    <string name="hint_select_date">Select date</string>
+    <string name="label_time_from">Time From</string>
+    <string name="hint_select_time">Select time</string>
+    <string name="label_time_to">Time To</string>
+    <string name="label_giving">Giving</string>
+    <string name="label_teaching">Teaching</string>
+    <string name="label_see_all">See All</string>
+    <string name="label_date_posted">Date Posted:</string>
+    <string name="label_categories">Categories:</string>
+    <string name="label_denominations">Denominations:</string>
+    <string name="label_church_size">Church Size:</string>
+    <string name="label_job_type">Job Type</string>
+    <string name="label_job_description">Description:</string>
+    <string name="btl_apply_now">Apply Now</string>
+    <string name="label_health">Health</string>
+    <string name="btn_i_pray_for_this">I pray for this</string>
+    <string name="label_comments">Comments</string>
+    <string name="hint_comment">Comment</string>
+    <string name="label_post_as_anonymous">Post as Anonymous</string>
+    <string name="label_category">Category</string>
+    <string name="label_select_category">Select Category</string>
+    <string name="label_time_left">Time Left:</string>
+    <string name="label_choose_an_option">Choose An Option:</string>
+    <string name="label_change_profile_photo">Change Profile Photo</string>
+    <string name="trend">Trend</string>
+    <string name="live">Live</string>
+    <string name="post">Post</string>
+
+
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="marital_status_array">
+        <item>Single</item>
+        <item>Married</item>
+        <item>Divorced</item>
+    </string-array>
+    <string-array name="media_category">
+        <item>Category</item>
+        <item>Category1</item>
+        <item>Category2</item>
+    </string-array>
+    <string-array name="status_array">
+        <item>Member</item>
+        <item>Alumni</item>
+    </string-array>
+
+    <string-array name="country_array">
+        <item>Afghanistan</item>
+        <item>Albania</item>
+        <item>Algeria</item>
+        <item>American Samoa</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Anguilla</item>
+        <item>Antarctica</item>
+        <item>Antigua and Barbuda</item>
+        <item>Argentina</item>
+        <item>Armenia</item>
+        <item>Aruba</item>
+        <item>Australia</item>
+        <item>Austria</item>
+        <item>Azerbaijan</item>
+        <item>Bahrain</item>
+        <item>Bangladesh</item>
+        <item>Barbados</item>
+        <item>Belarus</item>
+        <item>Belgium</item>
+        <item>Belize</item>
+        <item>Benin</item>
+        <item>Bermuda</item>
+        <item>Bhutan</item>
+        <item>Bolivia</item>
+        <item>Bosnia and Herzegovina</item>
+        <item>Botswana</item>
+        <item>Bouvet Island</item>
+        <item>Brazil</item>
+        <item>British Indian Ocean Territory</item>
+        <item>British Virgin Islands</item>
+        <item>Brunei</item>
+        <item>Bulgaria</item>
+        <item>Burkina Faso</item>
+        <item>Burundi</item>
+        <item>Cambodia</item>
+        <item>Cameroon</item>
+        <item>Canada</item>
+        <item>Cape Verde</item>
+        <item>Cayman Islands</item>
+        <item>Central African Republic</item>
+        <item>Chad</item>
+        <item>Chile</item>
+        <item>China</item>
+        <item>Christmas Island</item>
+        <item>Cocos (Keeling) Islands</item>
+        <item>Colombia</item>
+        <item>Comoros</item>
+        <item>Congo</item>
+        <item>Cook Islands</item>
+        <item>Costa Rica</item>
+        <item>Cote d\'Ivoire</item>
+        <item>Croatia</item>
+        <item>Cuba</item>
+        <item>Cyprus</item>
+        <item>Czech Republic</item>
+        <item>Democratic Republic of the Congo</item>
+        <item>Denmark</item>
+        <item>Djibouti</item>
+        <item>Dominica</item>
+        <item>Dominican Republic</item>
+        <item>East Timor</item>
+        <item>Ecuador</item>
+        <item>Egypt</item>
+        <item>El Salvador</item>
+        <item>Equatorial Guinea</item>
+        <item>Eritrea</item>
+        <item>Estonia</item>
+        <item>Ethiopia</item>
+        <item>Faeroe Islands</item>
+        <item>Falkland Islands</item>
+        <item>Fiji</item>
+        <item>Finland</item>
+        <item>Former Yugoslav Republic of Macedonia</item>
+        <item>France</item>
+        <item>French Guiana</item>
+        <item>French Polynesia</item>
+        <item>French Southern Territories</item>
+        <item>Gabon</item>
+        <item>Georgia</item>
+        <item>Germany</item>
+        <item>Ghana</item>
+        <item>Gibraltar</item>
+        <item>Greece</item>
+        <item>Greenland</item>
+        <item>Grenada</item>
+        <item>Guadeloupe</item>
+        <item>Guam</item>
+        <item>Guatemala</item>
+        <item>Guinea</item>
+        <item>Guinea-Bissau</item>
+        <item>Guyana</item>
+        <item>Haiti</item>
+        <item>Heard Island and McDonald Islands</item>
+        <item>Honduras</item>
+        <item>Hong Kong</item>
+        <item>Hungary</item>
+        <item>Iceland</item>
+        <item>India</item>
+        <item>Indonesia</item>
+        <item>Iran</item>
+        <item>Iraq</item>
+        <item>Ireland</item>
+        <item>Israel</item>
+        <item>Italy</item>
+        <item>Jamaica</item>
+        <item>Japan</item>
+        <item>Jordan</item>
+        <item>Kazakhstan</item>
+        <item>Kenya</item>
+        <item>Kiribati</item>
+        <item>Kuwait</item>
+        <item>Kyrgyzstan</item>
+        <item>Laos</item>
+        <item>Latvia</item>
+        <item>Lebanon</item>
+        <item>Lesotho</item>
+        <item>Liberia</item>
+        <item>Libya</item>
+        <item>Liechtenstein</item>
+        <item>Lithuania</item>
+        <item>Luxembourg</item>
+        <item>Macau</item>
+        <item>Madagascar</item>
+        <item>Malawi</item>
+        <item>Malaysia</item>
+        <item>Maldives</item>
+        <item>Mali</item>
+        <item>Malta</item>
+        <item>Marshall Islands</item>
+        <item>Martinique</item>
+        <item>Mauritania</item>
+        <item>Mauritius</item>
+        <item>Mayotte</item>
+        <item>Mexico</item>
+        <item>Micronesia</item>
+        <item>Moldova</item>
+        <item>Monaco</item>
+        <item>Mongolia</item>
+        <item>Montenegro</item>
+        <item>Montserrat</item>
+        <item>Morocco</item>
+        <item>Mozambique</item>
+        <item>Myanmar</item>
+        <item>Namibia</item>
+        <item>Nauru</item>
+        <item>Nepal</item>
+        <item>Netherlands</item>
+        <item>Netherlands Antilles</item>
+        <item>New Caledonia</item>
+        <item>New Zealand</item>
+        <item>Nicaragua</item>
+        <item>Niger</item>
+        <item>Nigeria</item>
+        <item>Niue</item>
+        <item>Norfolk Island</item>
+        <item>North Korea</item>
+        <item>Northern Marianas</item>
+        <item>Norway</item>
+        <item>Oman</item>
+        <item>Pakistan</item>
+        <item>Palau</item>
+        <item>Panama</item>
+        <item>Papua New Guinea</item>
+        <item>Paraguay</item>
+        <item>Peru</item>
+        <item>Philippines</item>
+        <item>Pitcairn Islands</item>
+        <item>Poland</item>
+        <item>Portugal</item>
+        <item>Puerto Rico</item>
+        <item>Qatar</item>
+        <item>Reunion</item>
+        <item>Romania</item>
+        <item>Russia</item>
+        <item>Rwanda</item>
+        <item>Sqo Tome and Principe</item>
+        <item>Saint Helena</item>
+        <item>Saint Kitts and Nevis</item>
+        <item>Saint Lucia</item>
+        <item>Saint Pierre and Miquelon</item>
+        <item>Saint Vincent and the Grenadines</item>
+        <item>Samoa</item>
+        <item>San Marino</item>
+        <item>Saudi Arabia</item>
+        <item>Senegal</item>
+        <item>Serbia</item>
+        <item>Seychelles</item>
+        <item>Sierra Leone</item>
+        <item>Singapore</item>
+        <item>Slovakia</item>
+        <item>Slovenia</item>
+        <item>Solomon Islands</item>
+        <item>Somalia</item>
+        <item>South Africa</item>
+        <item>South Georgia and the South Sandwich Islands</item>
+        <item>South Korea</item>
+        <item>South Sudan</item>
+        <item>Spain</item>
+        <item>Sri Lanka</item>
+        <item>Sudan</item>
+        <item>Suriname</item>
+        <item>Svalbard and Jan Mayen</item>
+        <item>Swaziland</item>
+        <item>Sweden</item>
+        <item>Switzerland</item>
+        <item>Syria</item>
+        <item>Taiwan</item>
+        <item>Tajikistan</item>
+        <item>Tanzania</item>
+        <item>Thailand</item>
+        <item>The Bahamas</item>
+        <item>The Gambia</item>
+        <item>Togo</item>
+        <item>Tokelau</item>
+        <item>Tonga</item>
+        <item>Trinidad and Tobago</item>
+        <item>Tunisia</item>
+        <item>Turkey</item>
+        <item>Turkmenistan</item>
+        <item>Turks and Caicos Islands</item>
+        <item>Tuvalu</item>
+        <item>Virgin Islands</item>
+        <item>Uganda</item>
+        <item>Ukraine</item>
+        <item>United Arab Emirates</item>
+        <item>United Kingdom</item>
+        <item>United States</item>
+        <item>United States Minor Outlying Islands</item>
+        <item>Uruguay</item>
+        <item>Uzbekistan</item>
+        <item>Vanuatu</item>
+        <item>Vatican City</item>
+        <item>Venezuela</item>
+        <item>Vietnam</item>
+        <item>Wallis and Futuna</item>
+        <item>Western Sahara</item>
+        <item>Yemen</item>
+        <item>Yugoslavia</item>
+        <item>Zambia</item>
+        <item>Zimbabwe</item>
+    </string-array>
+
+
+    <string name="GPSAlertDialogTitle">GPS is setting</string>
+    <string name="GPSAlertDialogMessage">GPS is not enabled. Do you want to go to setting menu</string>
+    <string name="settings">Settings</string>
+    <string name="cancel">Cancel</string>
+
+
+    <string name="alert_title">Attention!</string>
+    <string name="alert_message">Unable to load data. \nCheck your connection!</string>
+    <string name="alert_positive">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

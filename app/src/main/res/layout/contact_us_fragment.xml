@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/parent"
+    android:visibility="gone"
+    android:background="@drawable/bg_splash_">
+
+    <View
+        android:id="@+id/divView"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:background="@color/light_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/believe_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_20dp"
+        android:layout_marginRight="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_20dp"
+        android:text="@string/label_believe_1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/countryName_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10dp"
+        android:layout_marginRight="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_20dp"
+        android:text="Country Name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/believe_TV"
+        app:layout_constraintTop_toBottomOf="@+id/divView" />
+
+    <LinearLayout
+        android:id="@+id/infoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/_20dp"
+        android:layout_marginLeft="@dimen/_20dp"
+        android:layout_marginRight="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_10dp"
+        android:background="@drawable/square_shape_magenta"
+        android:elevation="4dp"
+        android:paddingBottom="@dimen/_5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/believe_TV"
+        app:layout_constraintVertical_bias="0.0">
+
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:paddingTop="@dimen/_10dp"
+            android:paddingBottom="@dimen/_10dp"
+            android:id="@+id/address_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:layout_marginLeft="@dimen/_15dp"
+            android:layout_marginRight="@dimen/_8dp"
+            android:layout_marginStart="@dimen/_15dp"
+            android:drawableLeft="@drawable/ic_home"
+            android:drawablePadding="@dimen/_15dp"
+            android:drawableTint="@color/black"
+            android:gravity="center_vertical"
+            android:text="301 Park Avenue Rd Ga 30349"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:background="@color/light_grey" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/contact_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:layout_marginLeft="@dimen/_15dp"
+            android:paddingTop="@dimen/_10dp"
+            android:paddingBottom="@dimen/_10dp"
+            android:layout_marginRight="@dimen/_8dp"
+            android:layout_marginStart="@dimen/_15dp"
+            android:drawableLeft="@drawable/ic_phone"
+            android:drawablePadding="@dimen/_15dp"
+            android:drawableTint="@color/black"
+            android:gravity="center_vertical"
+            android:text="222-222-2211"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:background="@color/light_grey" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/email_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:layout_marginLeft="@dimen/_15dp"
+            android:layout_marginRight="@dimen/_8dp"
+            android:layout_marginStart="@dimen/_15dp"
+            android:paddingTop="@dimen/_10dp"
+            android:paddingBottom="@dimen/_10dp"
+            android:drawableLeft="@drawable/ic_email"
+            android:drawablePadding="@dimen/_15dp"
+            android:drawableRight="@drawable/right_arrow"
+            android:drawableTint="@color/black"
+            android:gravity="center_vertical"
+            android:text="believe@gmail.com"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:background="@color/light_grey"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/website_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:paddingTop="@dimen/_10dp"
+            android:paddingBottom="@dimen/_10dp"
+            android:layout_marginLeft="@dimen/_15dp"
+            android:layout_marginRight="@dimen/_8dp"
+            android:layout_marginStart="@dimen/_15dp"
+            android:drawableLeft="@drawable/ic_glob"
+            android:drawablePadding="@dimen/_15dp"
+            android:drawableRight="@drawable/right_arrow"
+            android:drawableTint="@color/black"
+            android:gravity="center_vertical"
+            android:text="http://www.believe.org"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:background="@color/light_grey" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/direction_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:layout_marginLeft="@dimen/_15dp"
+            android:layout_marginRight="@dimen/_8dp"
+            android:layout_marginStart="@dimen/_15dp"
+            android:drawableLeft="@drawable/ic_location"
+            android:drawablePadding="@dimen/_15dp"
+            android:drawableRight="@drawable/right_arrow"
+            android:drawableTint="@color/black"
+            android:gravity="center_vertical"
+            android:text="Get Directions"
+            android:paddingTop="@dimen/_10dp"
+            android:paddingBottom="@dimen/_10dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/follow_label_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8dp"
+        android:text="Follow us on:"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infoContainer"
+        app:layout_constraintVertical_bias="0.018" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/follow_label_TV">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/fb_IV"
+            android:layout_width="@dimen/_40dp"
+            android:layout_height="@dimen/_40dp"
+            android:padding="@dimen/_5dp"
+            android:layout_weight="0.1"
+            app:srcCompat="@drawable/ic_facebook" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/twitter_IV"
+            android:layout_width="@dimen/_40dp"
+            android:layout_height="@dimen/_40dp"
+            android:padding="@dimen/_5dp"
+            android:layout_weight="0.1"
+            app:srcCompat="@drawable/ic_twitter" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/insta_IV"
+            android:layout_width="@dimen/_40dp"
+            android:layout_height="@dimen/_40dp"
+            android:padding="@dimen/_5dp"
+            android:layout_weight="0.1"
+            app:srcCompat="@drawable/ic_insta" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

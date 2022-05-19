@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:padding="@dimen/_10"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/locationTvMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/redish_pink"
+        android:text="location"
+        android:layout_gravity="center"
+        android:textSize="@dimen/_14sp" />
+
+    <TextView
+        android:id="@+id/groupnameTvMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium_numbers"
+        android:textColor="@color/black"
+        android:text="distance"
+        android:layout_gravity="center"
+        android:textSize="@dimen/_14sp" />
+    <TextView
+        android:id="@+id/showMoreMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:text="show more"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:textSize="@dimen/_14sp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash_">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/mainBlogDetailsId"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/blogImage_IV"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_220dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+           />
+
+
+        <LinearLayout
+            android:id="@+id/catText_View"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10dp"
+            android:background="@drawable/square_shape_magenta"
+            android:orientation="vertical"
+            android:padding="@dimen/_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/blogImage_IV"
+            android:elevation="4dp">
+
+
+            <TextView
+                android:id="@+id/blogName_TV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Presentation"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/blogAuthor_TV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- by believe"
+                android:textSize="@dimen/_14sp"
+                android:layout_marginTop="@dimen/_5dp"/>
+
+
+            <TextView
+                android:id="@+id/blogText_TV"
+                android:textIsSelectable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/catText_View">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5dp"
+                android:layout_marginTop="@dimen/_5dp"
+                android:gravity="center"
+                android:text="@string/label_share_on"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_70dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/fbShare_IV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5dp"
+                    android:layout_weight="0.20"
+                    android:src="@drawable/fb_share"/>
+
+                <ImageView
+                    android:id="@+id/twitterShare_IV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5dp"
+                    android:layout_weight="0.20"
+                    android:src="@drawable/share_twitter" />
+
+                <ImageView
+                    android:id="@+id/emailShare_IV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5dp"
+                    android:layout_weight="0.20"
+                    android:src="@drawable/share_msg" />
+
+                <ImageView
+                    android:id="@+id/smsShare_IV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5dp"
+                    android:layout_weight="0.20"
+                    android:src="@drawable/ic_sms" />
+
+                <ImageView
+                    android:id="@+id/whatsShare_IV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5dp"
+                    android:layout_weight="0.20"
+                    android:src="@drawable/ic_whatsaap" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_splash_">
+
+
+    <ImageView
+        android:id="@+id/bornImage_IV"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_210dp"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/catText_View"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mar_20"
+        android:layout_marginLeft="@dimen/_10dp"
+        android:layout_marginRight="@dimen/mar_10"
+        android:background="@drawable/square_shape_magenta"
+        android:orientation="vertical"
+        android:padding="@dimen/_10dp"
+        android:elevation="4dp">
+
+
+        <TextView
+            android:id="@+id/bornName_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Presentation"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/bornAuthor_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="- by believe"
+            android:textSize="@dimen/_14sp"
+            android:layout_marginTop="@dimen/_5dp"/>
+
+
+        <TextView
+            android:id="@+id/bornText_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

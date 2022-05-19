@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.Priyansh-Kedia:OpenGraphParser:2.5.4@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/853b16e38be179e093b7bd6ad2a79593/jetified-OpenGraphParser-2.5.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/853b16e38be179e093b7bd6ad2a79593/jetified-OpenGraphParser-2.5.4/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/caches/transforms-2/files-2.1/853b16e38be179e093b7bd6ad2a79593/jetified-OpenGraphParser-2.5.4/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/caches/modules-2/files-2.1/com.github.Priyansh-Kedia/OpenGraphParser/2.5.4/1134997f67c05de8240b7ad1980a595f4c79ad42/OpenGraphParser-2.5.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
